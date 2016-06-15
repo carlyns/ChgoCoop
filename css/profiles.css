@@ -1,0 +1,13 @@
+.unit-info h4 {
+  background-color: rgba(242,242,242,1);
+  padding: 3%;
+  margin: 5% 0;
+}
+.coop-info h4 {
+  background-color: rgba(242,242,242,1);
+  padding: 3%;
+  margin: 5% 0;
+}
+.container .button {
+  margin: 5% auto;
+}

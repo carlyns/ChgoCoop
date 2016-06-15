@@ -1,0 +1,130 @@
+header {
+  /* position: fixed;
+  top: 0;
+  width: 100%;
+  HOW TO PUSH DOWN WHOLE PAGE?  */
+  }
+header a {
+  color: white;
+}
+
+.topexplore {
+  background-color: rgba(33,48,0, 1);
+  color: white;
+}
+.topenhance {
+  background-color: rgba(66,17,60, 1);
+  color: white;
+}
+
+.topexplore h1 {
+  text-transform: uppercase;
+  padding-left: 3%;
+  width: 80%;
+}
+.topenhance h1 {
+  text-transform: uppercase;
+  padding-left: 3%;
+  width: 80%;
+}
+.tools {
+  overflow: auto;
+  clear: both;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.band-white {
+  padding: 6%;
+}
+.band-white a {
+  color: black;
+}
+.band-green {
+  padding: 6%;
+  background-color: rgba(33,48,0, 1);
+  color: white;
+}
+.band-green a {
+  color: white;
+}
+.band-purple {
+  padding: 6%;
+  background-color: rgba(66,17,60, 1);
+  color: white;
+}
+.band-purple a {
+  color: white;
+}
+.tools a:hover { /* maybe because the h3 text is wrapped in a div the link properties don't come through (underline on hover), but highlighting the whole div is better anyway*/
+  background-color: rgba(150,150,150, 0.4);
+}
+.infotool {
+  width: 100px;
+  float: left;
+  flex:none;
+  margin: 3% 0;
+  margin-left: 5%;
+}
+.infotool h3 {
+  clear: both;
+  text-align: center;
+}
+.icon {
+  border: 3px solid black;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.button-section {
+  font-size: 1.5em;
+  padding: 1%;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  text-transform: capitalize;
+  clear: both;
+}
+.band-green .button-section {
+  border: 1px solid white;
+}.band-purple .button-section {
+  border: 1px solid white;
+}
+.band-white .button-section {
+  border: 1px solid black;
+}
+.allsections {
+  clear: both;
+}
+/* ------ MEDIA QUERIES START HERE -----*/
+@media screen and (min-width: 700px) {
+  /* -- anchoring the button at the bottom might not be needed.  just use the clear:both.
+  .band-color, .band-white {
+    position: relative;
+  }
+  .button-section {
+    position: absolute;
+    bottom: 5%;
+    left: 40%;
+  } ---*/
+  .topexplore h1 {
+    width: 40%;
+    text-align: center;
+    float: left;
+    padding: 0;
+  }
+
+  .topenhance h1 {
+    width: 40%;
+    text-align: center;
+    float: left;
+    padding: 0;
+  }
+  .button-section {
+    width: 30%;
+  }
+
+
+}
