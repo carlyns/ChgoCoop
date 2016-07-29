@@ -21,8 +21,9 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 <header>
 		<div class="topsticky home">
 			<div class="heading">
-				<h1><a href="index.html">Cooperative Communities of Chicago</a></h1>
+				<h1><a href="<?php echo esc_url( home_url( '/' ) );	    ?>"><?php bloginfo( 'name' ); ?></a></h1>
 				<p class="tagline">Promoting and facilitating housing cooperatives for the middle class.</p>
+				<?php echo get_bloginfo( 'description', 'display' ); ?>
 			</div>
 		</div>
 		<div class="icon-menu3">		</div>

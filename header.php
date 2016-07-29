@@ -17,8 +17,8 @@
 
 <!-- THIS STYLESHEET IS LOADED FOR ALL PAGES -->
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/coop.css">
-<!-- FONT/ICON GLYPHS LOADED FOR ALL PAGES
-	<link rel="stylesheet" href="css/font.css">-->
+<!-- FONT/ICON GLYPHS LOADED FOR ALL PAGES -->
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/font.css">
 
 	<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/coop.css"> -->

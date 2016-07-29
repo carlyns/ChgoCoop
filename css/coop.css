@@ -1,4 +1,6 @@
-body {
+html {
+  margin-top: 0;
+
 }
 .home {
   color: white;
@@ -11,6 +13,7 @@ body {
   width: 100%;
   border-bottom: 3px solid white;
   box-shadow: 1px 5px 5px rgba(1,1,1,1);
+
 }
 .heading {
   width: 85%;
