@@ -22,7 +22,7 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 		<div class="topsticky home">
 			<div class="heading">
 				<h1><a href="<?php echo esc_url( home_url( '/' ) );	    ?>"><?php bloginfo( 'name' ); ?></a></h1>
-				<p class="tagline">Promoting and facilitating housing cooperatives for the middle class.</p>
+				<p class="tagline">This is the index.php page!</p>
 				<?php echo get_bloginfo( 'description', 'display' ); ?>
 			</div>
 		</div>
@@ -60,22 +60,7 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 
 		<p>A few co-ops that might interest you:</p>
 		<!--<p>Housing for the middle class is hard to come by these days.  Not to mention we've replaced real-life community with digital connections.  Cooperatives may not be what you think.</p>-->
-			<div class="type">
-				<img src="imgs/walkup.jpg" alt="private apartments">
-				<p>private apartments</p>
-			</div>
-			<div class="type">
-				<img src="imgs/home.png" alt="single family home">
-				<p>single family detached</p>
-			</div>
-			<div class="type">
-				<img src="imgs/hirise.jpg" alt="high rise">
-				<p>high-rise</p>
-			</div>
-			<div class="type">
-				<img src="imgs/communal.png" alt="shared home">
-				<p>shared common spaces</p>
-			</div>
+
 
 	</div>
 

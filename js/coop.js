@@ -3,7 +3,7 @@ var main = function() {
 
 // TOGGLING THE MENU ICON -- off for now
 /*
-$(".icon-menu3").click(function() {
+$(".icon-menu").click(function() {
     $(".menu").toggle();
   });
 }
@@ -13,7 +13,7 @@ $(".icon-menu3").click(function() {
 
 
 // TRYING TO SLIDE THE MENU IN FROM THE RIGHT on click
-$(".icon-menu3").click(function() {
+$(".icon-menu").click(function() {
     $(".menu").animate({right: "-30px"});
     $(".icon-rocket").toggle({duration: 500});
   });

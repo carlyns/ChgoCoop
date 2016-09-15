@@ -27,6 +27,7 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 
 
 		<p>A few co-ops that might interest you:</p>
+		<?php wp_nav_menu(); // pulls the first menu by default ?>
 		<!--<p>Housing for the middle class is hard to come by these days.  Not to mention we've replaced real-life community with digital connections.  Cooperatives may not be what you think.</p>-->
 			<div class="type">
 				<img src="<?php bloginfo( 'template_url' ); ?>/imgs/walkup.jpg" alt="private apartments">
@@ -131,55 +132,4 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 
 </div> <!--/ "container" -->
 
-<footer>
-
-	<div class="grid6right">
-		<div class="map">
-			<iframe width='100%' frameBorder='0' src='https://a.tiles.mapbox.com/v4/carlyniuna.pi535411/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiY2FybHluaXVuYSIsImEiOiJvQTVpUXY0In0.xJqOXcNQ80n3JFmY7mZCPw'></iframe>
-		</div>
-
-		<div class="button"><a href="#">See Larger Map</a></div>
-	</div>
-
-
-	<div class="grid6right">
-		<h3><a href="about.html">Our Team</a></h3>
-
-		<div class="eventlist">
-			<h3>Upcoming Events</h3>
-			<div class="eventinfo">
-				<div class="datebox">27</br>feb</div>
-				<div class="eventtitle">Open House</div>
-			</div>
-			<div class="eventinfo">
-				<div class="datebox">14</br>mar</div>
-				<div class="eventtitle">Meetup for those Exploring Housing Cooperatives</div>
-			</div>
-			<div class="eventinfo">
-				<div class="datebox">02</br>apr</div>
-				<div class="eventtitle">CCLF-hosted info session @StoneSoup</div>
-			</div>
-			<div class="eventinfo">
-				<div class="datebox">20</br>may</div>
-				<div class="eventtitle">On The Table dinner and discussion</div>
-			</div>
-		</div>
-
-		<div class="contactinfo">
-			<p><a href="mailto:cso@RESUSstudio.com">Email us</a></p>
-			<p><a href="https://www.facebook.com/Exploring-Housing-Cooperatives-420807511344699/">Find us on Facebook</a></p>
-		</div>
-	</div>
-
-	<div class="credits">
-		<p>Copyright &copy;	2016</p>
-		<p>Site Design by <a href="http://sitesforsocialgood.com">Sites for Social Good</a></p>
-	</div>
-
-</footer>
-
-<script src="js/jquery.min.js"></script>
-<script src="js/coop.js"></script>
-
-</body>
-</html>
+<?php get_footer(); ?>

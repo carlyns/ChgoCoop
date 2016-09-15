@@ -1,8 +1,4 @@
 header {
-  /* position: fixed;
-  top: 0;
-  width: 100%;
-  HOW TO PUSH DOWN WHOLE PAGE?  */
   }
 header a {
   color: white;
@@ -89,13 +85,15 @@ header a {
 }
 .band-green .button-section {
   border: 1px solid white;
-}.band-purple .button-section {
+}
+.band-purple .button-section {
   border: 1px solid white;
 }
 .band-white .button-section {
   border: 1px solid black;
 }
-.allsections {
+.allsections { /* SIMILAR RULES AS .container on typical pages to allow for topsticky space */
+  padding-top: 50px;
   clear: both;
 }
 /* ------ MEDIA QUERIES START HERE -----*/
@@ -109,6 +107,12 @@ header a {
     bottom: 5%;
     left: 40%;
   } ---*/
+
+  .allsections { /* SIMILAR RULES AS .container on typical pages to allow for topsticky space */
+    padding-top: 100px;
+  }
+
+
   .topexplore h1 {
     width: 40%;
     text-align: center;

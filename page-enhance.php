@@ -24,19 +24,21 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 
 <?php include ('menu.php'); ?>
 
+<div class="allsections">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<h1><?php the_title(); ?></h1>
-	  <?php the_content(); ?>
-	<?php endwhile; endif; // THIS PLACEMENT MATTERS: in between the ul tag! ?>
+		<?php the_content(); ?>
+	<?php endwhile; endif; ?> <!-- THIS CONTENT PROBABLY WONT SHOW -->
 
-<div class="allsections">
 	<div class="band-white">
 		<h2>Fundamentals</h2>
 		<div class="tools">
-			<a href="tool.html"><div class="infotool">
+			<a href="<?php get_page_template(); ?>/chgocoopWP/tool">
+				<div class="infotool">
 					<div class="icon"></div>
 					<h3>Title of the Tool</h3>
-				</div></a>
+				</div>
+			</a>
 			<div class="infotool">
 				<div class="icon"></div>
 				<h3>Title of the Tool</h3>
@@ -59,11 +61,11 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 			</div>
 		</div>
 		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE JUST FOR REVIEWING FUNDAMENTALS -->
-		<a href="<?php get_page_template(); ?>/chgocoopWP/enhance"><div class="button-section">Read more</div></a>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/fundamentals"><div class="button-section">Read more</div></a>
 	</div>
 
 	<div class="band-purple">
-		<h2>Collaboration Tools</h2>
+		<h2>Collaboration Tools (the soft skills necessary)</h2>
 		<div class="tools">
 			<a href="tool.html"><div class="infotool">
 					<div class="icon"></div>
@@ -83,11 +85,11 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 			</div>
 		</div>
 		<!-- THE FOLLOWING LINK SHOULD BE AN ARCHIVE PAGE FOR ALL TOOLS, A TAG? -->
-		<a href="#"><div class="button-section">See All Advice</div></a>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/collaboration"><div class="button-section">See All Advice on archive page</div></a>
 	</div>
 
 	<div class="band-white">
-		<h2>Financial/Legal Tools</h2>
+		<h2>Financial/Legal Tools (the hard resources)</h2>
 		<div class="tools">
 			<div class="infotool">
 				<div class="icon"></div>
@@ -99,7 +101,7 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 			</div>
 		</div>
 		<!-- THE FOLLOWING LINK SHOULD BE AN ARCHIVE PAGE FOR ALL TOOLS, A TAG? -->
-		<a href="#"><div class="button-section">See All Tools</div></a>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/enhance-tools"><div class="button-section">See All Tools on archive page</div></a>
 	</div>
 
 	<div class="band-purple">

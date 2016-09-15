@@ -1,15 +1,13 @@
 <!-- REMEMBER: I HAVE TO REGISTER MY MENU FOR IT TO SHOW UP IN THE WP DASHBOARD? -->
 
 <nav>
-  <p>
-    register the menu!
-  </p>
 
-  <?php wp_nav_menu( array( 'menu' => 'primary' ) ); ?>
 
   <ul class="menu">
     <div class="icon-rocket">	</div>
     <li><span class="icon-home">		</span><a href="index.html">Home</a></li>
+    <?php wp_nav_menu(); ?>
+
     <li><a href="explore.html">For Explorers</a></li>
       <li class="sub"><a href="explore.html">Info for Beginners</a></li>
       <li class="sub"><a href="explore.html">Tools/Diagrams</a></li>

@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 
-<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
-  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/profiles.css">
+<?php /* PostType Page Template: Profile: Potential Property */ ?>
+
+<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/profiles.css">-->
 
 
 

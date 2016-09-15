@@ -5,5 +5,5 @@
 				<p class="tagline"><?php echo get_bloginfo( 'description', 'display' ); ?></p>
 			</div>
 		</div>
-		<div class="icon-menu3">		</div>
+		<div class="icon-menu">		</div>
 </header>

@@ -11,3 +11,37 @@
 .container .button {
   margin: 5% auto;
 }
+.container h2 {
+  font-weight: 200;
+}
+.mainfact {
+  font-weight: 500;
+}
+.infofield {
+  font-weight: 200;
+}
+.infoicon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  color: grey;
+  font-size: 3em;
+}
+
+
+/* ------ MEDIA QUERIES START HERE -----*/
+@media screen and (min-width: 700px) {
+  .infoicon {
+    float: left;
+    margin-bottom: 5%;
+  }
+  .infoblock {
+    width: 500px;
+    float: left;
+    margin-top: 0; /* helps align to top */
+    margin-left: 30px;
+  }
+  .profileblock {
+    clear: both;
+  }
+}

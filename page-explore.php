@@ -24,19 +24,21 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 
 <?php include ('menu.php'); ?>
 
+<div class="allsections">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<h1><?php the_title(); ?></h1>
 	  <?php the_content(); ?>
-	<?php endwhile; endif; // THIS PLACEMENT MATTERS: in between the ul tag! ?>
+	<?php endwhile; endif; ?>  <!-- THIS CONTENT PROBABLY WONT SHOW -->
 
-<div class="allsections">
 	<div class="band-white">
-		<h2>Info for Beginners</h2>
+		<h2>The Very Beginning</h2>
 		<div class="tools">
-			<a href="tool.html"><div class="infotool">
+			<a href="<?php get_page_template(); ?>/chgocoopWP/tool">
+				<div class="infotool">
 					<div class="icon"></div>
 					<h3>Title of the Tool</h3>
-				</div></a>
+				</div>
+			</a>
 			<div class="infotool">
 				<div class="icon"></div>
 				<h3>Title of the Tool</h3>
@@ -59,11 +61,11 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 			</div>
 		</div>
 		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE JUST FOR BEGINNING EXPLORERS -->
-		<a href="<?php get_page_template(); ?>/chgocoopWP/explore"><div class="button-section">Get started</div></a>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/beginners"><div class="button-section">Get Started</div></a>
 	</div>
 
 	<div class="band-green">
-		<h2>Tools/Diagrams</h2>
+		<h2>Anecdotes / Stories</h2>
 		<div class="tools">
 			<a href="tool.html"><div class="infotool">
 					<div class="icon"></div>
@@ -82,16 +84,19 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 				<h3>Title of the Tool</h3>
 			</div>
 		</div>
-		<!-- THE FOLLOWING LINK SHOULD BE AN ARCHIVE PAGE FOR ALL TOOLS, A TAG? -->
-		<a href="#"><div class="button-section">See All Tools</div></a>
+		<!-- THE FOLLOWING LINK SHOULD BE AN ARCHIVE PAGE FOR ALL STORY POSTS, A TAG? -->
+		<a href="#"><div class="button-section">Read archive page</div></a>
 	</div>
 
 	<div class="band-white">
 		<h2>Find an Existing Co-op Vacancy</h2>
+		<p>
+			>> STYLE THIS INTO 3 ACTION BUTTONS
+		</p>
 		<p>If you prefer to drop into an already existing cooperative in/near Chicago, there are a few options:</p>
 		<ol>
-			<li>Check out the map for vacancies. We also profile vacancies <a href="#">on our blog</a>, so subscribe to it!.</li>
-			<li>Visit Craigslist and use the search term “co-op” or “cooperative”</li>
+			<li>Check out the map for vacancies. We also profile vacancies <a href="#">on our blog</a>, so subscribe to it!</li>
+			<li>Visit Craigslist and use the search term “co-op” or “cooperative” (We also capture these via ifttt in our blog)</li>
 			<li>Create a Fireplace profile and discover your closest co-op match. This new tool will connect you!</li>
 		</ol>
 	</div>
@@ -121,7 +126,7 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 			</div>
 		</div>
 		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE DETAILING THE PROCESS OF FORMING COOPS -->
-		<a href="#"><div class="button-section">Read More</div></a>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/formation"><div class="button-section">Read More</div></a>
 	</div>
 
 </div> <!-- //end of "allsections"-->

@@ -1,6 +1,10 @@
 html {
   margin-top: 0;
-
+}
+body {
+  /* font-family: 'Slabo 27px', sans-serif; */
+  font-family: helvetica neue, sans-serif;
+  margin: 0;
 }
 .home {
   color: white;
@@ -58,9 +62,10 @@ nav .icon-home {
   padding-bottom: 0;
   font-size: 1em;
 }
-.icon-menu3 {
+.icon-menu {
   color: white;
   background-color: black;
+  border: 2px solid white;
   border-radius: 10px;
   padding: 1%;
   text-align: right;
@@ -110,10 +115,7 @@ nav .icon-home {
 .allsections {
   padding-top: 100px;
 }
-body {
-  font-family: 'Slabo 27px', sans-serif;
-  margin: 0;
-}
+
 .icon-home {
   color: black;
   font-size: 3em;
@@ -177,12 +179,10 @@ body {
   text-transform: uppercase;
 }
 
-.container {
-  padding: 0 6%;
-  clear: both;
-}
-.container {
+.container { /* SIMILAR RULES AS .allsections on banded pages to allow for topsticky space */
+  margin: 0 6%;
   padding-top: 50px;
+  clear: both;
 }
 .featured-org, .featured-unit, .featured-coop {
   background-color: rgba(236,164,0, 1);
@@ -275,9 +275,7 @@ footer a {
 }
 .contactinfo {
   clear: both;
-  border-top: 1px solid white;
-  width: 80%;
-  line-height: 0.4em;
+/*  border-top: 1px solid white;  */
   margin-top: 7%;
 }
 .credits {
@@ -289,7 +287,7 @@ footer a {
 /* ------ MEDIA QUERIES START HERE -----*/
 
 @media screen and (max-width: 418px) {
-  .icon-menu3 {
+  .icon-menu {
     top: 150px;
   }
   .icon-rocket {
@@ -317,7 +315,7 @@ footer a {
   .heading {
     font-size: 1em;
   }
-  .icon-menu3 {
+  .icon-menu {
     top: 150px;
   }
   .icon-rocket {

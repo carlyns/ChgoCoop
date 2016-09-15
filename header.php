@@ -7,7 +7,6 @@
 
   <link rel="shortcut icon" href="coop_favicon.ico" type="image/ico" width="16" height="16">
 
-	<meta name="keywords" content="housing, cooperative, living, chicago, affordable, home, apartment, condo, ownership, property, roommates">
 	<meta name="description" content="Empowering/bringing together the community of housing cooperatives in Chicago.">
 
 	<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
@@ -17,8 +16,11 @@
 
 <!-- THIS STYLESHEET IS LOADED FOR ALL PAGES -->
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/coop.css">
-<!-- FONT/ICON GLYPHS LOADED FOR ALL PAGES -->
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/font.css">
+<!-- FONT/ICON GLYPHS LOADED FOR ALL PAGES
+		Keep the whole folder so you can reference the icon visually on the html page generated.
+-->
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/icomoon55467/style.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/icomoon37003/style.css">
 
 	<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/coop.css"> -->

@@ -1,5 +1,8 @@
 <?php get_header(); ?>
 
+<?php /* PostType Page Template: Profile: Organization */ ?>
+
+
 <!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/profiles.css">-->
 
