@@ -44,4 +44,8 @@
   .profileblock {
     clear: both;
   }
+  .gallery-plugin {
+    width: 600px;
+    text-align: left;
+  }
 }

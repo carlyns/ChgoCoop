@@ -230,6 +230,7 @@ nav .icon-home {
   color: black;
 }
 footer {
+  clear: both;
   background-color: black;
   color: white;
   padding: 3% 3% 0 3%;
