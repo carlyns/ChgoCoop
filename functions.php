@@ -34,6 +34,14 @@ function coop_theme_setup() {
 }
 add_action('init', 'coop_theme_setup');
 
+
+// Adding Post Thumbnails, so attached media can show up in other areas
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 50, 50);
+add_image_size( 'full-size', 500, 500 ); // prob dont need this
+
+
+
 // Year Shortcode
 function year_shortcode() {
   $year = date('Y');

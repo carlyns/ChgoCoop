@@ -1,6 +1,5 @@
 <?php get_header(); ?>
-
-<?php /* PostType Page Template: Profile: Co-op */ ?>
+<?php /* WP Post Template: Profile: Co-op */ ?>
 
 <!-- PUT THIS BEFORE PATH FOR RELATIVE FOLDER PATHS!
 <?php bloginfo('template_directory'); ?>

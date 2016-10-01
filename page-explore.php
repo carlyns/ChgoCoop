@@ -4,13 +4,6 @@
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bandedsections.css">
 
 
-<!-- GOOGLE ANALYTICS TRACKING.  TRACKING NUMBER STARTS WITH UA.
-
-GOOGLE ANALYTICS TRACKING: PHP ALTERNATIVE!  via https://analytics.google.com/analytics/web/?authuser=1#management/Settings/a72902531w110694745p115471852/%3Fm.page%3DTrackingCode%26_r.ghFlowId%3D6324039/
-
-
-HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS GOOD AS GOOGLE ANALYTICS?  SEE WHAT HAPPENS IF I INCLUDE THIS SCRIPT ON INDEX AT LEAST?  WP BUSINESS PLAN CAN ADD MORE GOOGLE ANALYTICS FEATURES.
--->
 
 <title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
 
@@ -32,60 +25,72 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 
 	<div class="band-white">
 		<h2>The Very Beginning</h2>
-		<div class="tools">
-			<a href="<?php get_page_template(); ?>/chgocoopWP/tool">
+		<p>
+			Show all posts (CPT only) of "tools" (not tagged with "formation") + Explore Category
+		</p>
+		<section>
+			<!-- DISPLAY CUSTOM POST TYPE OF "TOOL" WITH THE PROPER DIV/CLASS WRAPPING.  AS A CUSTOM POST TYPE, IT WON'T SHOW UP IN THE BLOG FEED. THIS IS PROBABLY GOOD FOR DOCUMENTS AND TEMPLATES.  NEEDS TO BE WRAPPED IN A LINK TO THE POST. DISPLAY 6 MAX. -->
+
+			<?php //HOW TO DISPLAY CUSTOM POSTS from https://wp-types.com/documentation/user-guides/displaying-wordpress-custom-content/
+			$args = array( 'post_type' => 'tool', 'posts_per_page' => 6 ); //Define your custom post type name in the arguments
+			$loop = new WP_Query( $args ); //Define the loop based on those arguments
+			//Display the contents
+			while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+			<a href="<?php the_permalink(); ?>">
 				<div class="infotool">
-					<div class="icon"></div>
-					<h3>Title of the Tool</h3>
+					<div class="icon">
+						<?php
+							$image = get_field('tool_img');
+				      if( !empty($image) ): ?>
+						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+					<?php endif; ?>
+					</div>
+					<h3><?php the_title(); ?></h3>
 				</div>
+				<?php endwhile; ?>
 			</a>
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
-		</div>
+			<?php // RESETTING TO ORIG LOOP
+			wp_reset_postdata(); ?>
+		</section>
+
+
 		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE JUST FOR BEGINNING EXPLORERS -->
-		<a href="<?php get_page_template(); ?>/chgocoopWP/beginners"><div class="button-section">Get Started</div></a>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/explore/beginners"><div class="button-section">Get Started</div></a>
+
 	</div>
 
 	<div class="band-green">
-		<h2>Anecdotes / Stories</h2>
-		<div class="tools">
-			<a href="tool.html"><div class="infotool">
-					<div class="icon"></div>
-					<h3>Title of the Tool</h3>
-				</div></a>
+		<h2>Anecdotes / Stories, Advice for Beginners</h2>
+		<p>
+			Show all posts (blog only) of "advice"  + Explore Category
+			(advice tag could be for Explore & Enhance, eg for the co-op principles)
+		</p>
+		<section>
+
+
+			<?php
+			$args = array( 'tag' => 'advice', 'posts_per_page' => 6, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
+			$loop = new WP_Query( $args ); //Define the loop based on those arguments
+			//Display the contents
+			while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+			<a href="<?php the_permalink(); ?>">
 			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
+				<div class="icon">
+					<!-- ADD A ICON FOR ALL THE 'ADVICE' TAGGED POSTS -->
+				</div>
+				<h3><?php the_title(); ?></h3>
 			</div>
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
-		</div>
-		<!-- THE FOLLOWING LINK SHOULD BE AN ARCHIVE PAGE FOR ALL STORY POSTS, A TAG? -->
-		<a href="#"><div class="button-section">Read archive page</div></a>
+			</a>
+
+			<?php endwhile; ?>
+		<?php // RESETTING TO ORIG LOOP
+		wp_reset_postdata(); ?>
+
+		</section>
+		<!-- THE FOLLOWING LINK SHOULD BE AN ARCHIVE PAGE for tag "advice" -->
+		<a href="<?php get_page_template(); ?>/chgocoopWP/tag/advice"><div class="button-section">See All Inspiring Stories</div></a>
 	</div>
 
 	<div class="band-white">
@@ -103,30 +108,33 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 
 	<div class="band-green">
 		<h2>Form Your Own Co-op! (DIY)</h2>
-		<div class="tools">
+		<p>
+			Show all posts (CPT only) of "tools" (tagged with "formation") + Explore Category
+		</p>
+		<section>
+
+			<?php
+			$args = array( 'post_type' => 'tool', 'tag' => 'formation', 'posts_per_page' => 6, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
+			$loop = new WP_Query( $args ); //Define the loop based on those arguments
+			//Display the contents
+			while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+			<a href="<?php the_permalink(); ?>">
 			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
+				<div class="icon">
+					<!-- ADD A ICON FOR ALL THE 'FORMATION' TAGGED POSTS -->
+				</div>
+				<h3><?php the_title(); ?></h3>
 			</div>
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
-		</div>
+			</a>
+
+			<?php endwhile; ?>
+		<?php // RESETTING TO ORIG LOOP
+		wp_reset_postdata(); ?>
+
+		</section>
 		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE DETAILING THE PROCESS OF FORMING COOPS -->
-		<a href="<?php get_page_template(); ?>/chgocoopWP/formation"><div class="button-section">Read More</div></a>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/explore/formation"><div class="button-section">Read More</div></a>
 	</div>
 
 </div> <!-- //end of "allsections"-->

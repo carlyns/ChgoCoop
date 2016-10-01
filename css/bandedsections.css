@@ -23,7 +23,7 @@ header a {
   padding-left: 3%;
   width: 80%;
 }
-.tools {
+section {
   overflow: auto;
   clear: both;
   display: flex;
@@ -57,7 +57,7 @@ header a {
   background-color: rgba(150,150,150, 0.4);
 }
 .infotool {
-  width: 100px;
+  width: 175px;
   float: left;
   flex:none;
   margin: 3% 0;
@@ -71,8 +71,11 @@ header a {
   border: 3px solid black;
   width: 75px;
   height: 75px;
-  border-radius: 50%;
   margin: 0 auto;
+  border-radius: 50%;
+}
+.icon img {
+  width: 100%;
 }
 .button-section {
   font-size: 1.5em;

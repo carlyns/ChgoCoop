@@ -6,12 +6,12 @@
 		</div>
 
 
-		<div class="button"><a href="#">See Larger Map</a></div>
+		<div class="button"><a href="https://www.google.com/maps/d/u/0/viewer?mid=1XihqVgdsrpQRCvE-2q5KsEsj0iY" target="_blank">See Larger Map</a></div>
 	</div>
 
 
 	<div class="grid6right">
-		<h3><a href="about.html">Our Team</a></h3>
+		<h3><a href="<?php get_page_template(); ?>/chgocoopWP/our-team">Our Team</a></h3>
 
 		<div class="eventlist">
 			<h3>Upcoming Events</h3>

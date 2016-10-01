@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php /* PostType Page Template: Profile: Organization */ ?>
+<?php /* WP Post Template: Profile: Organization */ ?>
 
 
 <!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.
@@ -23,6 +23,7 @@
 
 <div class="container">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		This is uniquely formatted for an Organization Post.
 		<h1><?php the_title(); ?></h1>
 	  <?php the_content(); ?>
 	<?php endwhile; endif; // THIS PLACEMENT MATTERS: in between the ul tag! ?>
