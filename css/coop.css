@@ -279,10 +279,27 @@ footer a {
 /*  border-top: 1px solid white;  */
   margin-top: 7%;
 }
+.loves {
+}
 .credits {
   clear: both;
   text-align: center;
   padding: 2%;
+}
+
+/* ------ EVENT ARCHIVE PAGE -----*/
+
+.eventdate {
+  font-weight: 200;
+}
+
+
+/* ------ STANDARD TOOL ICONS (PUT THIS IN BANDEDSECTIONS?!?!) -----*/
+.tool-img {
+  width: 50%;
+}
+.tool-img img {
+  width: 100%;
 }
 
 /* ------ MEDIA QUERIES START HERE -----*/
@@ -365,6 +382,9 @@ footer a {
   }
   .grid6right {
     width: 50%;
-    float: right;
+    float: right; /* so info comes after map on mobile!*/
+  }
+  .map iframe {
+    height: 500px;
   }
 }

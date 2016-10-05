@@ -37,10 +37,24 @@ add_action('init', 'coop_theme_setup');
 
 // Adding Post Thumbnails, so attached media can show up in other areas
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 50, 50);
+set_post_thumbnail_size( 75, 75);
 add_image_size( 'full-size', 500, 500 ); // prob dont need this
 
-
+// Trying to show ALL posts (both regular and CPT) on a query either on the banded sections or on an archive page.
+// Beware though, some people said it messed up their menus
+// found here: https://wordpress.org/support/topic/custom-post-type-tagscategories-archive-page/
+add_filter('pre_get_posts', 'query_post_type');
+function query_post_type($query) {
+  if(is_category() || is_tag()) {
+    $post_type = get_query_var('post_type');
+	if($post_type)
+	    $post_type = $post_type;
+	else
+	    $post_type = array('post','tool'); // 'tool' is my custom post type
+    $query->set('post_type',$post_type);
+	return $query;
+    }
+}
 
 // Year Shortcode
 function year_shortcode() {

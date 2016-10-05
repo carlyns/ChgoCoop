@@ -27,7 +27,7 @@ section {
   overflow: auto;
   clear: both;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -70,12 +70,16 @@ section {
 .icon {
   border: 3px solid black;
   width: 75px;
-  height: 75px;
+  height: 75px;/* if this does not match default thumbnail size in functions.php, it will be cut off*/
   margin: 0 auto;
   border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
 }
 .icon img {
-  width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
 }
 .button-section {
   font-size: 1.5em;

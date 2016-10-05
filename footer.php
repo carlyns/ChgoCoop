@@ -6,7 +6,7 @@
 		</div>
 
 
-		<div class="button"><a href="https://www.google.com/maps/d/u/0/viewer?mid=1XihqVgdsrpQRCvE-2q5KsEsj0iY" target="_blank">See Larger Map</a></div>
+		<div class="button"><a href="<?php get_page_template(); ?>/chgocoopWP/map" target="_blank">See Larger Map</a></div>
 	</div>
 
 
@@ -15,23 +15,54 @@
 
 		<div class="eventlist">
 			<h3>Upcoming Events</h3>
+			<?php // DEFINE THE QUERY ARGUMENTS FOR EVENTS TODAY OR IN THE FUTURE ?>
+			<?php
+			$today = date("Ymd");
+
+			$args = array (
+				 	'category' => 18,
+					'posts_per_page' => 4,
+					'orderby'       => 'meta_value_num',
+					'order'          => 'ASC',
+			 'meta_query' => array(
+						 array(
+								'key'       => 'event_start_date',
+								'compare'   => '>=',
+								'value'     => $today,
+						)
+				),
+			);
+		 ?>
+
+
+			<?php
+			$loop = new WP_Query( $args ); //Define the loop based on those arguments
+		 //Display the contents
+		 while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+
+			<!-- Then, need to pull the ACF data. -->
+			<?php  // edited code from: http://www.advancedcustomfields.com/resources/date-picker/
+				$date = DateTime::createFromFormat('Ymd', get_field('event_start_date'));
+				$month = DateTime::createFromFormat('Ymd', get_field('event_start_date'));
+			?>
+
+			<!-- And display in the desired format.
+			Date and time formats: https://codex.wordpress.org/Formatting_Date_and_Time -->
 			<div class="eventinfo">
-				<div class="datebox">27</br>feb</div>
-				<div class="eventtitle">Open House</div>
+				<a href="<?php the_permalink(); ?>">
+					<div class="datebox"><?php echo $date->format('d'); ?></br><?php	echo $month->format('M'); ?></div>
+				<div class="eventtitle"><?php the_title(); ?></div>
+				</a>
 			</div>
-			<div class="eventinfo">
-				<div class="datebox">14</br>mar</div>
-				<div class="eventtitle">Meetup for those Exploring Housing Cooperatives</div>
-			</div>
-			<div class="eventinfo">
-				<div class="datebox">02</br>apr</div>
-				<div class="eventtitle">CCLF-hosted info session @StoneSoup</div>
-			</div>
-			<div class="eventinfo">
-				<div class="datebox">20</br>may</div>
-				<div class="eventtitle">On The Table dinner and discussion</div>
-			</div>
+
+		<?php endwhile; ?>
+		<?php // RESETTING TO ORIG LOOP
+		wp_reset_postdata(); ?>
+
 		</div>
+
+
 
 		<div class="contactinfo">
 			<h3>Stay in Touch</h3>
@@ -40,15 +71,19 @@
 			<p><a href="https://www.facebook.com/Exploring-Housing-Cooperatives-420807511344699/">Find us on Facebook</a></p>
 		</div>
 
-		<h3>We also love: </h3>
-		<p>
-			<a href="http://workerdemocracy.org/Directory.aspx">Chicagoland worker co-ops</a>
-		</p>
-		<p>
-			<a href="http://www.chifoodcoops.org">Chicagoland food co-ops</a>
-		</p>
+		<div class="loves">
+			<h3>We also love: </h3>
+			<p>
+				<a href="http://workerdemocracy.org/Directory.aspx">Chicagoland worker co-ops</a>
+			</p>
+			<p>
+				<a href="http://www.chifoodcoops.org">Chicagoland food co-ops</a>
+			</p>
+		</div>
 
-	</div>
+
+	</div> <!-- // end of "grid6right"-->
+
 
 	<div class="credits">
 		<p>Copyright ©<?php echo year_shortcode(); ?></p>

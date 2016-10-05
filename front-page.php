@@ -3,14 +3,6 @@
 <!-- ADD THE STYLESHEET THAT MIGHT CHANGE BETWEEN PAGES HERE.-->
 
 
-<!-- GOOGLE ANALYTICS TRACKING.  TRACKING NUMBER STARTS WITH UA.
-
-GOOGLE ANALYTICS TRACKING: PHP ALTERNATIVE!  via https://analytics.google.com/analytics/web/?authuser=1#management/Settings/a72902531w110694745p115471852/%3Fm.page%3DTrackingCode%26_r.ghFlowId%3D6324039/
-
-
-HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS GOOD AS GOOGLE ANALYTICS?  SEE WHAT HAPPENS IF I INCLUDE THIS SCRIPT ON INDEX AT LEAST?  WP BUSINESS PLAN CAN ADD MORE GOOGLE ANALYTICS FEATURES.
--->
-
 <title>Cooperative Homes & Communities of Chicago</title>
 
 </head>
@@ -89,37 +81,82 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 
 	<div class="grid4">
 		<div class="featured-org">
+
+			<?php
+			$args = array( 'cat' => 19, 'posts_per_page' => 1 ); //Which tag you want, how many posts to show
+			$loop = new WP_Query( $args ); //Define the loop based on those arguments
+			//Display the contents
+			while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+
 			<h3>ORG PROFILE:</h3>
-			<p class="orgname">New Community Vision</p>
-			<p>Taking co-housing city-wide. An organization led by Terry Edlin</p>
 			<div class="thumbnail">
-				<img src="imgs/ncv.png" alt="vacant unit">
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+				<!-- THE POST THUMBNAIL SHRINKS THE RESOLUTION OF THE FEATURED IMAGE??? BUT NOT THE FIRST ONE?? -->
+
 			</div>
-			<a href="profile-org.html"><div class="button-bottom">Read More</div></a>
+			<p class="orgname"><?php the_title(); ?></p>
+			<p><?php the_excerpt(); ?></p>
+			<a href="<?php the_permalink(); ?>"><div class="button-bottom">Read More</div></a>
+
+		<?php endwhile; ?>
+		<?php // RESETTING TO ORIG LOOP
+		wp_reset_postdata(); ?>
+
+
 		</div>
 	</div>
 
 	<div class="grid4">
 		<div class="featured-unit">
+
+		<?php
+		$args = array( 'cat' => 20, 'posts_per_page' => 1 ); //Which tag you want, how many posts to show
+		$loop = new WP_Query( $args ); //Define the loop based on those arguments
+		//Display the contents
+		while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
 			<h3>VACANCY!</h3>
 			<div class="thumbnail">
-				<a href="profile-unit.html"><img src="imgs/livrm.png" alt="vacant unit"></a>
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+				<!-- THE POST THUMBNAIL SHRINKS THE RESOLUTION OF THE FEATURED IMAGE??? BUT NOT THE FIRST ONE?? -->
+
 			</div>
-			<p>Take a virtual tour of the HUB in Little Village
-				$800/monthly fee, 2bedroom, 900 SF</p>
-				<a href="profile-unit.html"><div class="button-bottom">Own It</div></a>
+			<p><?php the_excerpt(); ?></p>
+			<a href="<?php the_permalink(); ?>"><div class="button-bottom">Own It</div></a>
+
+		<?php endwhile; ?>
+		<?php // RESETTING TO ORIG LOOP
+		wp_reset_postdata(); ?>
+
+
 		</div>
 	</div>
 
 	<div class="grid4">
 		<div class="featured-coop">
+
+			<?php
+			$args = array( 'tag' => 'startup-story', 'posts_per_page' => 1 ); //Which tag you want, how many posts to show
+			$loop = new WP_Query( $args ); //Define the loop based on those arguments
+			//Display the contents
+			while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
 			<h3>STARTUP STORIES</h3>
-			<p class="quote">“We did it for $100K per person!”</p>
-			<p>Learn how Valerie made her dream place happen with four friends.</p>
 			<div class="thumbnail">
-				<img src="imgs/valvision.png" alt="vacant unit">
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+				<!-- THE POST THUMBNAIL SHRINKS THE RESOLUTION OF THE FEATURED IMAGE??? BUT NOT THE FIRST ONE?? -->
 			</div>
-			<a href="single.html"><div class="button-bottom">Read More</div></a>
+			<p class="quote"><?php the_excerpt(); ?></p>
+			<a href="<?php the_permalink(); ?>"><div class="button-bottom">Read More</div></a>
+
+
+
+		<?php endwhile; ?>
+		<?php // RESETTING TO ORIG LOOP
+		wp_reset_postdata(); ?>
+
+
 		</div>
 	</div>
 

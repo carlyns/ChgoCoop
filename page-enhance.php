@@ -3,15 +3,6 @@
 <!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bandedsections.css">
 
-
-<!-- GOOGLE ANALYTICS TRACKING.  TRACKING NUMBER STARTS WITH UA.
-
-GOOGLE ANALYTICS TRACKING: PHP ALTERNATIVE!  via https://analytics.google.com/analytics/web/?authuser=1#management/Settings/a72902531w110694745p115471852/%3Fm.page%3DTrackingCode%26_r.ghFlowId%3D6324039/
-
-
-HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS GOOD AS GOOGLE ANALYTICS?  SEE WHAT HAPPENS IF I INCLUDE THIS SCRIPT ON INDEX AT LEAST?  WP BUSINESS PLAN CAN ADD MORE GOOGLE ANALYTICS FEATURES.
--->
-
 <title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
 
 </head>
@@ -36,36 +27,37 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 			Show all posts (CPT or blog) tagged with "principles/values" + Enhance Category
 		</p>
 		<section>
-
 			<?php
 			$args = array( 'tag' => 'principles', 'posts_per_page' => 6, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
+
+			<!-- STILL DOESN'T SHOW BOTH REG BLOG POSTS AND CPT POSTS, EVEN THOUGH ARCHIVE PAGE DOES!! -->
+
+
+
+			<!-- THIS LOOP IS NOT SHOWING THE CPT ... HOW TO INCLUDE THE CPT THAT ARE TAGGED WITH 'PRINCIPLES'?? -->
+
+
+
+
+
+
 			<a href="<?php the_permalink(); ?>">
 			<div class="infotool">
 				<div class="icon">
-					<!-- ADD A ICON FOR ALL THE 'PRINCIPLES' TAGGED POSTS -->
+					<?php the_post_thumbnail(); ?>
+
 				</div>
 				<h3><?php the_title(); ?></h3>
 			</div>
 			</a>
 
-
-
 			<?php endwhile; ?>
 			<?php // RESETTING TO ORIG LOOP
 			wp_reset_postdata(); ?>
-
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
 
 
 		</section>
@@ -106,16 +98,6 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 			<?php endwhile; ?>
 			<?php // RESETTING TO ORIG LOOP
 			wp_reset_postdata(); ?>
-
-
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
-			<div class="infotool">
-				<div class="icon"></div>
-				<h3>Title of the Tool</h3>
-			</div>
 
 
 		</section>

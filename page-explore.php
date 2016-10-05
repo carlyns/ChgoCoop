@@ -3,8 +3,6 @@
 <!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bandedsections.css">
 
-
-
 <title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
 
 </head>
@@ -78,7 +76,7 @@
 			<a href="<?php the_permalink(); ?>">
 			<div class="infotool">
 				<div class="icon">
-					<!-- ADD A ICON FOR ALL THE 'ADVICE' TAGGED POSTS -->
+					<?php the_post_thumbnail(); ?>
 				</div>
 				<h3><?php the_title(); ?></h3>
 			</div>
@@ -122,15 +120,21 @@
 			<a href="<?php the_permalink(); ?>">
 			<div class="infotool">
 				<div class="icon">
-					<!-- ADD A ICON FOR ALL THE 'FORMATION' TAGGED POSTS -->
-				</div>
-				<h3><?php the_title(); ?></h3>
+						<?php
+							$image = get_field('tool_img');
+							if( !empty($image) ): ?>
+						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+					<?php endif; ?>
+					</div>
+					<h3><?php the_title(); ?></h3>
 			</div>
 			</a>
 
 			<?php endwhile; ?>
 		<?php // RESETTING TO ORIG LOOP
 		wp_reset_postdata(); ?>
+
+
 
 		</section>
 		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE DETAILING THE PROCESS OF FORMING COOPS -->

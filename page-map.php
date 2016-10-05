@@ -18,6 +18,8 @@
 
 
 <div class="container">
+	<h3>See All Co-op Profiles</h3>
+	<h3>See All Unit Listings</h3>
 	<p>This page should show the map and a list of the co-ops, with or without a comprehensive profile and with/out vacancies.
 
 		Make sure the frame is smaller on mobile.  </p>
