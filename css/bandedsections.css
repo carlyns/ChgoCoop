@@ -33,6 +33,8 @@ section {
 }
 .band-white {
   padding: 6%;
+  overflow-x: auto;
+
 }
 .band-white a {
   color: black;
@@ -41,6 +43,8 @@ section {
   padding: 6%;
   background-color: rgba(33,48,0, 1);
   color: white;
+  overflow-x: auto;
+
 }
 .band-green a {
   color: white;
@@ -103,6 +107,31 @@ section {
   padding-top: 50px;
   clear: both;
 }
+/* UNIQUE EXPLORERS 3-BUTTON CALL TO ACTION */
+.explore-action {
+  width: 30%;
+  margin-right: 2%;
+  border: 1px solid black;
+  float: left;
+  height: 200px;
+  padding: 1%;
+  text-align: left;
+}
+.explore-action:last-child {
+  margin-right: none;
+
+}
+.explore-action .button-bottom {
+  border: 1px solid white;
+  background-color: black;
+  margin: 0 auto;
+  width: 90%;
+}
+.explore-action a {
+  color: white;
+  font-size: 0.8em;
+}
+
 /* ------ MEDIA QUERIES START HERE -----*/
 @media screen and (min-width: 700px) {
   /* -- anchoring the button at the bottom might not be needed.  just use the clear:both.

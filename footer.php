@@ -52,7 +52,9 @@
 			<div class="eventinfo">
 				<a href="<?php the_permalink(); ?>">
 					<div class="datebox"><?php echo $date->format('d'); ?></br><?php	echo $month->format('M'); ?></div>
-				<div class="eventtitle"><?php the_title(); ?></div>
+				</a>
+				<a href="<?php the_permalink(); ?>">
+					<div class="eventtitle"><?php the_title(); ?></div>
 				</a>
 			</div>
 

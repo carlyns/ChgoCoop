@@ -3,14 +3,6 @@
 <!-- ADD THE STYLESHEET THAT MIGHT CHANGE BETWEEN PAGES HERE.-->
 
 
-<!-- GOOGLE ANALYTICS TRACKING.  TRACKING NUMBER STARTS WITH UA.
-
-GOOGLE ANALYTICS TRACKING: PHP ALTERNATIVE!  via https://analytics.google.com/analytics/web/?authuser=1#management/Settings/a72902531w110694745p115471852/%3Fm.page%3DTrackingCode%26_r.ghFlowId%3D6324039/
-
-
-HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS GOOD AS GOOGLE ANALYTICS?  SEE WHAT HAPPENS IF I INCLUDE THIS SCRIPT ON INDEX AT LEAST?  WP BUSINESS PLAN CAN ADD MORE GOOGLE ANALYTICS FEATURES.
--->
-
 <title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
 
 </head>
@@ -29,6 +21,29 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 		<h1><?php the_title(); ?></h1>
 	  <?php the_content(); ?>
 	<?php endwhile; endif; // THIS PLACEMENT MATTERS: in between the ul tag! ?>
+
+	<hr>
+	<div class="tags">
+		<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
+
+			<!-- WP Conditionals page is always helpful.  it's in_category not is_category! (which only works on archive pages prob)
+			https://codex.wordpress.org/Conditional_Tags
+			-->
+			<?php
+				$category = '18';
+					if (in_category( $category )) {  ?>
+						You can check out all events by visiting the<span class="category"><?php the_category( ' ') ?></span>archive page.
+
+					<?php
+					} else {	// it's neither, do nothing  ?>
+					This post was tagged with:
+					<span><?php echo the_tags( '<li>', '</li><li>', '</li>' );				?>
+					</span>
+					<?
+					}
+			?>
+		</h5>
+	</div>
 
 </div>
 

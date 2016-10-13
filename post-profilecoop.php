@@ -39,7 +39,23 @@
       <div class="infoicon">
         <div class="icon-location">	</div>
       </div>
-        <div class="infoblock"><p><span class="infofield">Main intersection: </span><?php the_field('intersection'); ?> (at <?php the_field('address'); ?>)</p></div> <!-- add if statement to display address or not -->
+        <div class="infoblock"><p><span class="infofield">Main intersection: </span><?php the_field('intersection'); ?>
+        <!-- add if statement to display address or not -->
+        <?php
+          $address = get_field('address');
+
+          if( $address ): ?>
+          <!-- turn an address into clickable google map link: http://stackoverflow.com/questions/1300838/how-to-convert-an-address-into-a-google-maps-link-not-map -->
+            <p>
+              <a href="http://maps.google.com/?q=<?php the_field('address'); ?>" target="_blank"><?php the_field('address'); ?></a>
+            </p>
+
+          <?php else: // do nothing ?>
+
+          <?php endif;      ?>
+
+
+    </p></div>
     </div>
 
     <div class="profileblock">
@@ -124,31 +140,58 @@
     </div>
 
     <hr class="profileblock">
-    <h2>Available Units??</h2>
+    <h2>Available Units?</h2>
     <div class="infoicon">
       <div class="icon-key">	</div>
     </div>
-    <!-- IF STATEMENT: SORRY, NO VANCANCIES. -->
-    <!-- SHOW POST THAT MEETS CONDITION OF   -->
-<p>
-  Build so this will retrieve a thumbnail from the link
-</p>
-    <h3>2-bdrm, $800/mo</h3>
-    <!-- make this image black and white, color on hover.  standard size thumbnail. -->
-    <!-- linked to unit profile, if it exists. -->
 
-    <img src="<?php bloginfo('template_directory'); ?>/imgs/sample/livrm1.jpg" alt="sample unit" />
+    <div class="infoblock">
+      <?php
+      /* -------- DIDN'T USE THIS OPTION 1
+      *  Loop through post objects (assuming this is a multi-select field) ( setup postdata )
+      *  Using this method, you can use all the normal WP functions as the $post object is temporarily initialized within the loop
+      *  Read more: http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset  --------------*/  ?>
 
-    <a href="<?php the_field('vacancies'); ?>">Title of the Post</a>
+      <?php
+      /*  USED THIS OPTION
+      *  Loop through post objects (assuming this is a multi-select field) ( don't setup postdata )
+      *  Using this method, the $post object is never changed so all functions need a seccond parameter of the post ID in question.
+      */ ?>
+
+      <?php
+      $vacancy = get_field('vacancies');
+
+      if( $vacancy ): ?>
+        <ul class="availunits">
+        <?php foreach( $vacancy as $vacancy): ?>
+            <li>
+                <a href="<?php echo get_permalink($vacancy->ID); ?>"><h3><?php echo get_the_title($vacancy->ID); ?> (<?php the_field('bedrooms', $vacancy->ID); ?>)</h3></a>
+
+                <!--  this is tricky because it's a ACF field that links to a post.  getting the ACF from that post is easy (above), but getting the regular featured image to appear is not working ...   <?php the_post_thumbnail(); ?> -->
+
+            </li>
+        <?php endforeach; ?>
+        </ul>
 
 
-      <p>Currently it's a Category, so I can create an archive page of all Cooperative Profiles and all listing pretty easily.</p>
-      <p>Link to their IC profile page (more detailed profile): http://www.ic.org/directory/logan-square-coYay!  The Post Template works - where you can select the template for the post as a drop down option to the right.  Now I can customize this look and all the ACF.
-       and all the ACF.</p>
+      <!-- BASIC ACF IF/ELSE STATMENTS https://support.advancedcustomfields.com/forums/topic/if-true-do-this-false-do-that/ -->
+      <?php else: ?>
+        <p>
+          Sorry, there are no vacancies at this co-op.
+        </p>
+
+      <?php endif;      ?>
+    </div>
+
+	<?php endwhile; endif; ?>
 
 
-
-	<?php endwhile; endif; // THIS PLACEMENT MATTERS: in between the ul tag! ?>
+  <hr>
+  <div class="tags">
+		<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
+			You can check out all  Cooperative Profiles by visiting the<span class="category"><?php the_category( ' ') ?></span>archive page.
+		</h5>
+	</div>
 
 
 </div>

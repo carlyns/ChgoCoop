@@ -37,8 +37,8 @@ add_action('init', 'coop_theme_setup');
 
 // Adding Post Thumbnails, so attached media can show up in other areas
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 75, 75);
-add_image_size( 'full-size', 500, 500 ); // prob dont need this
+set_post_thumbnail_size( 500,500);
+add_image_size( 'tool-icon', 75, 75 ); // prob dont need this
 
 // Trying to show ALL posts (both regular and CPT) on a query either on the banded sections or on an archive page.
 // Beware though, some people said it messed up their menus

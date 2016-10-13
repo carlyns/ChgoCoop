@@ -16,10 +16,6 @@
 <?php include ('menu.php'); ?>
 
 <div class="allsections">
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<h1><?php the_title(); ?></h1>
-	  <?php the_content(); ?>
-	<?php endwhile; endif; ?>  <!-- THIS CONTENT PROBABLY WONT SHOW -->
 
 	<div class="band-white">
 		<h2>The Very Beginning</h2>
@@ -76,7 +72,7 @@
 			<a href="<?php the_permalink(); ?>">
 			<div class="infotool">
 				<div class="icon">
-					<?php the_post_thumbnail(); ?>
+					<?php the_post_thumbnail('tool-icon'); ?>
 				</div>
 				<h3><?php the_title(); ?></h3>
 			</div>
@@ -97,11 +93,24 @@
 			>> STYLE THIS INTO 3 ACTION BUTTONS
 		</p>
 		<p>If you prefer to drop into an already existing cooperative in/near Chicago, there are a few options:</p>
-		<ol>
-			<li>Check out the map for vacancies. We also profile vacancies <a href="#">on our blog</a>, so subscribe to it!</li>
-			<li>Visit Craigslist and use the search term “co-op” or “cooperative” (We also capture these via ifttt in our blog)</li>
-			<li>Create a Fireplace profile and discover your closest co-op match. This new tool will connect you!</li>
-		</ol>
+		<div class="explore-action">
+			<p>Check out the map for vacancies. We also profile vacancies <a href="#">on our blog</a>, so subscribe to it!</p>
+			<a href="<?php the_permalink(); ?>"><div class="button-bottom">Check out the map</div></a>
+		</div>
+		<div class="explore-action">
+			<p>
+				Visit Craigslist and use the search term “co-op” or “cooperative” (We also capture these via ifttt in our blog)
+			</p>
+			<a href="#"><div class="button-bottom">Visit Craigslist</div></a>
+		</div>
+		<div class="explore-action">
+			<p>
+				Create a Fireplace profile and discover your closest co-op match. This new tool will connect you!
+			</p>
+			<a href="#"><div class="button-bottom">Create Fireplace Profile</div></a>
+		</div>
+
+
 	</div>
 
 	<div class="band-green">

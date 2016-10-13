@@ -1,27 +1,32 @@
 <?php get_header(); ?>
 
+<!-- ADD THE STYLESHEET THAT MIGHT CHANGE BETWEEN PAGES HERE.-->
 
-<title>Cooperative Homes & Communities of Chicago</title>
+
+<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
 
 </head>
 
 
 
 <body>
-	<div class="container">
 
-				<p class="tagline">This is the index.php page!</p>
+<?php include ('topsticky.php'); ?>
 
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-					<h1><?php the_title(); ?></h1>
-					<p>Posted on: <?php the_date('l, F j, Y'); ?></p>
-					<?php the_excerpt(); ?>
-				<?php endwhile; endif; ?> <!-- THIS CONTENT PROBABLY WONT SHOW -->
+<?php include ('menu.php'); ?>
+
+<div class="container archive">
+
+	<h1>Archived News Items</h1>
+
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></a>
+			<span class="date">(Posted on: <?php the_date('l, F j, Y'); ?>)</span></h3>
+	<?php endwhile; endif; ?>
 
 
 
 </div> <!--/ "container" -->
 
 
-</body>
-</html>
+<?php get_footer(); ?>

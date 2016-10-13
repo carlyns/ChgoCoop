@@ -16,10 +16,7 @@
 <?php include ('menu.php'); ?>
 
 	<div class="teaser">
-
-
 		<p>A few co-ops that might interest you:</p>
-		<?php wp_nav_menu(); // pulls the first menu by default ?>
 		<!--<p>Housing for the middle class is hard to come by these days.  Not to mention we've replaced real-life community with digital connections.  Cooperatives may not be what you think.</p>-->
 			<div class="type">
 				<img src="<?php bloginfo( 'template_url' ); ?>/imgs/walkup.jpg" alt="private apartments">

@@ -23,10 +23,16 @@
 
 <div class="container">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		This is uniquely formatted for an Organization Post.
 		<h1><?php the_title(); ?></h1>
 	  <?php the_content(); ?>
-	<?php endwhile; endif; // THIS PLACEMENT MATTERS: in between the ul tag! ?>
+	<?php endwhile; endif;  ?>
+
+	<hr>
+	<div class="tags">
+		<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
+			You can check out all organizations by visiting the<span class="category"><?php the_category( ' ') ?></span>archive page.
+		</h5>
+	</div>
 
 </div>
 

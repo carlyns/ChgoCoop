@@ -62,6 +62,8 @@
       <a href="mailto:<?php the_field('email_unit'); ?>"><?php the_field('email_unit'); ?></a>
       <!-- make sure Fireplace is ready to generate profiles -->
 
+
+
       <!-- this didn't work - didn't generate url link
       <?php if( get_field('application_form')): // if there's an app form ?>
           Application Form: </p>
@@ -69,7 +71,26 @@
 
     </div>
 
+
+    <div class="profileblock">
+      <div class="infoicon">
+        <div class="icon-star-full">	</div>
+      </div>
+
+      <p class="infoblock"><span class="infofield">Learn more about this Cooperative by checking out its profile:  </span><a href="<?php the_field('coop_name'); ?>"><?php echo get_field('coop_name'); ?></a></p>
+
+    </div>
+
+
+
 	<?php endwhile; endif; // THIS PLACEMENT MATTERS: in between the ul tag! ?>
+
+  <hr>
+  <div class="tags">
+		<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
+			You can check out all Vacant Listings by visiting the<span class="category"><?php the_category( ' ') ?></span>archive page.
+		</h5>
+	</div>
 
 </div>
 
