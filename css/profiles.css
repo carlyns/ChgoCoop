@@ -1,5 +1,6 @@
 a {
   color: grey;
+  font-weight: 700;
 }
 a:hover {
   background-color: rgba(236,164,0, 1); /* gold */

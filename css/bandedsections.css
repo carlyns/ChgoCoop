@@ -70,6 +70,7 @@ section {
 .infotool h3 {
   clear: both;
   text-align: center;
+  text-transform: capitalize;
 }
 .icon {
   border: 3px solid black;
@@ -109,17 +110,9 @@ section {
 }
 /* UNIQUE EXPLORERS 3-BUTTON CALL TO ACTION */
 .explore-action {
-  width: 30%;
-  margin-right: 2%;
   border: 1px solid black;
-  float: left;
-  height: 200px;
   padding: 1%;
   text-align: left;
-}
-.explore-action:last-child {
-  margin-right: none;
-
 }
 .explore-action .button-bottom {
   border: 1px solid white;
@@ -127,9 +120,14 @@ section {
   margin: 0 auto;
   width: 90%;
 }
-.explore-action a {
+ a .button-bottom {
   color: white;
-  font-size: 0.8em;
+}
+.explore-action a {
+  background-color: rgba(236,164,0, 1); /* gold */
+}
+.sectionlisting{
+  text-align: center;
 }
 
 /* ------ MEDIA QUERIES START HERE -----*/
@@ -147,15 +145,12 @@ section {
   .allsections { /* SIMILAR RULES AS .container on typical pages to allow for topsticky space */
     padding-top: 100px;
   }
-
-
   .topexplore h1 {
     width: 40%;
     text-align: center;
     float: left;
     padding: 0;
   }
-
   .topenhance h1 {
     width: 40%;
     text-align: center;
@@ -165,6 +160,14 @@ section {
   .button-section {
     width: 30%;
   }
-
+  .explore-action {
+    width: 29%;
+    margin-right: 2%;
+    float: left;
+    height: 180px;
+  }
+  .explore-action:last-of-type {
+    margin-right: 0;
+  }
 
 }

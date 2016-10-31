@@ -18,7 +18,7 @@
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<h1><?php the_title(); ?></h1>
-			<p>Overview:<?php the_content(); ?></p>
+			<p><?php the_content(); ?></p>
 
 			<div class="tool-img">
 				<!-- if this is a stock photo, you don't want it too big -->
@@ -27,7 +27,7 @@
 					if( !empty($image) ): ?>
 
 					<!-- it may not have an associated pdf (fireplace link) so you don't want to wrap this with an <a> tag-->
-						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+						<a href="<?php echo $image['url']; ?>" target="_blank"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></a>
 
 					<?php endif; ?>
 			</div>

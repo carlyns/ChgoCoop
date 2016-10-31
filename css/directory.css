@@ -1,0 +1,46 @@
+a {
+  color: grey;
+  font-weight: 700;
+}
+a:hover {
+  background-color: rgba(236,164,0, 1); /* gold */
+}
+.directorytabs {
+  padding: 0;
+}
+.directorytabs li {
+  display: inline-block;
+}
+.cooplist-item {
+  clear: both;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  margin: 1% 0;
+}
+
+.coopname {
+  float: left;
+  margin-right: 2%;
+}
+.coopname h3, .coopname p, .profiletag p {
+  margin: 0;
+}
+.profiletag {
+  border: 1px solid black;
+  padding: 1%;
+  float: left;
+  margin-right: 2%;
+}
+.vacancytag {
+  background-color: rgba(236,164,0, 1);
+  padding: 1%;
+  margin-right: 2%;
+  float: left;
+}
+.vacancytag p {
+  margin: 0;
+}
+hr {
+  clear: both;
+}

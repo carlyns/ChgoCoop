@@ -158,7 +158,6 @@ nav .icon-home {
 .explorers a {
   color: white;
 }
-
 .existing a {
   color: white;
 }
@@ -184,6 +183,9 @@ nav .icon-home {
   padding: 2% 4%;
   margin-bottom: 3%;
   z-index: -1
+}
+.orgname {
+  /* can't figure out where the spacing is coming from - use Chrome Dev Tools?  */
 }
 .grid4 a {
   color: black;
@@ -229,6 +231,7 @@ footer {
   background-color: black;
   color: white;
   padding: 3% 3% 0 3%;
+  overflow: auto;
 }
 footer .button {
   width: 86%;
@@ -308,11 +311,14 @@ footer a {
 }
 
 /* ------ STANDARD POST -----*/
+.container h1 {
+  text-transform: capitalize;
+}
 hr {
   clear: both;
 }
 .tags {
-  font-size: 1.2em;;
+  font-size: 1.2em;
   clear: both;
 }
 .tags h5 {
@@ -341,7 +347,8 @@ hr {
 
 /* ------ STANDARD TOOL ICONS (PUT THIS IN BANDEDSECTIONS?!?!) -----*/
 .tool-img {
-  width: 50%;
+  width: 100%;
+  margin-bottom: 3%;
 }
 .tool-img img {
   width: 100%;

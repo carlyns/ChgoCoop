@@ -6,7 +6,7 @@
 		</div>
 
 
-		<div class="button"><a href="<?php get_page_template(); ?>/chgocoopWP/map" target="_blank">See Larger Map</a></div>
+		<div class="button"><a href="<?php get_page_template(); ?>/chgocoopWP/directory" target="_blank">See Directory</a></div>
 	</div>
 
 
@@ -14,13 +14,16 @@
 		<h3><a href="<?php get_page_template(); ?>/chgocoopWP/our-team">Our Team</a></h3>
 
 		<div class="eventlist">
+
 			<h3>Upcoming Events</h3>
 			<?php // DEFINE THE QUERY ARGUMENTS FOR EVENTS TODAY OR IN THE FUTURE ?>
 			<?php
 			$today = date("Ymd");
+			// WOW for some reason, making a post "sticky" placed it in the events list and broke the query. So must include ignore_sticky_posts in the array
 
 			$args = array (
 				 	'category' => 18,
+					'ignore_sticky_posts' => 1,
 					'posts_per_page' => 4,
 					'orderby'       => 'meta_value_num',
 					'order'          => 'ASC',

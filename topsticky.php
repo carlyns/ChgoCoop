@@ -1,4 +1,4 @@
-<header>
+<header id="top">
 		<div class="topsticky home">
 			<div class="heading">
 				<h1><a href="<?php echo esc_url( home_url( '/' ) );	    ?>"><?php bloginfo( 'name' ); ?><span class="beta">  (BETA)</span></a></h1>

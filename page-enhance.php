@@ -34,7 +34,7 @@
 			<a href="<?php the_permalink(); ?>">
 			<div class="infotool">
 				<div class="icon">
-					<?php the_post_thumbnail('tool-icon'); ?>
+					<?php the_post_thumbnail('tool-icon'); // where tool-icon is a size i specified in functions.php ?>
 				</div>
 				<h3><?php the_title(); ?></h3>
 			</div>
@@ -97,7 +97,8 @@
 		<section>
 
 			<?php // DISPLAY CUSTOM POST TYPE
-			$args = array( 'post_type' => 'tool', 'posts_per_page' => 6 ); //Define your custom post type name in the arguments
+			// be aware tag & cat intersection has unique arguments: http://wordpress.stackexchange.com/questions/4201/how-to-query-posts-by-category-and-tag-
+			$args = array( 'post_type' => 'tool', 'posts_per_page' => 6, 'cat' => 15 ); //Define your custom post type name in the arguments
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -105,11 +106,20 @@
 			<a href="<?php the_permalink(); ?>">
 				<div class="infotool">
 					<div class="icon">
+
+						<?php // IF you uploaded a standard tool icon under ACF 'icon_thumb', it means you want this to display as the landingpage icon. this captures ugly pdf documents.  ?>
 						<?php
-							$image = get_field('tool_img');
-							if( !empty($image) ): ?>
-						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-					<?php endif; ?>
+						$icon_thumb = get_field('icon_thumb');
+						$image = get_field('tool_img');
+				      if( !empty($icon_thumb) ): ?>
+							<img src="<?php echo $icon_thumb['url']; ?>" alt="<?php echo $icon_thumb['alt']; ?>" />
+
+
+						<?php // ELSE you want the uploaded post image to display as the landingpage icon
+						$image = get_field('tool_img');
+							else : ?>
+							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+						<?php endif; ?>
 					</div>
 					<h3><?php the_title(); ?></h3>
 				</div>
@@ -124,11 +134,11 @@
 	</div>
 
 	<div class="band-purple">
-		<h2>Have a Vacancy? Get Listed!</h2>
+		<h2>Have a Vacancy at your Co-op? Get Listed!</h2>
 		<p>Unit Listing: $20/unit</p>
 		<ol>
 			<li>Fill out our simple form. The associated fee goes towards maintaining this site.</li>
-			<li>We feature your co-op and/or unit on this site, blog posts, and our newsletter.  (See a sample <a href="<?php get_page_template(); ?>/chgocoopWP/profile/vacant-unit-800-logan-square-co-op/">Co-op Profile</a> or a sample <a href="<?php get_page_template(); ?>/chgocoopWP/profile/logan-square-cooperative//">Unit Listing</a>)</li>
+			<li>We feature your co-op and/or unit on this site, blog posts, and our <a href="http://eepurl.com/cmiuZv" target="_blank">"Good Housing" newsletter</a>.  (See a sample <a href="<?php get_page_template(); ?>/chgocoopWP/profile/vacant-unit-800-logan-square-co-op/">Co-op Profile</a> or a sample <a href="<?php get_page_template(); ?>/chgocoopWP/profile/logan-square-cooperative/">Unit Listing</a>)</li>
 			<li>Watch the requests roll in!</li>
 
 		</ol>
@@ -141,14 +151,14 @@
 	<div class="band-white">
 		<h2>"Put Yourself On The Map"</h2>
 		<p>We list basic information about any cooperative on our map for free.</p>
-		<p>If you see a mistake, please email us so we can revise it.</p>
+		<p>If you see a mistake, please <a href="mailto: cso@RESUSstudio.com">email us</a> so we can revise it.</p>
 
 		<p>Get included: </p>
 		<h3>Co-op Name:</h3>
 		<h3>Approx Location:</h3><p>Major Intersection</p>
 		<h3>Size:</h3><p>Number of Units</p>
 		<h3>SUBMIT</h3>
-		<p>Want a more comprehensive listing?</p>
+		<p class="sectionlisting">Want a more comprehensive listing?</p>
 		<a href="https://resus.typeform.com/to/emYHV9"><div class="button-section">Create Co-op Profile: $5/year</div></a>
 	</div>
 </div> <!-- //end of "allsections"-->

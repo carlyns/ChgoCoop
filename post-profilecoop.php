@@ -39,7 +39,7 @@
       <div class="infoicon">
         <div class="icon-location">	</div>
       </div>
-        <div class="infoblock"><p><span class="infofield">Main intersection: </span><?php the_field('intersection'); ?>
+        <div class="infoblock"><p>Main intersection: </span><a href="http://maps.google.com/?q=<?php the_field('intersection'); ?>" target="_blank"><span class="infofield"><?php the_field('intersection'); ?></a>
         <!-- add if statement to display address or not -->
         <?php
           $address = get_field('address');
