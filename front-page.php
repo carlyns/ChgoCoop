@@ -78,28 +78,31 @@
 
 	<div class="grid4">
 		<div class="featured-org">
-			<!-- Just ONE post labelled "sticky" breaks the other post queries with a sticky note.  But if NO posts are "sticky" then the latest one shows and all of the work. -->
-
-			<?php
-			$args = array( 'cat' => 19, 'posts_per_page' => 1, 'post__in'  => get_option( 'sticky_posts' ), 'ignore_sticky_posts' => 1  ); //Which tag you want, how many posts to show
-			$loop = new WP_Query( $args ); //Define the loop based on those arguments
-			//Display the contents
-			while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			<?php // need to get the all the Post Date from the selected Page Link ACF!!
 
 
-			<h3>ORG PROFILE:</h3>
+			 ?>
+
+
+			<h3>ORGANIZATION PROFILE</h3>
+
+			<?php // grabbing data about the post with Page Link ACF from https://www.advancedcustomfields.com/resources/page-link/
+
+			// vars
+			$org = get_field('featured_org', false, false);
+
+			// check
+			if( $org ): ?>
+
 			<div class="thumbnail">
-				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-				<!-- THE POST THUMBNAIL SHRINKS THE RESOLUTION OF THE FEATURED IMAGE??? BUT NOT THE FIRST ONE?? -->
+				<a href="<?php echo get_the_permalink($org); ?>"><?php echo get_the_post_thumbnail($org); ?></a>
 
 			</div>
-			<h4 class="orgname"><?php the_title(); ?></h4>
-			<p><?php the_excerpt(); ?></p>
-			<a href="<?php the_permalink(); ?>"><div class="button-bottom">Read More</div></a>
+			<h4 class="orgname"><?php echo get_the_title($org); ?></h4>
+			<p><?php echo get_the_excerpt($org); ?></p>
+			<a href="<?php echo get_the_permalink($org); ?>"><div class="button-bottom">Read More</div></a>
 
-		<?php endwhile; ?>
-		<?php // RESETTING TO ORIG LOOP
-		wp_reset_postdata(); ?>
+			<?php endif; ?>
 
 
 		</div>
@@ -107,34 +110,41 @@
 
 	<div class="grid4">
 		<div class="featured-unit">
+			<!-- tried to separate the unit and tool, but didn't work.  and not as easy as selecting from either because Units use post thumbnails and tools use ACF images -->
+			<?php
+			// vars
+			$vacancy = get_field('featured_unit', false, false);
 
-		<?php
-		$args = array( 'cat' => 20, 'posts_per_page' => 1, 'post__in'  => get_option( 'sticky_posts' ), 'ignore_sticky_posts' => 1  ); //Which tag you want, how many posts to show
-		$loop = new WP_Query( $args ); //Define the loop based on those arguments
-		//Display the contents
-		while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			// check
+			if( $vacancy ): ?>
+				<h3>UNIT VACANCY</h3>
 
-			<h3>VACANCY!</h3>
-			<!-- if there are no vacancies, might just have to hard code this for now to show the match tool instead.  -->
-			<!-- for the future, show an if/else statement.  if vacancy, show it.  if not, show the match tool.  -->
-			<div class="thumbnail">
-				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-			</div>
-			<p><?php the_excerpt(); ?></p>
-			<a href="<?php the_permalink(); ?>"><div class="button-bottom">Own It</div></a>
+				<div class="thumbnail">
+					<a href="<?php echo get_the_permalink($vacancy); ?>"><?php echo get_the_post_thumbnail($vacancy); ?></a>
+				</div>
+				<p><?php echo get_the_excerpt($vacancy); ?></p>
+				<a href="<?php echo get_the_permalink($vacancy); ?>"><div class="button-bottom">Own It</div></a>
 
-		<?php endwhile; ?>
-		<?php // RESETTING TO ORIG LOOP
-		wp_reset_postdata(); ?>
 
+			<?php else : // THIS ELSE STATEMENT ISN'T WORKING, SO JUST HARD-CODE IT WHEN NECESSARY? ?>
+				<h3>FEATURED TOOL:</h3>
+				<div class="thumbnail">
+					<a href="#">
+							<img src="image.jpg" alt="housing match tool">
+					</a>
+				</div>
+				<p>Match tool for you .... </p>
+				<a href="#"><div class="button-bottom">Learn More</div></a>
+			<?php endif; // PUTTING THIS AFTER THE MATCH TOOL MAKES IN INVISIBLE, SO JUST HARD CODE WHEN NECESSARY ?>
 
 		</div>
 	</div>
 
 	<div class="grid4">
 		<div class="featured-coop">
+			<!-- Just ONE post labelled "sticky" breaks the other post queries with a sticky note.  But if NO posts are "sticky" then the latest one shows and all of the work. -->
 
-			<?php
+			<?php // THIS CAN STAY A STICKY POST AND DON'T NEED AN ACF
 			$args = array( 'tag' => 'startup-story', 'posts_per_page' => 1, 'post__in'  => get_option( 'sticky_posts' ), 'ignore_sticky_posts' => 1 ); //Which tag you want, how many posts to show, last two arguments are to show first sticky post, if none show last post published. https://codex.wordpress.org/Sticky_Posts
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents

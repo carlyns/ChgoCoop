@@ -411,7 +411,7 @@ hr {
   }
   .featured-org, .featured-unit, .featured-coop {
     height: 350px;
-    position: relative;
+    position: relative; /* need this here for button-bottom */
     z-index: auto;
   }
   .container {
@@ -419,7 +419,7 @@ hr {
   }
 
   .container .button-bottom {
-    position: absolute;
+    position: absolute; /* need this here for button-bottom */
     bottom: 4%;
     width: 70%;
     left: 15%;

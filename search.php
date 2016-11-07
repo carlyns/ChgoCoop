@@ -17,7 +17,7 @@
 
 <div class="container archive">
 
-	<h1>Archived News Items</h1>
+	<h1>Search Results:</h1>
 	<!-- SHOULD NOT DISPLAY CPTs -->
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

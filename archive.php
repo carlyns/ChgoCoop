@@ -15,7 +15,7 @@
 
 	<?php if ( have_posts() ) : ?>
 		<p>
-			You were looking for the tag/category <span class="keyword"><?php single_tag_title(); ?></span>.  Here are some posts/pages that match:
+			You were looking for the tag/category/type <span class="keyword"><?php single_tag_title(); ?></span>.  Here are some posts/pages that match:
 				<!-- add the Tag Description? -->
 		</p>
 
@@ -38,7 +38,7 @@
 	<?php endwhile; else : ?>
 
 		<p>
-				You were looking for the tag/category <span class="keyword"><?php single_tag_title(); ?></span>.
+				You were looking for the tag/category/type <span class="keyword"><?php single_tag_title(); ?></span>.
 			<?php _e( "Unfortunately, no posts matched your criteria.  But don't give up just yet!" ); //_e aka echo
 		?></p>
 

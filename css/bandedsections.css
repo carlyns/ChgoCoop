@@ -113,12 +113,18 @@ section {
   border: 1px solid black;
   padding: 1%;
   text-align: left;
+  position: relative; /* 1/3 needed this here for button-bottom, diff from main css */
 }
 .explore-action .button-bottom {
   border: 1px solid white;
   background-color: black;
   margin: 0 auto;
   width: 90%;
+  position: absolute; /* 1/3 needed this here for button-bottom, diff from main css */
+  bottom: 4%; /* 1/3 needed this here for button-bottom, diff from main css */
+}
+
+.button-bottom {
 }
  a .button-bottom {
   color: white;

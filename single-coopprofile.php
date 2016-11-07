@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php /* WP Post Template: Profile: Co-op */ ?>
 
 <!-- PUT THIS BEFORE PATH FOR RELATIVE FOLDER PATHS!
 <?php bloginfo('template_directory'); ?>
@@ -189,7 +188,8 @@
   <hr>
   <div class="tags">
 		<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
-			You can check out all  Cooperative Profiles by visiting the<span class="category"><?php the_category( ' ') ?></span>archive page.
+			You can check out all Cooperative Profiles by visiting the<span class="category"><a href="<?php get_page_template(); ?>/chgocoopWP/coopprofile">co-op profile</a>
+      </span>archive page.
 		</h5>
 	</div>
 
