@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.funfact {
+  font-weight: 200;
+  text-align: center;
+  font-size: 1em;
+  border: 1px solid rgba(236,164,0, 1); /* gold */
+  padding: 2%;
+}
+.row-stepicons {
+  display: none;
+}
+.row-stepicons h2, .steptitle {
+  font-size: 0.8em;
+}
+.mobileicon {
+  background-color: rgba(236,164,0, 1); /* gold */
+  border: 3px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+.mobileicon img {
+  width: 100%;
+  padding: 10%;
+}
+.step {
+  clear: both;
+}
+.steptitle {
+  float: left;
+  padding-left: 10px;
+
+}
+.stepcontent {
+  clear: both;
+  padding-left: 60px;
+}
+.steps-tool {
+
+}
+.steps-tool img {
+  max-width: 100%;
+}
+.stepcontent .row-step-buttons {
+
+}
+.stepcontent .next a {
+  background-color: rgba(236,164,0, 1); /* gold */
+  display: inline-block;
+  padding: 1%;
+  color: black;
+  float: right;
+  margin-bottom: 2%;
+}
+.stepcontent .previous a {
+  background-color: silver;
+  display: inline-block;
+  padding: 1%;
+  color: black;
+  float: left;
+  margin-bottom: 2%;
+}
+.allexploreposts {
+  clear: both;
+}
+
+@media screen and (min-width: 700px) {
+  .row-stepicons {
+    display: block;
+    overflow: auto;
+  }
+  .stepicon {
+    background-color: rgba(236,164,0, 1); /* gold */
+    border: 3px solid black;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+  }
+  .stepicon img {
+    width: 100%;
+    padding: 10%;
+  }
+  .desktop-stepframe {
+    clear: both;
+    overflow: auto;
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+  }
+  .row-stepicons h2 {
+  }
+  .desktop-stepframe h3 {
+  }
+  .mobileicon {
+    display: none;
+  }
+  .step1, .step2, .step3, .step4, .step5 {
+    float: left;
+    width: 20%;
+    border-top: 1px solid grey;
+    padding-top: 2%;
+    border-left: 1px solid grey;
+    border-bottom: 1px solid grey;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+  }
+  .step5 {
+    border-right: 1px solid grey;
+  }
+  .active-tab { /* add this class w/ JS: raised and gold fill */
+    background-color: rgba(236,164,0, 0.5); /* gold */
+    border-bottom: none;
+  }
+  .steptitle { /* mobile only */
+    display: none;
+  }
+  .icontitle {
+    text-align: center;
+  }
+  .stepcontent {
+    padding-left: 0;
+  }
+
+  .desktopcontent1 {
+
+  }
+  .desktopcontent1,.desktopcontent2, .desktopcontent3, .desktopcontent4, .desktopcontent5 {
+    display: none;
+    padding: 3% 3% 0 3%;
+  }
+  .showdesktopstep {
+    display: block;
+  }
+
+
+
+}
