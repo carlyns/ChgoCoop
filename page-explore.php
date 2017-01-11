@@ -28,7 +28,7 @@
 
 			// how to exclude a tag: http://wordpress.stackexchange.com/questions/180052/exclude-tags-by-array  but in the end it made more sense to just create another tag
 
-			$args = array( 'post_type' => 'tool', 'tag' => 'beginners', 'posts_per_page' => 6, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
+			$args = array( 'post_type' => 'tool', 'tag' => 'beginners', 'posts_per_page' => 6, 'order'=> 'DESC', 'orderby' => 'date' ); //Which tag you want, how many posts to show
 
  			//Define your custom post type name in the arguments
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
@@ -72,16 +72,16 @@
 	</div>
 
 	<div class="band-green">
-		<h2>Anecdotes / Stories, Advice for Beginners</h2>
-		<p>
+		<h2>Anecdotes & Advice for Beginners</h2>
+		<!--
 			Show all posts (blog only) of "advice"  + Explore Category
 			(advice tag could be for Explore & Enhance, eg for the co-op principles)
-		</p>
+		-->
 		<section>
 
 
 			<?php
-			$args = array( 'tag' => 'advice', 'posts_per_page' => 6, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
+			$args = array( 'tag' => 'advice', 'cat' => 10, 'posts_per_page' => 6, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -128,15 +128,15 @@
 	</div>
 
 	<div class="band-green">
-		<h2>Form Your Own Co-op! (DIY)</h2>
-		<p>
+		<h2>DIY: Form Your Own Co-op!</h2>
+		<!--
 			Show all posts (CPT only) of "tools" (tagged with "formation") + Explore Category
-		</p>
+		-->
 		<section>
 
 			<?php
 
-			$args = array( 'post_type' => 'tool', 'tag' => 'formation', 'posts_per_page' => 6, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
+			$args = array( 'post_type' => 'tool', 'tag' => 'formation', 'posts_per_page' => 6, 'orderby' => 'rand' ); //Which tag you want, how many posts to show
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -145,21 +145,21 @@
 			<div class="infotool">
 				<div class="icon">
 
-						<?php // IF you uploaded a standard tool icon under ACF 'icon_thumb', it means you want this to display as the landingpage icon. this captures ugly pdf documents.  ?>
-						<?php
-						$icon_thumb = get_field('icon_thumb');
-						$image = get_field('tool_img');
-				      if( !empty($icon_thumb) ): ?>
-							<img src="<?php echo $icon_thumb['url']; ?>" alt="<?php echo $icon_thumb['alt']; ?>" />
+					<?php // IF you uploaded a standard tool icon under ACF 'icon_thumb', it means you want this to display as the landingpage icon. this captures ugly pdf documents.  ?>
+					<?php
+					$icon_thumb = get_field('icon_thumb');
+					$image = get_field('tool_img');
+			      if( !empty($icon_thumb) ): ?>
+						<img src="<?php echo $icon_thumb['url']; ?>" alt="<?php echo $icon_thumb['alt']; ?>" />
 
-						<?php // ELSE you want the uploaded post image to display as the landingpage icon
-						$image = get_field('tool_img');
-							else : ?>
-							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-						<?php endif; ?>
+					<?php // ELSE you want the uploaded post image to display as the landingpage icon
+					$image = get_field('tool_img');
+						else : ?>
+						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+					<?php endif; ?>
 
-					</div>
-					<h3><?php the_title(); ?></h3>
+				</div>
+				<h3><?php the_title(); ?></h3>
 			</div>
 			</a>
 

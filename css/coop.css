@@ -21,7 +21,7 @@ body {
   float: left;
   text-align: left;
   padding-left: 3%;
-  font-size: 0.7em;
+  font-size: 0.6em;
 }
 .heading a {
   color: white;
@@ -175,7 +175,7 @@ nav .icon-home {
 
 .container { /* SIMILAR RULES AS .allsections on banded pages to allow for topsticky space */
   margin: 0 6%;
-  padding-top: 50px;
+  padding-top: 70px;
   clear: both;
 }
 .featured-org, .featured-unit, .featured-coop {
@@ -280,7 +280,8 @@ footer a {
 /*  border-top: 1px solid white;  */
   margin-top: 7%;
 }
-.loves {
+.cooploves {
+  font-size: 0.7em;
 }
 .credits {
   clear: both;
@@ -311,6 +312,9 @@ footer a {
 }
 
 /* ------ STANDARD POST -----*/
+.container {
+  min-height: 400px;
+}
 .container h1 {
   text-transform: capitalize;
 }
@@ -345,9 +349,10 @@ hr {
   padding: 2%;
 }
 
-/* ------ STANDARD TOOL ICONS (PUT THIS IN BANDEDSECTIONS?!?!) -----*/
+/* ------ STANDARD TOOL ICONS  -----*/
 .tool-img {
   width: 100%;
+  max-width: 800px;
   margin-bottom: 3%;
 }
 .tool-img img {
@@ -383,7 +388,7 @@ hr {
     height: auto;
   }
   .heading {
-    font-size: 1em;
+    font-size: 0.9em;
   }
   .icon-menu {
     top: 150px;

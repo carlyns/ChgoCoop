@@ -79,10 +79,10 @@
 		<div class="loves">
 			<h3>We also love: </h3>
 			<p>
-				<a href="http://workerdemocracy.org/Directory.aspx">Chicagoland worker co-ops</a>
+				<a href="http://workerdemocracy.org/Directory.aspx">Chicagoland worker co-ops</a>.  <span class="cooploves">Check out Spudnik, Reliance, CoLab, Stocksy. </span>
 			</p>
 			<p>
-				<a href="http://www.chifoodcoops.org">Chicagoland food co-ops</a>
+				<a href="http://www.chifoodcoops.org">Chicagoland food co-ops</a>.  <span class="cooploves">Check out Dill Pickle, Chicago Food Co-op, Sugar Beet & Chicago Market.</span>
 			</p>
 		</div>
 

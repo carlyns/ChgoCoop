@@ -19,11 +19,11 @@
 <div class="container">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<h1><?php the_title(); ?></h1>
-	  <?php the_content(); ?>
+
 	<?php endwhile; endif; ?>
 
 
-	<h2 class="funfact">Diagram: Steps we recommend, but not the dominant advice!  How your Group can faction off into other groups.</h2>
+	<h2 class="funfact"><?php the_content(); ?></h2>
 
 	<div class="row-stepicons">
 			<div class="step1">
@@ -102,7 +102,7 @@
 				<img src="<?php bloginfo( 'template_url' ); ?>/imgs/stepicons/noun_idea_195285.png" alt="understand" />
 			</div>
 
-			<div class="steptitle">
+			<div class="steptitle"> <!-- these only show on mobile. desktop has steptitle in tab. -->
 				<h2>1. RECRUIT</h2>
 			</div>
 
@@ -119,7 +119,7 @@
 				<img src="<?php bloginfo( 'template_url' ); ?>/imgs/stepicons/noun_compatibility_612057.png" alt="right fit" />
 			</div>
 
-			<div class="steptitle">
+			<div class="steptitle"> <!-- these only show on mobile. desktop has steptitle in tab. -->
 				<h2>2. STRUCTURE</h2>
 			</div>
 
@@ -141,7 +141,7 @@
 			</div>
 
 			<div class="steptitle">
-				<h2>TASKS</h2>
+				<h2>3. TASKS</h2> <!-- these only show on mobile. desktop has steptitle in tab. -->
 			</div>
 			<div class="stepcontent desktopcontent3">
 				<h3>Search for properties.</h3>
@@ -159,7 +159,7 @@
 			</div>
 
 			<div class="steptitle">
-				<h2>BUILDING</h2>
+				<h2>4. BUILDING</h2> <!-- these only show on mobile. desktop has steptitle in tab. -->
 			</div>
 			<div class="stepcontent desktopcontent4">
 				<h3>Finalize documents.</h3>
@@ -177,7 +177,7 @@
 			</div>
 
 			<div class="steptitle">
-				<h2>CELEBRATE</h2>
+				<h2>5. CELEBRATE</h2> <!-- these only show on mobile. desktop has steptitle in tab. -->
 			</div>
 
 			<div class="stepcontent desktopcontent5">
@@ -189,6 +189,43 @@
 			</div>
 		</div>
 	</div> <!-- end of "desktop-stepframe" -->
+
+	<div class="groupdiagram">
+		<h3 class="funfact">Here's a helpful diagram:</h3>
+		<img src="<?php bloginfo( 'template_url' ); ?>/imgs/grouptobldg.jpg" alt="form an initial group">
+	</div>
+
+	<div class="allexploreposts">
+		<h2>See All Tools & Posts tagged with "formation"</h2>
+
+		<?php // ALL 'FORMATION' TOOLS
+		$args = array( 'post_type' => 'tool', 'tag' => 'formation', 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
+		$loop = new WP_Query( $args ); //Define the loop based on those arguments
+		//Display the contents
+		while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+		<a href="<?php the_permalink(); ?>">
+			<h4><?php the_title(); ?></h4>
+		</a>
+
+		<?php endwhile; ?>
+		<?php wp_reset_postdata(); ?>
+
+
+		<?php // ALL FROM EXPLORE CATEGORY
+		$args = array( 'cat' => 10, 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
+		$loop = new WP_Query( $args ); //Define the loop based on those arguments
+		//Display the contents
+		while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+		<a href="<?php the_permalink(); ?>">
+			<h4><?php the_title(); ?></h4>
+		</a>
+
+		<?php endwhile; ?>
+		<?php wp_reset_postdata(); ?>
+	</div>
+
 
 </div>
 

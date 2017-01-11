@@ -19,12 +19,11 @@
 <div class="container">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<h1><?php the_title(); ?></h1>
-	  <?php the_content(); ?>
 	<?php endwhile; endif; ?>
 
 	<!-- a hard coded page?  maybe later dynamic -->
+	<h2 class="funfact"><?php the_content(); ?></h2>
 
-	<h2 class="funfact">Determine: Is a co-op for you? Decide: a) Form One or b) Shop Around</h2>
 	<div class="row-stepicons">
 			<div class="step1">
 				<div class="stepicon">
@@ -271,10 +270,10 @@
 	</div> <!-- end of "desktop-stepframe" -->
 
 	<div class="allexploreposts">
-		<h2>See All Tools (and Posts??) tagged with "beginners"</h2>
+		<h2>See All Tools & Posts tagged with "beginners"</h2>
 
-			<?php
-			$args = array( 'cat' => 'explore', 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
+			<?php // ALL 'BEGINNERS' TOOLS
+			$args = array( 'post_type' => 'tool', 'tag' => 'beginners', 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -284,8 +283,21 @@
 			</a>
 
 			<?php endwhile; ?>
-		<?php // RESETTING TO ORIG LOOP
-		wp_reset_postdata(); ?>
+			<?php wp_reset_postdata(); ?>
+
+			<?php // ALL FROM EXPLORE CATEGORY
+			$args = array( 'cat' => 10, 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
+			$loop = new WP_Query( $args ); //Define the loop based on those arguments
+			//Display the contents
+			while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+			<a href="<?php the_permalink(); ?>">
+				<h4><?php the_title(); ?></h4>
+			</a>
+
+			<?php endwhile; ?>
+			<?php wp_reset_postdata(); ?>
+
 	</div>
 
 </div> <!-- end of "container" -->

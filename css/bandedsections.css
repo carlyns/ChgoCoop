@@ -71,6 +71,8 @@ section {
   clear: both;
   text-align: center;
   text-transform: capitalize;
+  padding: 0 2.5%;
+
 }
 .icon {
   border: 3px solid black;
@@ -133,6 +135,22 @@ section {
   background-color: rgba(236,164,0, 1); /* gold */
 }
 .sectionlisting{
+  text-align: center;
+}
+.taller-field {
+  font-size: 1.3em;
+  margin: 1% 0;
+  padding: 1%;
+  border-radius: 5px;
+  width: 285px;
+}
+input[type=submit] {
+  font-size: 1.3em;
+  margin: 2% auto;
+  width: 100%;
+  background-color: rgba(236,164,0, 1); /* gold */
+  border-radius: 5px;
+  width: 300px;
   text-align: center;
 }
 

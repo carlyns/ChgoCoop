@@ -41,7 +41,16 @@
 			<?php endif; ?>
 
 
-		<?php endwhile; endif; // THIS PLACEMENT MATTERS: in between the ul tag! ?>
+		<?php endwhile; endif; ?>
+
+		<hr>
+		<div class="tags">
+			<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
+				This post was tagged with:
+				<span><?php echo the_tags( '<li>', '</li><li>', '</li>' );				?></span>
+			</h5>
+		</div>
+
 
 </div>
 

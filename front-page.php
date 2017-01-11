@@ -16,26 +16,28 @@
 <?php include ('menu.php'); ?>
 
 	<div class="teaser">
-		<p>A few co-ops that might interest you:</p>
-		<!--<p>Housing for the middle class is hard to come by these days.  Not to mention we've replaced real-life community with digital connections.  Cooperatives may not be what you think.</p>-->
-			<div class="type">
-				<img src="<?php bloginfo( 'template_url' ); ?>/imgs/walkup.jpg" alt="private apartments">
-				<p>private apartments</p>
-			</div>
-			<div class="type">
-				<img src="<?php bloginfo( 'template_url' ); ?>/imgs/home.png" alt="single family home">
-				<p>single family detached</p>
-			</div>
-			<div class="type">
-				<img src="<?php bloginfo( 'template_url' ); ?>/imgs/hirise.jpg" alt="high rise">
-				<p>high-rise</p>
-			</div>
-			<div class="type">
-				<img src="<?php bloginfo( 'template_url' ); ?>/imgs/communal.png" alt="shared home">
-				<p>shared common spaces</p>
-			</div>
+		<!-- <h2>Welcome.  We built this site as an information hub so more people can GET CO-OPed</h2> -->
 
+		<h2>Welcome to our information hub.</h2>
+		<h3>Discover free tools we've gathered to help you get started or keep going strong with housing co-ops.</h3>
+
+<!----------------------------- carousel image taglines:
+		<h3>Get inspired by stories.</h3>
+		<h3>Let your imagination take over and custom-design a co-op of unlimited possibilities. </h3>
+
+		possible carousel images:
+		map,
+		vision board,
+		collage of chicago building stock
+
+------------------------->
 	</div>
+
+
+	<!----------------------------- possible styling for explore/enhance:
+		soft diagonal with explore and enhance as the buttons themselves (instead of "go")
+		include other buttons like match tool, list your co-op, etc
+	------------------------->
 
 <div class="twousers">
 	<div class="grid6">
@@ -169,8 +171,8 @@
 
 	<div class="newsletter">
 		<p>Like those stories?
-		</br><a href="#">See the archive</a> OR Get them regularly:</p>
-		<a href="#"><div class="button">Sign Up for Newsletter</div></a>
+		</br><a href="<?php get_page_template(); ?>/chgocoopWP/archived-news/">See the archive</a> OR Get them regularly:</p>
+		<a href="http://eepurl.com/cmiuZv" target="_blank"><div class="button">Sign Up for Newsletter</div></a>
 	</div>
 
 

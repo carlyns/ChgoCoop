@@ -18,7 +18,10 @@ a:hover {
   align-items: center;
   margin: 1% 0;
 }
-
+.black-link-font {
+  color: black;
+  font-weight: normal;
+}
 .coopname {
   float: left;
   margin-right: 2%;
@@ -28,9 +31,12 @@ a:hover {
 }
 .profiletag {
   border: 1px solid black;
-  padding: 1%;
   float: left;
   margin-right: 2%;
+  padding: 1%;
+}
+.profiletag p {
+
 }
 .vacancytag {
   background-color: rgba(236,164,0, 1);

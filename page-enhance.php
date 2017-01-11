@@ -18,11 +18,11 @@
 <div class="allsections">
 
 	<div class="band-white">
-		<h2>Principles/Fundamentals</h2>
-			<!-- Show all posts (CPT or blog) tagged with "principles/values" + Enhance Category -->
+		<h2>Fundamentals & Collaboration</h2>
+			<!-- Show all posts (CPT or blog) + Enhance Category -->
 		<section>
 			<?php
-			$args = array( 'tag' => 'principles', 'posts_per_page' => 6, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
+			$args = array( 'cat' => 15, 'posts_per_page' => 6, 'orderby' => 'rand' ); //Which tag you want, how many posts to show
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -46,59 +46,20 @@
 
 
 		</section>
-		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE JUST FOR REVIEWING FUNDAMENTALS -->
-		<a href="<?php get_page_template(); ?>/chgocoopWP/tag/principles"><div class="button-section">More Resources on Fundamentals</div></a>
-	</div>
 
-	<div class="band-purple">
-		<h2>Collaboration Tools</h2>
-		 <!-- (soft skills) -->
-			<!-- Show all posts (CPT or blog) tagged with "collaboration" + Enhance Category -->
-		<section>
-
-			<?php
-			$args = array( 'tag' => 'collaboration', 'posts_per_page' => 6, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
-			$loop = new WP_Query( $args ); //Define the loop based on those arguments
-			//Display the contents
-			while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
-			<a href="<?php the_permalink(); ?>">
-			<div class="infotool">
-				<div class="icon">
-					<?php the_post_thumbnail('tool-icon'); ?>
-
-					<?php // HOW TO ADD THE IMAGE HERE?  OR JUST ADD A DEFAULT ONE FOR EACH TYPE OF TAG, IN THIS CASE 'COLLABORATION'
-						/* $images = get_attached_media('image', $post->ID);
-						foreach($images as $image) { ?>
-						    <img src="<?php echo wp_get_attachment_image_src($image->ID,'thumbnail'); ?>" />
-						<?php } */ ?>
-
-
-				</div>
-				<h3><?php the_title(); ?></h3>
-			</div>
-			</a>
-
-			<?php endwhile; ?>
-			<?php // RESETTING TO ORIG LOOP
-			wp_reset_postdata(); ?>
-
-
-		</section>
-		<!-- THE FOLLOWING LINK SHOULD BE AN ARCHIVE PAGE FOR ALL TOOLS, A TAG? -->
 		<a href="<?php get_page_template(); ?>/chgocoopWP/tag/collaboration"><div class="button-section">See All articles</div></a>
 	</div>
 
 
-	<div class="band-white">
-		<h2>Tool/Template Resources</h2>
+	<div class="band-purple">
+		<h2>Tool & Templates</h2>
 		 <!-- (hard skills) -->
 			<!-- Show all posts (CPT only) of "tools" + Enhance Category -->
 		<section>
 
 			<?php // DISPLAY CUSTOM POST TYPE
 			// be aware tag & cat intersection has unique arguments: http://wordpress.stackexchange.com/questions/4201/how-to-query-posts-by-category-and-tag-
-			$args = array( 'post_type' => 'tool', 'posts_per_page' => 6, 'cat' => 15 ); //Define your custom post type name in the arguments
+			$args = array( 'post_type' => 'tool', 'posts_per_page' => 6, 'cat' => 15, 'orderby' => 'date'  ); //Define your custom post type name in the arguments
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -130,14 +91,38 @@
 
 		</section>
 		<!-- THE FOLLOWING LINK SHOULD BE AN ARCHIVE PAGE FOR ALL TOOLS, A TAG? -->
-		<a href="<?php get_page_template(); ?>/chgocoopWP/enhance-tools"><div class="button-section">See All Tools</div></a>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/tool"><div class="button-section">See All Tools</div></a>
+	</div>
+
+	<div class="band-white" id="cooplisting">
+		<h2>Put Your Co-op On The Map</h2>
+		<p>We list basic information like name, approximate location and size on our map for free.</p>
+		<p>If you see a mistake, please <a href="mailto: cso@RESUSstudio.com">email us</a> so we can revise it.</p>
+
+		<div>
+			<form action="https://formspree.io/cso@RESUSstudio.com" method="POST">
+				<input class="taller-field" type="text" name="coopname" id="coopname" placeholder="Co-op Name">
+				<input class="taller-field" type="text" name="intersection" id="intersection" placeholder="Major Intersection, City">
+				<input class="taller-field" type="text" name="coopsize" id="coopsize" placeholder="Number of Units/Apts">
+				<br>
+				<input class="form-submit-style" type="submit" name="submit" value="Get on the Map (free)"> <!-- target="_blank" doens't work on the submit button -->
+			</form>
+		</div>
+
+		<hr>
+
+		<h3>Want a more comprehensive listing?</h3>
+		<p>This includes contact, website, and photos.  Please complete <a href="https://resus.typeform.com/to/emYHV9" target="_blank">this form</a>.  It's $5/year to help maintain this website.</p>
+
+		<a href="https://resus.typeform.com/to/emYHV9" target="_blank"><div class="button-section">Create Co-op Profile: $5/year</div></a>
 	</div>
 
 	<div class="band-purple">
+
 		<h2>Have a Vacancy at your Co-op? Get Listed!</h2>
 		<p>Unit Listing: $20/unit</p>
 		<ol>
-			<li>Fill out our simple form. The associated fee goes towards maintaining this site.</li>
+			<li>Fill out our simple form. The fee goes towards maintaining this site.</li>
 			<li>We feature your co-op and/or unit on this site, blog posts, and our <a href="http://eepurl.com/cmiuZv" target="_blank">"Good Housing" newsletter</a>.  (See a sample <a href="<?php get_page_template(); ?>/chgocoopWP/profile/vacant-unit-800-logan-square-co-op/">Co-op Profile</a> or a sample <a href="<?php get_page_template(); ?>/chgocoopWP/profile/logan-square-cooperative/">Unit Listing</a>)</li>
 			<li>Watch the requests roll in!</li>
 
@@ -145,22 +130,9 @@
 		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE JUST FOR MEMBERSHIP
 		<a href="<?php get_page_template(); ?>/chgocoopWP/membership"><div class="button-section">Become a Member</div></a>-->
 		<a href="https://resus.typeform.com/to/LWTR4c"><div class="button-section">List a Unit</div></a>
-
 	</div>
 
-	<div class="band-white">
-		<h2>"Put Yourself On The Map"</h2>
-		<p>We list basic information about any cooperative on our map for free.</p>
-		<p>If you see a mistake, please <a href="mailto: cso@RESUSstudio.com">email us</a> so we can revise it.</p>
 
-		<p>Get included: </p>
-		<h3>Co-op Name:</h3>
-		<h3>Approx Location:</h3><p>Major Intersection</p>
-		<h3>Size:</h3><p>Number of Units</p>
-		<h3>SUBMIT</h3>
-		<p class="sectionlisting">Want a more comprehensive listing?</p>
-		<a href="https://resus.typeform.com/to/emYHV9"><div class="button-section">Create Co-op Profile: $5/year</div></a>
-	</div>
 </div> <!-- //end of "allsections"-->
 
 <?php get_footer(); ?>

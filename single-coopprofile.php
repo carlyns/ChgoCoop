@@ -73,6 +73,24 @@
 
     <div class="profileblock">
       <div class="infoicon">
+        <div class="icon-feather">	</div>
+      </div>
+      <div class="infoblock">
+        <p>
+          <span class="infofield">Spirituality: </span>
+          <?php // if spiritual is Yes, then:
+            if( get_field('spiritual') ): ?>
+            <?php the_field('spiritual_description');  ?>
+
+          <?php // if spiritual is No, then:
+            else : ?>
+            We are not a spiritual community.
+          <?php endif; ?>
+        </p></div>
+    </div>
+
+    <div class="profileblock">
+      <div class="infoicon">
         <div class="icon-fire">	</div>
       </div>
       <div class="infoblock"><p><span class="infofield">Shared common spaces: </span><?php the_field('shared_spaces'); ?></p></div>
@@ -126,14 +144,18 @@
         <div class="icon-envelop">	</div>
       </div>
       <div class="infoblock"><p><span class="infofield">How to learn more: </span>
-        </br>We prefer to be contacted <?php the_field('contact_pref'); // if statement pulled from https://www.advancedcustomfields.com/resources/hiding-empty-fields/ ?>
+        </br>We prefer to be contacted <?php the_field('contact_pref');  ?>
         </br>
-        <?php if( get_field('email')): // if there's an email ?>
-        at <?php the_field('email'); // then print it ?></p>
-        <?php endif; ?>
 
-        <?php if( get_field('phone')): // if there's a phone number ?>
-          at <?php the_field('phone'); // then print it ?></p>
+        <?php if( get_field('contact_pref') == 'via email' ):  ?>
+        at <?php the_field('email'); // then print email ?></p>
+
+      <?php elseif( get_field('contact_pref') == 'via phone' ):  ?>
+        at <?php the_field('phone'); // then print it ?></p>
+
+      <?php elseif( get_field('contact_pref') == 'through ChicagoCoop.net' ):  ?>
+        <?php // do nothing -- could just delete this block ?>
+
         <?php endif; ?>
       </div>
     </div>

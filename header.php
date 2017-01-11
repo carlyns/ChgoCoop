@@ -21,6 +21,7 @@
 -->
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/icomoon55467/style.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/icomoon37003/style.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/icomoon78600/style.css">
 
 	<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/coop.css"> -->
