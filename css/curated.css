@@ -39,16 +39,17 @@
 .stepcontent {
   clear: both;
   padding-left: 60px;
+  border-bottom: 1px solid grey;
+  margin-bottom: 30px;
+  overflow: auto;
 }
 .steps-tool {
-
+  max-width: 800px;
 }
 .steps-tool img {
   max-width: 100%;
 }
-.stepcontent .row-step-buttons {
 
-}
 .stepcontent .next a {
   background-color: rgba(236,164,0, 1); /* gold */
   display: inline-block;
@@ -68,9 +69,11 @@
 
 .groupdiagram {
   margin: 5% auto;
+  text-align: center;
 }
 .groupdiagram img {
   width: 100%;
+  max-width: 1000px;
   border: 1px solid grey;
 }
 .allexploreposts {
@@ -103,10 +106,6 @@
     border-bottom: 2px solid grey;
     border-left: 2px solid grey;
     border-right: 2px solid grey;
-  }
-  .row-stepicons h2 {
-  }
-  .desktop-stepframe h3 {
   }
   .mobileicon {
     display: none;
@@ -142,6 +141,7 @@
   }
   .stepcontent {
     padding-left: 0;
+    border-bottom: none;
   }
 
   .desktopcontent1 {

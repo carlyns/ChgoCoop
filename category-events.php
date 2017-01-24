@@ -15,25 +15,25 @@
 
 	<!-- CODE FOUND HERE: https://support.advancedcustomfields.com/forums/topic/using-datepicker-to-display-posts-on-a-page/-->
 
-	<?php // DEFINE THE QUERY ARGUMENTS FOR EVENTS TODAY OR IN THE FUTURE ?>
-	<?php
+	<?php // DEFINE THE QUERY ARGUMENTS FOR EVENTS TODAY OR IN THE FUTURE
 	$today = date("Ymd");
 
 	$args = array (
-            'posts_per_page' => -1,
-						'orderby'       => 'meta_value_num', // ORDER SOONEST FIRST
-            'order'          => 'ASC',
-   'meta_query' => array(
-         array(
-            'key'       => 'event_start_date', // needed to change this to my ACF name
-            'compare'   => '>=',
-            'value'     => $today,
-        )
-    ),
+		'cat' => 18, // oddly, a startup story was getting queried so i added this filter
+		'posts_per_page' => -1,
+		'orderby'       => 'meta_value_num', // order soonest first
+		'order'          => 'ASC',
+	 	'meta_query' => array(
+		 array(
+				'key'       => 'event_start_date', // needed to change this to my ACF name
+				'compare'   => '>=', // met this condition
+				'value'     => $today,
+			)
+		),
 	);
- ?>
+	?>
 
-	<?php // PASS THOSE ARGUMENTS THROUGH TO RETREIVE THE DATA ?>
+	<?php // PASS THOSE ARGUMENTS THROUGH TO RETREIVE THE POSTS THAT MEET THE >= CONDITION ?>
 	<?php $events = new WP_Query( $args ); ?>
 
 	<?php if ( $events->have_posts() ) : ?>
@@ -50,8 +50,9 @@
 
 		<h3><span class="eventdate"><?php echo $day->format('l'); ?>, <?php echo $date->format('F'); ?> <?php echo $date->format('d'); ?>, <?php echo $date->format('Y'); ?>. </span><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
+
+
 	<?php endwhile; else : ?>
-		<!-- Otherwise show this:-->
 
 		<p><?php _e( "Unfortunately, there are no upcoming events.  But check back here soon!  Or subscribe to our RSS feed to be notified. " ); //_e aka echo
 		?></p>
@@ -62,26 +63,26 @@
 
 	<hr>
 	<!-- Write if statement: if event_start_date is before todays date, then get those posts.  And show only those here.-->
-	<?php // DEFINE THE QUERY ARGUMENTS FOR EVENTS TODAY OR IN THE FUTURE ?>
-	<?php
+	<?php // DEFINE THE QUERY ARGUMENTS FOR EVENTS IN THE PAST
 	$today = date("Ymd");
 
 	$args = array (
-            'posts_per_page' => -1,
-            /* --- 'meta_key'       => 'date_debut', --NEEDED TO DELETE THIS --*/
-            /* --- 'orderby'       => 'meta_value_num', --- REVERSE DATE ORDER --*/
-            'order'          => 'ASC',
-   'meta_query' => array(
-         array(
-            'key'       => 'event_start_date',
-            'compare'   => '<',
-            'value'     => $today,
-        )
+		'cat' => 18, // oddly, a startup story was getting queried so i added this filter
+    'posts_per_page' => -1,
+    /* --- 'meta_key'       => 'date_debut', --NEEDED TO DELETE THIS --*/
+    /* --- 'orderby'       => 'meta_value_num', --- REVERSE DATE ORDER --*/
+    'order'          => 'ASC',
+   	'meta_query' => array(
+	     array(
+	        'key'       => 'event_start_date',
+	        'compare'   => '<',
+	        'value'     => $today,
+	    )
     ),
 	);
  ?>
 
-	<?php // PASS THOSE ARGUMENTS THROUGH TO RETREIVE THE DATA ?>
+	<?php // PASS THOSE ARGUMENTS THROUGH TO RETREIVE THE POSTS THAT MEET THE > CONDITION ?>
 	<?php $pastevents = new WP_Query( $args ); ?>
 
 	<?php if ( $pastevents->have_posts() ) : ?>
@@ -97,12 +98,12 @@
 		<h3><span class="eventdate"><?php echo $day->format('l'); ?>, <?php echo $date->format('F'); ?> <?php echo $date->format('d'); ?>, <?php echo $date->format('Y'); ?>. </span><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
 	<?php endwhile; else : ?>
-
 		<p><?php _e( "No past events yet!" ); //_e aka echo
 		?></p>
 
 	<?php endif; ?>
 	<?php wp_reset_postdata(); // RESETTING TO ORIG LOOP ?>
+
 
 
 		<!-- ADD PAGINATION JUST IN CASE??  HOW MANY RESULTS DOES IT DISPLAY? -->
