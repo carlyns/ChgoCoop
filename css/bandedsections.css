@@ -3,7 +3,10 @@ header {
 header a {
   color: white;
 }
-
+/*  for banded sections pages */
+.allsections {
+  padding-top: 100px;
+}
 .topexplore {
   background-color: rgba(33,48,0, 1);
   color: white;

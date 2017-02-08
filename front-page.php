@@ -15,7 +15,7 @@
 
 <?php include ('menu.php'); ?>
 
-	<div class="teaser">
+	<div class="style-hero">
 		<!-- <h2>Welcome.  We built this site as an information hub so more people can GET CO-OPed</h2> -->
 
 		<h2>Welcome to our information hub.</h2>
@@ -39,21 +39,15 @@
 		include other buttons like match tool, list your co-op, etc
 	------------------------->
 
-<div class="twousers">
+<div class="row">
 	<div class="grid6">
 		<div class="explorers">
 			<h2>EXPLORE</h2>
 			<div class="block">
 				<p>Want an affordable home with neighbors you can count on?  You and your friends can create a community of your own. </p>
 
-				<ul>
-					<li>info for beginners</li>
-					<li>tools</li>
-					<li>template docs</li>
-					<li>find vacancies</li>
-				</ul>
 			</div>
-			<a href="<?php get_page_template(); ?>/chgocoopWP/explore"><div class="button-bottom">Go</div></a>
+			<a href="<?php get_page_template(); ?>/chgocoopWP/explore"><div class="style-button button-bottom">Go</div></a>
 		</div>
 	</div>
 
@@ -61,16 +55,10 @@
 		<div class=existing>
 			<h2>ENHANCE</h2>
 			<div class="block">
-				<p>Does your co-op need to regroup / recharge / reorganize?</p>
-				<ul>
-					<li>fundamentals</li>
-					<li>collaboration tools</li>
-					<li>legal tools</li>
-					<li>list a unit</li>
-					<li>membership</li>
-				</ul>
+				<p>Does your co-op need to regroup or recharge?  See what your group can do to improve with some helpful resources. </p>
+
 			</div>
-			<a href="<?php get_page_template(); ?>/chgocoopWP/enhance"><div class="button-bottom">Go</div></a>
+			<a href="<?php get_page_template(); ?>/chgocoopWP/enhance"><div class="style-button button-bottom">Go</div></a>
 		</div>
 	</div>
 </div>
@@ -102,7 +90,7 @@
 			</div>
 			<h4 class="orgname"><?php echo get_the_title($org); ?></h4>
 			<p><?php echo get_the_excerpt($org); ?></p>
-			<a href="<?php echo get_the_permalink($org); ?>"><div class="button-bottom">Read More</div></a>
+			<a href="<?php echo get_the_permalink($org); ?>"><div class="style-button button-bottom">Read More</div></a>
 
 			<?php endif; ?>
 
@@ -125,7 +113,7 @@
 					<a href="<?php echo get_the_permalink($vacancy); ?>"><?php echo get_the_post_thumbnail($vacancy); ?></a>
 				</div>
 				<p><?php echo get_the_excerpt($vacancy); ?></p>
-				<a href="<?php echo get_the_permalink($vacancy); ?>"><div class="button-bottom">Own It</div></a>
+				<a href="<?php echo get_the_permalink($vacancy); ?>"><div class="style-button button-bottom">Own It</div></a>
 
 
 			<?php else : // THIS ELSE STATEMENT ISN'T WORKING, SO JUST HARD-CODE IT WHEN NECESSARY? ?>
@@ -136,7 +124,7 @@
 					</a>
 				</div>
 				<p>Match tool for you .... </p>
-				<a href="#"><div class="button-bottom">Learn More</div></a>
+				<a href="#"><div class="style-button button-bottom">Learn More</div></a>
 			<?php endif; // PUTTING THIS AFTER THE MATCH TOOL MAKES IN INVISIBLE, SO JUST HARD CODE WHEN NECESSARY ?>
 
 		</div>
@@ -157,7 +145,7 @@
 				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 			</div>
 			<p class="quote"><?php the_excerpt(); ?></p>
-			<a href="<?php the_permalink(); ?>"><div class="button-bottom">Read More</div></a>
+			<a href="<?php the_permalink(); ?>"><div class="style-button button-bottom">Read More</div></a>
 
 
 
@@ -169,10 +157,10 @@
 		</div>
 	</div>
 
-	<div class="newsletter">
+	<div class="row single-col">
 		<p>Like those stories?
 		</br><a href="<?php get_page_template(); ?>/chgocoopWP/archived-news/">See the archive</a> OR Get them regularly:</p>
-		<a href="http://eepurl.com/cmiuZv" target="_blank"><div class="button">Sign Up for Newsletter</div></a>
+		<a href="http://eepurl.com/cmiuZv" target="_blank"><div class="style-button">Sign Up for Newsletter</div></a>
 	</div>
 
 

@@ -6,7 +6,7 @@
 		</div>
 
 
-		<div class="button"><a href="<?php get_page_template(); ?>/chgocoopWP/directory" target="_blank">See Directory</a></div>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/directory" target="_blank"><div class="style-button">See Directory</div></a>
 	</div>
 
 

@@ -1,0 +1,277 @@
+//////// STYLE ////////
+  // default for all pages
+  $brand-background-color: rgba(250,255,232,1); /* beige */
+  $brand-color-primary: rgba(91,81,81,1); /* dark grey */
+
+  /* rgba(250,255,232,1); beige */
+  /* rgba(114,219,209,1); light teal */
+  /* rgba(41,156,144,1); dark teal */
+  /* rgba(221,219,219,1); grey */
+  /* rgba(91,81,81,1); dark grey */
+
+  body {
+    font-family: 'Prompt', sans-serif;
+    background-color: $brand-background-color;
+    color: $brand-color-primary;
+  }
+  h1,h2,h3 {
+    font-weight: 500;
+  }
+  a {
+    color: rgba(41,156,144,1); /* dark teal */
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .style-button {
+    font-size: 1.5em;
+    padding: 1%;
+    text-align: center;
+    background-color: rgba(41,156,144,1); /* dark teal */
+    color: rgba(250,255,232,1); /* beige */
+  }
+  // for front page
+  .beta {
+    font-size: 0.5em;
+    font-weight: 300;
+  }
+  .style-tagline {
+    font-size: 1.2em;
+  }
+  .style-hero {
+    font-size: 1.5em;
+    padding: 10%;
+  }
+
+  // center align the text
+  .datebox, .style-hero, .single-col {
+    text-align: center;
+  }
+
+//////// SPACING - POSITIONING ////////
+  // default for all pages
+  html {
+  }
+  body {
+  }
+  nav {
+  }
+  .container { /* SIMILAR RULES AS .allsections on banded pages to allow for topsticky space */
+    clear: both;
+    margin-top: 50px;
+  }
+    @media screen and (min-width: 700px) {
+      .container {
+      }
+    }
+  .button {
+    width: 50%;
+    margin: 0 auto;
+    margin: 4% auto 0 auto;
+  }
+  .button-bottom {
+    width: 50%;
+    margin: 4% auto 0 auto;
+  }
+
+
+  // for front page
+  .row {
+    clear: both;
+    overflow: auto;
+  }
+  .single-col {
+    padding: 3%;
+  }
+  @media screen and (min-width: 700px) {
+    .featured-org, .featured-unit, .featured-coop {
+      height: 350px;
+      position: relative; /* need this here for button-bottom */
+      z-index: auto;
+    }
+    .featured-org .button-bottom, .featured-unit .button-bottom,  .featured-coop .button-bottom, {
+      position: absolute; /* need this here for button-bottom */
+      bottom: 4%;
+      width: 70%;
+      left: 15%;
+    }
+  }
+
+
+
+  .orgname {
+    /* can't figure out where the spacing is coming from - use Chrome Dev Tools?  */
+  }
+  .thumbnail {
+    overflow: hidden;
+  }
+  .thumbnail img {
+    display: block;
+    margin: 0 auto;
+    height: 100px;
+    width: 80%;
+  	object-fit: cover;
+  }
+
+
+  footer {
+    clear: both;
+    padding: 3% 3% 0 3%;
+    overflow: auto;
+  }
+  footer h3 {
+    padding-top: 3%;
+    width: 80%;
+  }
+.map {
+  width: 90%;
+  padding-bottom: 5%;
+}
+.datebox {
+  border: 2px solid rgba(41,156,144,1); /* dark teal */
+  border-radius: 10px;
+  height: 40px;
+  width: 40px;
+  margin-bottom: 3%;
+  float: left;
+}
+.eventtitle {
+  float: left;
+  width: 60%;
+  padding-left: 3%;
+}
+.eventinfo {
+  clear: both;
+}
+.eventinfo a:hover { /* not sure why this hover is not working*/
+  text-decoration: underline;
+}
+.eventlist {
+  overflow: auto;
+}
+.contactinfo {
+  clear: both;
+/*  border-top: 1px solid white;  */
+  margin-top: 7%;
+}
+.cooploves {
+  font-size: 0.7em;
+}
+.credits {
+  clear: both;
+  text-align: center;
+  padding: 2%;
+}
+
+/* ------ EVENT ARCHIVE PAGE -----*/
+
+.eventdate {
+  font-weight: 200;
+}
+
+
+/* ------ STANDARD ARCHIVE PAGE -----*/
+.keyword {
+  font-weight: 700;
+}
+.date {
+  font-weight: 300;
+  font-size: 0.8em;
+}
+.archive a {
+  color: black;
+}
+.archive a:hover {
+  background-color: rgba(114,219,209, 1); /* light teal */
+}
+
+/* ------ STANDARD POST -----*/
+.container {
+  min-height: 400px;
+}
+.container h1 {
+  text-transform: capitalize;
+}
+hr {
+  clear: both;
+}
+.tags {
+  font-size: 1.2em;
+  clear: both;
+}
+.tags h5 {
+  font-weight: normal;
+}
+.tags li {
+  display: inline-block;
+  background-color: rgba(114,219,209, 1); /* light teal */
+  padding: 0.5% 1%;
+  margin: 0 1%;
+}
+.tags a {
+  color: black;
+}
+.category {
+  background-color: rgba(114,219,209, 1); /* light teal */
+  padding: 0.5%;
+  margin: 0 0.5%;
+
+}
+.search {
+  border: 1px solid rgba(221,219,219, 1); /* grey */;
+  margin: 3% 0;
+  padding: 2%;
+}
+
+/* ------ STANDARD TOOL ICONS  -----*/
+.tool-img {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 3%;
+}
+.tool-img img {
+  width: 100%;
+}
+
+/* ------ MEDIA QUERIES START HERE -----*/
+
+
+@media screen and (min-width: 700px) {
+
+	.type {
+    width: 20%;
+    padding: 2%;
+    max-width: 150px;
+    font-size: 0.8em;
+    height: auto;
+  }
+  .heading {
+    font-size: 0.9em;
+  }
+  .grid6 {
+    width: 50%;
+    float: left;
+
+  }
+  .block {
+    height: 200px;
+  }
+
+
+  .grid4 {
+    width: 30%;
+    float: left;
+    padding-right: 3%;
+    /*figure out last child for padding*/
+  }
+  .grid4 a {
+  }
+  .grid6right {
+    width: 50%;
+    float: right; /* so info comes after map on mobile!*/
+  }
+  .map iframe {
+    height: 500px;
+  }
+}

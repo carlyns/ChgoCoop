@@ -9,13 +9,22 @@
 
 	<?php include ('menu.php'); ?>
 
+
 <div class="container archive">
 	<!-- if trying to display posts that are CPT, the ARCHIVE PAGE  NEEDS TO BE TOGGLED EITHER MANUALLY (if custom post types were manually created) OR VIA THE CPT UI SETTINGS: "HAS ARCHIVE".-->
 	<!-- but apparently CPT 'tools' needs some more tweaking.-->
 
+
+
 	<?php if ( have_posts() ) : ?>
 		<p>
-			You were looking for the tag/category/type <span class="keyword"><?php single_tag_title(); ?></span>.  Here are some posts/pages that match:
+			You were looking for the tag/category/type <span class="keyword">
+				<?php if ( is_post_type_archive() ){
+					echo get_post_type();
+				} ?>
+
+				<?php single_tag_title(); ?>
+			</span>.  Here are some posts/pages that match:
 				<!-- add the Tag Description? -->
 		</p>
 
