@@ -1,13 +1,19 @@
 <?php get_header(); ?>
 
 
-<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
+<title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 </head>
 
 <body>
-	<?php include ('topsticky.php'); ?>
-	<?php include ('menu.php'); ?>
+	<!-- menu not appearing on it's own, so adding this snippet -->
+		<?php
 
+		global $query_string;
+		parse_str($query_string, $args);
+		$args['post_type'] = array('nav_menu_item','post'); // can delete articles from the array and it'll still work.  this is leftover from the copied code cuz somone had a CPT of 'articles'
+		query_posts( $args );
+		?>
+		<?php include ('topsticky.php'); ?>
 
 <div class="container archive">
 

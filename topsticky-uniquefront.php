@@ -1,3 +1,5 @@
+<div class="home"> <!-- wrapped header for different treatment of front page hero image-->
+
 <header id="top">
 
 	<div class="topsticky">
@@ -13,5 +15,5 @@
 
 <div class="icon-menu">		</div>
 
-</header>
-<!-- header tag closes here for every page except front page-->
+
+<!-- header element ends in different place on front page-->

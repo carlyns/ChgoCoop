@@ -3,23 +3,26 @@
 <!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/curated.css">
 
-<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
+<title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
 </head>
-
 
 
 <body>
 
 <?php include ('topsticky.php'); ?>
 
-<?php include ('menu.php'); ?>
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<div class="topbanner">
+		<h1><?php the_title(); ?></h1>
+	</div>
+	<div class="topbanner showonscrolldown">
+		<h1><?php the_title(); ?></h1>
+	</div>
+	<?php endwhile; endif; ?>
 
 
 <div class="container">
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<h1><?php the_title(); ?></h1>
-	<?php endwhile; endif; ?>
 
 	<!-- a hard coded page?  maybe later dynamic -->
 	<h2 class="funfact"><?php the_content(); ?></h2>
@@ -243,7 +246,9 @@
 				</p>
 
 
-				<h4 class="next"><a href="<?php get_page_template(); ?>/chgocoopWP/explore/formation">GO TO FORMATION GUIDE</a></h4>
+				<div class="formation-button">
+					<h4><a href="<?php get_page_template(); ?>/chgocoopWP/explore/formation">GO TO FORMATION GUIDE</a></h4>
+				</div>
 
 			</div>
 		</div>

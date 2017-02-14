@@ -1,18 +1,48 @@
 /* beige */
 /* dark grey */
+/* dark teal */
+/* light blue */
+/* light grey */
+/* white */
 /* rgba(250,255,232,1); beige */
 /* rgba(114,219,209,1); light teal */
 /* rgba(41,156,144,1); dark teal */
 /* rgba(221,219,219,1); grey */
 /* rgba(91,81,81,1); dark grey */
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
 body {
   font-family: 'Prompt', sans-serif;
   background-color: #faffe8;
   color: #5b5151; }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-weight: 500; }
 
+h1 {
+  font-size: 1.2em; }
+
+h2 {
+  font-size: 1.2em; }
+
+h3 {
+  font-size: 1em; }
+
+@media screen and (min-width: 700px) {
+  h1 {
+    font-size: 1.5em; }
+
+  h2 {
+    font-size: 1.2em; } }
+@media screen and (min-width: 1200px) {
+  h2 {
+    font-size: 1.5em; }
+
+  h3 {
+    font-size: 1.2em; } }
 a {
   color: #299c90;
   /* dark teal */
@@ -30,25 +60,148 @@ a:hover {
   color: #faffe8;
   /* beige */ }
 
+.latest .style-button {
+  font-size: 1em;
+  margin-top: 0; }
+
+.newsletter {
+  padding-bottom: 5%;
+  font-size: 0.8em; }
+
+.newsletter h4 {
+  font-size: 1.1em; }
+
+@media screen and (min-width: 700px) {
+  .latest .style-button {
+    font-size: 1.5em; }
+
+  .newsletter .style-button {
+    width: 50%;
+    margin: 0 auto; }
+
+  .newsletter {
+    font-size: 1em; } }
 .beta {
   font-size: 0.5em;
   font-weight: 300; }
 
 .style-tagline {
-  font-size: 1.2em; }
+  font-size: 0.8em;
+  display: none; }
 
-.style-hero {
-  font-size: 1.5em;
-  padding: 10%; }
+@media screen and (min-width: 700px) {
+  .style-tagline {
+    display: block;
+    font-size: 1em; } }
+header {
+  background-image: url(../imgs/patterns/asanoha-400px.png);
+  /* Background pattern from Subtle Patterns */
+  background-attachment: fixed;
+  background-size: 40%;
+  overflow: auto;
+  clear: both; }
+
+.home header {
+  background-image: url("../imgs/unsplash apt-sm.jpg");
+  background-size: cover;
+  background-position: bottom;
+  overflow: auto; }
+
+.overview {
+  font-size: 1.2em;
+  clear: both;
+  padding: 5% 10% 0 10%; }
+
+.overview h2 {
+  font-weight: 700; }
 
 .datebox, .style-hero, .single-col {
   text-align: center; }
 
+body {
+  margin: 0; }
+
 .container {
   /* SIMILAR RULES AS .allsections on banded pages to allow for topsticky space */
   clear: both;
-  margin-top: 50px; }
+  margin: 0 3%; }
 
+.heading {
+  width: 150px;
+  margin: 0 auto;
+  padding-left: 10px; }
+
+@media screen and (min-width: 700px) {
+  .heading {
+    width: 100%;
+    padding-left: 20px; } }
+.heading h1 {
+  margin-bottom: 0; }
+
+.heading p {
+  margin-top: 0;
+  padding-left: 3px; }
+
+.icon-menu {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5em;
+  color: #299c90;
+  background-color: rgba(250, 255, 232, 0.8);
+  padding: 1%;
+  border-radius: 5px;
+  border: 2px solid #299c90;
+  z-index: 9; }
+
+@media screen and (min-width: 700px) {
+  .icon-menu {
+    display: none; } }
+nav ul {
+  padding-left: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700; }
+
+.menu-mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  background-image: url(../imgs/patterns/asanoha-400px.png);
+  /* Background pattern from Subtle Patterns */
+  background-attachment: fixed;
+  background-size: 40%;
+  border-bottom: 2px solid #299c90;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.2em; }
+
+.menu-big {
+  display: none; }
+
+@media screen and (min-width: 700px) {
+  .menu-big {
+    display: block; }
+
+  .menu-big li {
+    display: inline-block;
+    font-size: 0.8em;
+    padding: 0 15px;
+    margin-top: 15px; }
+
+  .menu-mobile {
+    display: none; }
+
+  .home header {
+    height: 500px; } }
+@media screen and (min-width: 1200px) {
+  .menu-big {
+    float: right; }
+
+  .heading {
+    padding-left: 3%;
+    float: left;
+    width: 520px; } }
 .button {
   width: 50%;
   margin: 0 auto;
@@ -62,25 +215,91 @@ a:hover {
   clear: both;
   overflow: auto; }
 
-.single-col {
-  padding: 3%; }
+.twousers .grid6 {
+  margin: 3% 1%;
+  padding: 2%; }
+
+.explorers .button-bottom {
+  width: 100px;
+  margin-left: 0;
+  margin-right: 0; }
+
+.existing {
+  text-align: right;
+  overflow: auto;
+  border-top: 2px solid #dddbdb; }
+
+.existing .button-bottom {
+  width: 100px;
+  margin-left: 0;
+  margin-right: 0;
+  float: right; }
 
 @media screen and (min-width: 700px) {
+  .block {
+    height: 100px; }
+
+  .grid6 {
+    width: 48%;
+    float: left; }
+
+  .twousers .grid6 {
+    transition: background-color 0.25s ease-in;
+    border: 1px solid #5b5151; }
+
+  .twousers .grid6:hover {
+    border: 2px solid #299c90;
+    color: #299c90; }
+
+  .existing, .explorers {
+    border-top: none;
+    text-align: left; }
+
+  .existing .button-bottom, .explorers .button-bottom {
+    margin: 0 auto;
+    float: none; } }
+.latest {
+  border-top: 1px solid #5b5151;
+  border-bottom: 1px solid #5b5151;
+  padding-bottom: 15px; }
+
+.latest h2 {
+  margin-bottom: 0; }
+
+.latest h3 {
+  margin-top: 20px;
+  margin-bottom: 0; }
+
+.latest p {
+  margin: 1% 0; }
+
+@media screen and (min-width: 700px) {
+  .latest {
+    border-top: none; }
+
   .featured-org, .featured-unit, .featured-coop {
     height: 350px;
     position: relative;
-    /* need this here for button-bottom */
-    z-index: auto; }
+    /* need this here for button-bottom */ }
 
-  .featured-org .button-bottom, .featured-unit .button-bottom, .featured-coop .button-bottom {
+  .latest .button-bottom {
     position: absolute;
     /* need this here for button-bottom */
     bottom: 4%;
     width: 70%;
     left: 15%; } }
-.orgname {
-  /* can't figure out where the spacing is coming from - use Chrome Dev Tools?  */ }
+@media screen and (min-width: 700px) {
+  .featured-org, .featured-unit, .featured-coop {
+    height: 300px; }
 
+  .grid4 {
+    width: 33%;
+    float: left;
+    padding-right: 3%;
+    /*figure out last child for padding*/ }
+
+  .grid4:last-child {
+    padding-right: 0; } }
 .thumbnail {
   overflow: hidden; }
 
@@ -88,30 +307,74 @@ a:hover {
   display: block;
   margin: 0 auto;
   height: 100px;
-  width: 80%;
+  width: 100%;
   object-fit: cover; }
 
+.topbanner {
+  background-color: #72dbd1;
+  text-align: left;
+  width: 100%;
+  clear: both;
+  font-size: 0.8em;
+  padding-right: 65px;
+  padding-left: 3%;
+  height: 60px;
+  border-bottom: 3px solid white;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); }
+
+.showonscrolldown {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 7; }
+
+@media screen and (min-width: 500px) {
+  .topbanner {
+    font-size: 1.2em;
+    height: auto; } }
+@media screen and (min-width: 700px) {
+  .topbanner {
+    height: 80px;
+    text-align: center;
+    padding-right: 0; } }
 footer {
   clear: both;
   padding: 3% 3% 0 3%;
-  overflow: auto; }
+  overflow: auto;
+  background-color: #dddbdb; }
 
 footer h3 {
-  padding-top: 3%;
-  width: 80%; }
+  width: 80%;
+  margin-top: 15px;
+  margin-bottom: 3px; }
+
+footer p {
+  margin: 0; }
 
 .map {
   width: 90%;
   padding-bottom: 5%; }
 
+@media screen and (min-width: 700px) {
+  .grid6right {
+    width: 50%;
+    float: right;
+    /* so info comes after map on mobile!*/ }
+
+  .map iframe {
+    height: 500px; } }
 .datebox {
   border: 2px solid #299c90;
   /* dark teal */
   border-radius: 10px;
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
   margin-bottom: 3%;
   float: left; }
+
+.datebox p {
+  padding-top: 3px;
+  margin: -5px; }
 
 .eventtitle {
   float: left;
@@ -119,7 +382,8 @@ footer h3 {
   padding-left: 3%; }
 
 .eventinfo {
-  clear: both; }
+  clear: both;
+  margin-bottom: 0; }
 
 .eventinfo a:hover {
   /* not sure why this hover is not working*/
@@ -130,11 +394,13 @@ footer h3 {
 
 .contactinfo {
   clear: both;
-  /*  border-top: 1px solid white;  */
-  margin-top: 7%; }
+  /*  border-top: 1px solid white;  */ }
 
 .cooploves {
   font-size: 0.7em; }
+
+.cooploves a {
+  color: #5b5151; }
 
 .credits {
   clear: both;
@@ -146,19 +412,15 @@ footer h3 {
   font-weight: 200; }
 
 /* ------ STANDARD ARCHIVE PAGE -----*/
+.archive li {
+  text-transform: capitalize; }
+
 .keyword {
   font-weight: 700; }
 
 .date {
   font-weight: 300;
   font-size: 0.8em; }
-
-.archive a {
-  color: black; }
-
-.archive a:hover {
-  background-color: #72dbd1;
-  /* light teal */ }
 
 /* ------ STANDARD POST -----*/
 .container {
@@ -175,27 +437,24 @@ hr {
   clear: both; }
 
 .tags h5 {
-  font-weight: normal; }
+  font-weight: 500; }
 
 .tags li {
   display: inline-block;
-  background-color: #72dbd1;
-  /* light teal */
+  background-color: #299c90;
   padding: 0.5% 1%;
   margin: 0 1%; }
 
 .tags a {
-  color: black; }
+  color: #faffe8; }
 
 .category {
-  background-color: #72dbd1;
-  /* light teal */
+  background-color: #299c90;
   padding: 0.5%;
   margin: 0 0.5%; }
 
 .search {
   border: 1px solid #dddbdb;
-  /* grey */
   margin: 3% 0;
   padding: 2%; }
 
@@ -207,38 +466,5 @@ hr {
 
 .tool-img img {
   width: 100%; }
-
-/* ------ MEDIA QUERIES START HERE -----*/
-@media screen and (min-width: 700px) {
-  .type {
-    width: 20%;
-    padding: 2%;
-    max-width: 150px;
-    font-size: 0.8em;
-    height: auto; }
-
-  .heading {
-    font-size: 0.9em; }
-
-  .grid6 {
-    width: 50%;
-    float: left; }
-
-  .block {
-    height: 200px; }
-
-  .grid4 {
-    width: 30%;
-    float: left;
-    padding-right: 3%;
-    /*figure out last child for padding*/ }
-
-  .grid6right {
-    width: 50%;
-    float: right;
-    /* so info comes after map on mobile!*/ }
-
-  .map iframe {
-    height: 500px; } }
 
 /*# sourceMappingURL=coop.css.map */

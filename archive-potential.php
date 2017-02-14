@@ -13,7 +13,7 @@
 
 	<?php // DISPLAY CUSTOM POST TYPE
 	// be aware tag & cat intersection has unique arguments: http://wordpress.stackexchange.com/questions/4201/how-to-query-posts-by-category-and-tag-
-	$args = array( 'post_type' => 'tool', 'posts_per_page' => -1, 'cat' => 15, 'order'=> 'ASC', 'orderby' => 'title' ); //Define your custom post type name in the arguments
+	$args = array( 'post_type' => 'potential', 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'title' ); //Define your custom post type name in the arguments
 	$loop = new WP_Query( $args ); //Define the loop based on those arguments
 	//Display the contents
 	?>
@@ -21,8 +21,8 @@
 
 	<?php if ( have_posts() ) : ?>
 		<p>
-			You were looking for Tools for Existing Co-ops:
-				<!-- this archive page only exists to link from the Enhance page, not for any other archive purposes.  as such, there is no archive page that lists Tools for Explorers bc it's not called for on the Explore page. -->
+			You were looking for Potential Properties:
+				<!-- add the Tag Description? -->
 		</p>
 
 		<?php while ( $loop->have_posts() ) : $loop->the_post();  ?>
@@ -31,6 +31,11 @@
 			<ul>
 				<li>
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+
+				<!-- IF I WANT TO SHOW THE PUBLISHED DATE (but the CPT don't have any!)
+				<span class="date">
+					(Published: <?php the_date(); ?>)
+				</span>----------->
 				</li>
 			</ul>
 		</h3>
@@ -39,7 +44,7 @@
 	<?php endwhile; else : ?>
 
 		<p>
-			You were looking for Tools for Existing Co-ops.
+			You were looking for Potential Properties.
 			<?php _e( "Unfortunately, no posts matched your criteria.  But don't give up just yet!" ); //_e aka echo
 		?></p>
 

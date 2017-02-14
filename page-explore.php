@@ -3,7 +3,7 @@
 <!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bandedsections.css">
 
-<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
+<title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
 </head>
 
@@ -13,9 +13,14 @@
 
 <?php include ('topsticky.php'); ?>
 
-<?php include ('menu.php'); ?>
-
 <div class="allsections">
+	<div class="topbanner">
+		<h1><?php the_field('explore_banner'); ?></h1>
+	</div>
+	<!-- repeated div that unique to scrolldown -->
+	<div class="topbanner showonscrolldown">
+		<h1><?php the_field('explore_banner'); ?></h1>
+	</div>
 
 	<div class="band-white">
 		<h2>The Very Beginning</h2>

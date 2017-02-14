@@ -9,15 +9,41 @@ $(".icon-menu").click(function() {
 
 // TRYING TO SLIDE THE MENU IN FROM THE RIGHT on click
 $(".icon-menu").click(function() {
-  $(".menu").animate({right: "-30px"});
-  $(".icon-rocket").toggle({duration: 500});
+  $(".menu-mobile").toggle({duration: 500});
 });
 
-// TRYING TO SLIDE THE MENU IN FROM THE RIGHT on click
-$(".icon-rocket").click(function() {
-  $(".menu").animate({right: "-350px"});
-  $(".icon-rocket").toggle({duration: 500});
-});
+// FIXED BAR ON SCROLL, works but not smooth
+// var headerTopOffset = $(".topexplore").offset().top;
+// $(window).scroll(function () {
+//
+//   if ($(window).scrollTop() > headerTopOffset) {
+//     $(".topexplore").addClass("fixedbar");
+//   }
+//   else {
+//     $(".topexplore").removeClass("fixedbar");
+//   }
+// });
+
+//FIXED BAR FADE IN ON SCROLL
+// from this thread: https://jsfiddle.net/tcloninger/e5qaD/  and  http://www.ordinarycoder.com/jquery-fade-content-scroll/
+
+
+$(window).scroll( function (){
+
+  if ( $(window).scrollTop() > 200 ) {
+    $(".showonscrolldown").fadeIn(500)
+    // don't even need this: !!  .css("display","block");
+    // bc fadeIn takes care of it!
+  }
+  else
+  {
+    $(".showonscrolldown").fadeOut(500);
+  }
+
+} );
+
+
+
 
 // CURATED PAGES: TOGGLE BETWEEN STEPS ON DESKTOP
 

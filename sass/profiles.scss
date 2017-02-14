@@ -1,0 +1,59 @@
+@import "helpers/variables"; // could just be helpers/
+
+.container .button {
+  margin: 5% auto;
+}
+.container h2 {
+  font-weight: $weight-light;
+}
+.mainfact {
+}
+.infofield {
+  font-weight: $weight-light;
+}
+.infoblock {
+  width: 80%;
+  float: left;
+  margin-left: 10px;
+}
+.infoicon {
+  width: 30px;
+  height: 30px;
+  font-size: 1.5em;
+  float: left;
+  margin-top: 15px;
+  color: $brand-color-primary;
+  text-align: center;
+}
+.profileblock {
+  clear: both;
+}
+/*---- THIS IS DIFFERENT THAN BELOW ... and therefore doesn't work
+ .availunits ul {
+  padding: 0;
+}*/
+ul.availunits { /* NEED THIS SYNTAX ESP IF NO PARENT-CHILD RELATIONSHIP AND IS THE SAME ELEMENT! */
+  padding: 0;
+}
+.availunits li {
+  list-style: none;
+}
+
+
+/* ------ MEDIA QUERIES START HERE -----*/
+@media screen and (min-width: $breakpoint-med-big) {
+  .infoicon {
+    width: 50px;
+    height: 50px;
+    font-size: 3em;
+    margin-top: 0px; // helps align to top
+    margin-bottom: 5%;
+  }
+  .infoblock {
+    margin-left: 30px;
+  }
+
+  .gallery-plugin {
+    text-align: left;
+  }
+}

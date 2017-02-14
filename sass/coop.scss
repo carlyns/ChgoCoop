@@ -1,7 +1,5 @@
 //////// STYLE ////////
-  // default for all pages
-  $brand-background-color: rgba(250,255,232,1); /* beige */
-  $brand-color-primary: rgba(91,81,81,1); /* dark grey */
+@import "helpers/variables"; // could just be helpers/
 
   /* rgba(250,255,232,1); beige */
   /* rgba(114,219,209,1); light teal */
@@ -9,14 +7,48 @@
   /* rgba(221,219,219,1); grey */
   /* rgba(91,81,81,1); dark grey */
 
+  * {
+    box-sizing: border-box;
+    	-moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+  }
+
   body {
     font-family: 'Prompt', sans-serif;
     background-color: $brand-background-color;
     color: $brand-color-primary;
   }
-  h1,h2,h3 {
-    font-weight: 500;
+  h1,h2,h3, h4 {
+    font-weight: $weight-medium;
   }
+  h1 {
+    font-size: 1.2em;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+    @media screen and (min-width: $breakpoint-med-big ) {
+      h1 {
+        font-size: 1.5em;
+      }
+      h2 {
+        font-size: 1.2em;
+      }
+
+    }
+    @media screen and (min-width: $breakpoint-biggest ) {
+      // adding h1 will change title logo size
+      h2 {
+        font-size: 1.5em;
+      }
+      h3 {
+        font-size: 1.2em;
+      }
+    }
+
   a {
     color: rgba(41,156,144,1); /* dark teal */
     text-decoration: none;
@@ -31,17 +63,66 @@
     background-color: rgba(41,156,144,1); /* dark teal */
     color: rgba(250,255,232,1); /* beige */
   }
+  .latest .style-button {
+    font-size: 1em;
+    margin-top: 0;
+  }
+  .newsletter {
+    padding-bottom: 5%;
+    font-size: 0.8em;
+  }
+  .newsletter h4 {
+    font-size: 1.1em;
+  }
+  @media screen and (min-width: $breakpoint-med-big ) {
+    .latest .style-button {
+      font-size: 1.5em;
+    }
+    .newsletter .style-button {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .newsletter {
+      font-size: 1em;
+    }
+  }
   // for front page
   .beta {
     font-size: 0.5em;
-    font-weight: 300;
+    font-weight: $weight-light;
   }
   .style-tagline {
-    font-size: 1.2em;
+    font-size: 0.8em;
+    display: none;
   }
-  .style-hero {
-    font-size: 1.5em;
-    padding: 10%;
+    @media screen and (min-width: $breakpoint-med-big ) {
+      .style-tagline {
+        display: block;
+        font-size: 1em;
+      }
+    }
+  header {
+    background-image: url(../imgs/patterns/asanoha-400px.png);
+    /* Background pattern from Subtle Patterns */
+    background-attachment: fixed;
+    background-size: 40%;
+    overflow: auto;
+    clear: both;
+  }
+  .home header {
+    background-image: url("../imgs/unsplash apt-sm.jpg");
+    background-size: cover;
+    background-position: bottom;
+    overflow: auto; // without this, image cuts off at top without a clear or a border!
+  }
+
+  .overview {
+    font-size: 1.2em;
+    clear: both;
+    padding: 5% 10% 0 10%;
+  }
+  .overview h2 {
+    font-weight: $weight-bold;
   }
 
   // center align the text
@@ -54,17 +135,109 @@
   html {
   }
   body {
+    margin: 0;
   }
-  nav {
-  }
+
   .container { /* SIMILAR RULES AS .allsections on banded pages to allow for topsticky space */
     clear: both;
-    margin-top: 50px;
+    margin: $margin-typ;
   }
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: $breakpoint-med-big ) {
       .container {
       }
     }
+  .heading {
+    width: 150px; // on mobile, 'center' or replace w/ logo
+    margin: 0 auto;
+    padding-left: 10px;
+  }
+    @media screen and (min-width: $breakpoint-med-big ) {
+      .heading {
+        width: 100%;
+        padding-left: 20px;
+      }
+    }
+  .heading h1 {
+    margin-bottom: 0;
+  }
+  .heading p {
+    margin-top: 0;
+    padding-left: 3px;
+  }
+
+  .icon-menu {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    color: $brand-color-accent;
+    background-color: rgba(250,255,232,0.8);
+    padding: 1%;
+    border-radius: 5px;
+    border: 2px solid $brand-color-accent;
+    z-index: 9;
+  }
+    @media screen and (min-width: $breakpoint-med-big ) {
+      .icon-menu {
+        display: none;
+      }
+    }
+  nav {
+
+  }
+  nav ul {
+    padding-left: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: $weight-bold;
+  }
+  nav li {
+  }
+  .menu-mobile {
+    display: none;
+    position: fixed;
+    top: 0;
+    background-image: url(../imgs/patterns/asanoha-400px.png);
+    /* Background pattern from Subtle Patterns */
+    background-attachment: fixed;
+    background-size: 40%;
+    border-bottom: 2px solid $brand-color-accent;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.2em;
+  }
+  .menu-big {
+    display: none;
+  }
+    @media screen and (min-width: $breakpoint-med-big ) {
+      .menu-big {
+        display: block;
+      }
+      .menu-big li {
+        display: inline-block;
+        font-size: 0.8em;
+        padding: 0 15px;
+        margin-top: 15px;
+      }
+      .menu-mobile {
+        display: none;
+      }
+      .home header {
+        height: 500px;
+      }
+    }
+    @media screen and (min-width: $breakpoint-biggest ) {
+      .menu-big {
+        float: right;
+      }
+      .heading {
+        padding-left: 3%;
+        float: left;
+        width: 520px;
+      }
+
+    }
+
   .button {
     width: 50%;
     margin: 0 auto;
@@ -81,28 +254,108 @@
     clear: both;
     overflow: auto;
   }
-  .single-col {
-    padding: 3%;
+
+  .twousers .grid6 {
+    margin: 3% 1%;
+    padding: 2%;
   }
-  @media screen and (min-width: 700px) {
-    .featured-org, .featured-unit, .featured-coop {
-      height: 350px;
-      position: relative; /* need this here for button-bottom */
-      z-index: auto;
+  .explorers .button-bottom {
+    width: 100px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .existing {
+    text-align: right;
+    overflow: auto;
+    border-top: 2px solid $brand-second-bkgd;
+  }
+  .existing .button-bottom {
+    width: 100px;
+    margin-left: 0;
+    margin-right: 0;
+    float: right;
+  }
+    @media screen and (min-width: $breakpoint-med-big ) {
+      .block {
+        height: 100px;
+      }
+      .grid6 {
+        width: 48%;
+        float: left;
+      }
+      .twousers .grid6 {
+        transition: background-color 0.25s ease-in;
+        border: 1px solid $brand-color-primary;
+      }
+      .twousers .grid6:hover {
+        border: 2px solid $brand-color-accent;
+        color: $brand-color-accent;
+      }
+      .existing, .explorers {
+        border-top: none;
+        text-align: left;
+      }
+      .existing .button-bottom, .explorers .button-bottom {
+        margin: 0 auto;
+        float: none;
+      }
     }
-    .featured-org .button-bottom, .featured-unit .button-bottom,  .featured-coop .button-bottom, {
-      position: absolute; /* need this here for button-bottom */
-      bottom: 4%;
-      width: 70%;
-      left: 15%;
+
+  .latest {
+    border-top: 1px solid $brand-color-primary;
+    border-bottom: 1px solid $brand-color-primary;
+    padding-bottom: 15px;
+  }
+  .latest h2 {
+    margin-bottom: 0;
+  }
+  .latest h3 {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .latest p {
+    margin: 1% 0;
+  }
+
+
+    @media screen and (min-width: $breakpoint-med-big ) {
+      .latest {
+        border-top: none;
+      }
+      .featured-org, .featured-unit, .featured-coop {
+        height: 350px;
+        position: relative; /* need this here for button-bottom */
+      }
+      .latest .button-bottom {
+        position: absolute; /* need this here for button-bottom */
+        bottom: 4%;
+        width: 70%;
+        left: 15%;
+      }
     }
-  }
+    @media screen and (min-width: $breakpoint-med-big ) {
+      .featured-org, .featured-unit, .featured-coop {
+        height: 300px;
+      }
+      // .type {
+      //   width: 20%;
+      //   padding: 2%;
+      //   max-width: 150px;
+      //   font-size: 0.8em;
+      //   height: auto;
+      // }
+      .grid4 {
+        width: 33%;
+        float: left;
+        padding-right: 3%;
+        /*figure out last child for padding*/
+      }
+      .grid4:last-child {
+        padding-right: 0;
+      }
+    }
 
 
-
-  .orgname {
-    /* can't figure out where the spacing is coming from - use Chrome Dev Tools?  */
-  }
   .thumbnail {
     overflow: hidden;
   }
@@ -110,31 +363,86 @@
     display: block;
     margin: 0 auto;
     height: 100px;
-    width: 80%;
+    width: 100%;
   	object-fit: cover;
   }
 
 
-  footer {
-    clear: both;
-    padding: 3% 3% 0 3%;
-    overflow: auto;
+
+// for other pages' topbanners
+.topbanner {
+  background-color: $brand-second-accent;
+  text-align: left;
+  width: 100%;
+  clear: both;
+  font-size: 0.8em;
+  padding-right: 65px;
+  padding-left: 3%;
+  height: 60px;
+  border-bottom: 3px solid white;
+  border-top: 1px solid rgba(255,255,255,0.1); // otherwise small gap at the top.  overflow auto sort of fixes but adds scroll bar.
+}
+.showonscrolldown {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 7;
+}
+  @media screen and (min-width: $breakpoint-small-med) {
+    .topbanner {
+      font-size: 1.2em;
+      height: auto;
+    }
   }
-  footer h3 {
-    padding-top: 3%;
-    width: 80%;
+  @media screen and (min-width: $breakpoint-med-big) {
+    .topbanner {
+      height: 80px;
+      text-align: center;
+      padding-right: 0;
+    }
   }
+
+
+footer {
+  clear: both;
+  padding: 3% 3% 0 3%;
+  overflow: auto;
+  background-color: $brand-second-bkgd;
+}
+footer h3 {
+  width: 80%;
+  margin-top: 15px;
+  margin-bottom: 3px;
+}
+footer p {
+  margin: 0;
+}
 .map {
   width: 90%;
   padding-bottom: 5%;
 }
+  @media screen and (min-width: $breakpoint-med-big ) {
+
+    .grid6right {
+      width: 50%;
+      float: right; /* so info comes after map on mobile!*/
+    }
+    .map iframe {
+      height: 500px;
+    }
+  }
+
 .datebox {
   border: 2px solid rgba(41,156,144,1); /* dark teal */
   border-radius: 10px;
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
   margin-bottom: 3%;
   float: left;
+}
+.datebox p {
+  padding-top: 3px;
+  margin: -5px;
 }
 .eventtitle {
   float: left;
@@ -143,6 +451,8 @@
 }
 .eventinfo {
   clear: both;
+  margin-bottom: 0;
+
 }
 .eventinfo a:hover { /* not sure why this hover is not working*/
   text-decoration: underline;
@@ -153,11 +463,14 @@
 .contactinfo {
   clear: both;
 /*  border-top: 1px solid white;  */
-  margin-top: 7%;
 }
 .cooploves {
   font-size: 0.7em;
 }
+.cooploves a {
+  color: $brand-color-primary;
+}
+
 .credits {
   clear: both;
   text-align: center;
@@ -172,19 +485,17 @@
 
 
 /* ------ STANDARD ARCHIVE PAGE -----*/
+.archive li {
+  text-transform: capitalize;
+}
 .keyword {
-  font-weight: 700;
+  font-weight: $weight-bold;
 }
 .date {
-  font-weight: 300;
+  font-weight: $weight-light;
   font-size: 0.8em;
 }
-.archive a {
-  color: black;
-}
-.archive a:hover {
-  background-color: rgba(114,219,209, 1); /* light teal */
-}
+
 
 /* ------ STANDARD POST -----*/
 .container {
@@ -201,25 +512,25 @@ hr {
   clear: both;
 }
 .tags h5 {
-  font-weight: normal;
+  font-weight: $weight-medium;
 }
 .tags li {
   display: inline-block;
-  background-color: rgba(114,219,209, 1); /* light teal */
+  background-color: $brand-color-accent;
   padding: 0.5% 1%;
   margin: 0 1%;
 }
 .tags a {
-  color: black;
+  color: $brand-background-color;
 }
 .category {
-  background-color: rgba(114,219,209, 1); /* light teal */
+  background-color: $brand-color-accent;
   padding: 0.5%;
   margin: 0 0.5%;
 
 }
 .search {
-  border: 1px solid rgba(221,219,219, 1); /* grey */;
+  border: 1px solid $brand-second-bkgd;
   margin: 3% 0;
   padding: 2%;
 }
@@ -232,46 +543,4 @@ hr {
 }
 .tool-img img {
   width: 100%;
-}
-
-/* ------ MEDIA QUERIES START HERE -----*/
-
-
-@media screen and (min-width: 700px) {
-
-	.type {
-    width: 20%;
-    padding: 2%;
-    max-width: 150px;
-    font-size: 0.8em;
-    height: auto;
-  }
-  .heading {
-    font-size: 0.9em;
-  }
-  .grid6 {
-    width: 50%;
-    float: left;
-
-  }
-  .block {
-    height: 200px;
-  }
-
-
-  .grid4 {
-    width: 30%;
-    float: left;
-    padding-right: 3%;
-    /*figure out last child for padding*/
-  }
-  .grid4 a {
-  }
-  .grid6right {
-    width: 50%;
-    float: right; /* so info comes after map on mobile!*/
-  }
-  .map iframe {
-    height: 500px;
-  }
 }

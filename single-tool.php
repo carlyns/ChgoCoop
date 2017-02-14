@@ -1,18 +1,14 @@
 <?php get_header(); ?>
 
 
-<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
+<title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
 </head>
-
 
 
 <body>
 
 <?php include ('topsticky.php'); ?>
-
-<?php include ('menu.php'); ?>
-
 
 <div class="container">
 

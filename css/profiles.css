@@ -1,71 +1,59 @@
-a {
-  color: grey;
-  font-weight: 700;
-}
-a:hover {
-  background-color: rgba(236,164,0, 1); /* gold */
-}
-.unit-info h4 {
-  background-color: rgba(242,242,242,1);
-  padding: 3%;
-  margin: 5% 0;
-}
-.coop-info h4 {
-  background-color: rgba(242,242,242,1);
-  padding: 3%;
-  margin: 5% 0;
-}
+/* beige */
+/* dark grey */
+/* dark teal */
+/* light blue */
+/* light grey */
+/* white */
 .container .button {
-  margin: 5% auto;
-}
+  margin: 5% auto; }
+
 .container h2 {
-  font-weight: 200;
-}
-.mainfact {
-  font-weight: 500;
-}
+  font-weight: 300; }
+
 .infofield {
-  font-weight: 200;
-}
+  font-weight: 300; }
+
+.infoblock {
+  width: 80%;
+  float: left;
+  margin-left: 10px; }
+
 .infoicon {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto;
-  color: grey;
-  font-size: 3em;
-}
+  width: 30px;
+  height: 30px;
+  font-size: 1.5em;
+  float: left;
+  margin-top: 15px;
+  color: #5b5151;
+  text-align: center; }
+
+.profileblock {
+  clear: both; }
+
 /*---- THIS IS DIFFERENT THAN BELOW ... and therefore doesn't work
  .availunits ul {
   padding: 0;
 }*/
-ul.availunits { /* NEED THIS SYNTAX ESP IF NO PARENT-CHILD RELATIONSHIP AND IS THE SAME ELEMENT! */
-  padding: 0;
-}
-.availunits li {
-  list-style: none;
-}
-.availunits a:hover { /* hover doesn't seem to work on CPT query displays */
-  background-color: rgba(236,164,0, 1); /* gold */
-}
+ul.availunits {
+  /* NEED THIS SYNTAX ESP IF NO PARENT-CHILD RELATIONSHIP AND IS THE SAME ELEMENT! */
+  padding: 0; }
 
+.availunits li {
+  list-style: none; }
 
 /* ------ MEDIA QUERIES START HERE -----*/
 @media screen and (min-width: 700px) {
   .infoicon {
-    float: left;
-    margin-bottom: 5%;
-  }
+    width: 50px;
+    height: 50px;
+    font-size: 3em;
+    margin-top: 0px;
+    margin-bottom: 5%; }
+
   .infoblock {
-    width: 500px;
-    float: left;
-    margin-top: 0; /* helps align to top */
-    margin-left: 30px;
-  }
-  .profileblock {
-    clear: both;
-  }
+    margin-left: 30px; }
+
   .gallery-plugin {
-    width: 600px;
-    text-align: left;
-  }
-}
+    text-align: left; } }
+
+/*# sourceMappingURL=profiles.css.map */

@@ -2,3 +2,25 @@
 
 // Color Variables
 $brand-background-color: rgba(250,255,232,1); /* beige */
+$brand-color-primary: rgba(91,81,81,1); /* dark grey */
+$brand-color-accent: rgba(41,156,144,1); /* dark teal */
+$brand-second-accent: rgba(114,219,209,1); /* light blue */
+$brand-second-bkgd: rgba(221,219,219,1); /* light grey */
+
+$brand-third-bkgd: rgba(255,255,255,1); /* white */
+
+
+// Font Weights
+$weight-bold: 700;
+$weight-medium: 500;
+$weight-light: 300;
+
+
+// Breakpoints, still need to specify min or max
+$breakpoint-small-med: 500px;
+$breakpoint-med-big: 700px;
+$breakpoint-biggest: 1200px;
+
+
+// Basic Page Margins:
+$margin-typ: 0 3%;

@@ -32,6 +32,8 @@ function coop_theme_setup() {
 
   register_nav_menu('primary', 'Main Coop Nav'); // first is made-up name in slug for, second is description
 
+  register_nav_menu('mobile', 'Mobile Coop Nav'); // first is made-up name in slug for, second is description
+
   register_nav_menu('secondary', 'Footer Coop Nav'); // first is made-up name in slug for, second is description
 
 }

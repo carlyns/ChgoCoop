@@ -7,19 +7,13 @@
 <!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/profiles.css">
 
-
-
-<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
+  <title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
 </head>
-
-
 
 <body>
 
 <?php include ('topsticky.php'); ?>
-
-<?php include ('menu.php'); ?>
 
 
 <div class="container">
@@ -68,7 +62,20 @@
       <div class="infoicon">
         <div class="icon-laptop">	</div>
       </div>
-      <div class="infoblock"><p><span class="infofield">Website: </span><?php the_field('website'); ?></p></div>
+      <div class="infoblock"><p><span class="infofield">Website: </span>
+
+        <?php if( get_field('website') ): ?>
+
+          <a href="<?php the_field('website'); ?>" target="_blank">Visit this co-op's site.</a>
+
+        <?php else: ?>
+
+          None
+
+        <?php endif; ?>
+
+
+      </p></div>
     </div>
 
     <div class="profileblock">
@@ -210,8 +217,7 @@
   <hr>
   <div class="tags">
 		<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
-			You can check out all Cooperative Profiles by visiting the<span class="category"><a href="<?php get_page_template(); ?>/chgocoopWP/coopprofile">co-op profile</a>
-      </span>archive page.
+			You can find more Profiles and Vacancies in the<span class="category"><a href="<?php get_page_template(); ?>/chgocoopWP/directory">Directory</a></span>
 		</h5>
 	</div>
 

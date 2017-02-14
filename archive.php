@@ -1,14 +1,19 @@
 <?php get_header(); ?>
 
-
-<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
+<title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 </head>
 
 <body>
-	<?php include ('topsticky.php'); ?>
+	<!-- menu not appearing on it's own, so adding this snippet -->
+		<?php
 
-	<?php include ('menu.php'); ?>
+		global $query_string;
+		parse_str($query_string, $args);
+		$args['post_type'] = array('nav_menu_item','post'); // can delete articles from the array and it'll still work.  this is leftover from the copied code cuz somone had a CPT of 'articles'
+		query_posts( $args );
+		?>
 
+<?php include ('topsticky.php'); ?>
 
 <div class="container archive">
 	<!-- if trying to display posts that are CPT, the ARCHIVE PAGE  NEEDS TO BE TOGGLED EITHER MANUALLY (if custom post types were manually created) OR VIA THE CPT UI SETTINGS: "HAS ARCHIVE".-->
@@ -28,23 +33,16 @@
 				<!-- add the Tag Description? -->
 		</p>
 
-	<?php while ( have_posts() ) : the_post(); ?>
 
-		<h3>
-			<ul>
+		<ul>
+			<?php while ( have_posts() ) : the_post(); ?>
 				<li>
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-
-				<!-- IF I WANT TO SHOW THE PUBLISHED DATE (but the CPT don't have any!)
-				<span class="date">
-					(Published: <?php the_date(); ?>)
-				</span>----------->
+					<h3>
+						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					</h3>
 				</li>
-			</ul>
-		</h3>
-
-
-	<?php endwhile; else : ?>
+			<?php endwhile; else : ?>
+		</ul>
 
 		<p>
 				You were looking for the tag/category/type <span class="keyword"><?php single_tag_title(); ?></span>.

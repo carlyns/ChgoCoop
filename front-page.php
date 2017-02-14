@@ -3,20 +3,15 @@
 <!-- ADD THE STYLESHEET THAT MIGHT CHANGE BETWEEN PAGES HERE.-->
 
 
-<title>Cooperative Homes & Communities of Chicago</title>
+<title><?php bloginfo( 'name' ); ?></title>
 
 </head>
 
-
-
 <body>
 
-<?php include ('topsticky.php'); ?>
+	<?php include ('topsticky-uniquefront.php'); ?>
 
-<?php include ('menu.php'); ?>
-
-	<div class="style-hero">
-		<!-- <h2>Welcome.  We built this site as an information hub so more people can GET CO-OPed</h2> -->
+	<div class="overview">
 
 		<h2>Welcome to our information hub.</h2>
 		<h3>Discover free tools we've gathered to help you get started or keep going strong with housing co-ops.</h3>
@@ -32,14 +27,18 @@
 
 ------------------------->
 	</div>
+</header>
+</div>
+<!-- header tag closes within topsticky for every page except front page-->
 
 
 	<!----------------------------- possible styling for explore/enhance:
 		soft diagonal with explore and enhance as the buttons themselves (instead of "go")
 		include other buttons like match tool, list your co-op, etc
 	------------------------->
+<div class="container">
 
-<div class="row">
+<div class="row twousers">
 	<div class="grid6">
 		<div class="explorers">
 			<h2>EXPLORE</h2>
@@ -47,119 +46,135 @@
 				<p>Want an affordable home with neighbors you can count on?  You and your friends can create a community of your own. </p>
 
 			</div>
-			<a href="<?php get_page_template(); ?>/chgocoopWP/explore"><div class="style-button button-bottom">Go</div></a>
+			<a href="<?php get_page_template(); ?>/chgocoopWP/explore"><div class="style-button button-bottom">GO</div></a>
 		</div>
 	</div>
 
 	<div class="grid6">
 		<div class=existing>
 			<h2>ENHANCE</h2>
+
 			<div class="block">
 				<p>Does your co-op need to regroup or recharge?  See what your group can do to improve with some helpful resources. </p>
 
 			</div>
-			<a href="<?php get_page_template(); ?>/chgocoopWP/enhance"><div class="style-button button-bottom">Go</div></a>
+			<a href="<?php get_page_template(); ?>/chgocoopWP/enhance"><div class="style-button button-bottom">GO</div></a>
 		</div>
 	</div>
 </div>
 
-<div class="container">
-	<h2>The Latest: What’s Happening in Chicago?</h2>
+	<div class="row latest">
+		<h2>The Latest: What’s Happening in Chicago?</h2>
 
-	<div class="grid4">
-		<div class="featured-org">
-			<?php // need to get the all the Post Date from the selected Page Link ACF!!
-
-
-			 ?>
+		<div class="grid4">
+			<div class="featured-org">
+				<?php // need to get the all the Post Date from the selected Page Link ACF!! ?>
 
 
-			<h3>ORGANIZATION PROFILE</h3>
+				<h3>ORGANIZATION PROFILE</h3>
+					<?php // grabbing data about the post with Page Link ACF from https://www.advancedcustomfields.com/resources/page-link/
 
-			<?php // grabbing data about the post with Page Link ACF from https://www.advancedcustomfields.com/resources/page-link/
+					// vars
+					$org = get_field('featured_org', false, false);
 
-			// vars
-			$org = get_field('featured_org', false, false);
+					// check
+					if( $org ): ?>
 
-			// check
-			if( $org ): ?>
+					<div class="thumbnail">
+					  <a href="<?php echo get_the_permalink($org); ?>"><?php echo get_the_post_thumbnail($org); ?></a>
 
-			<div class="thumbnail">
-				<a href="<?php echo get_the_permalink($org); ?>"><?php echo get_the_post_thumbnail($org); ?></a>
+					</div>
+					<p class="orgname"><?php echo get_the_title($org); ?>:
+					<?php echo get_the_excerpt($org); ?></p>
+					<a href="<?php echo get_the_permalink($org); ?>"><div class="style-button button-bottom">Read More</div></a>
 
-			</div>
-			<h4 class="orgname"><?php echo get_the_title($org); ?></h4>
-			<p><?php echo get_the_excerpt($org); ?></p>
-			<a href="<?php echo get_the_permalink($org); ?>"><div class="style-button button-bottom">Read More</div></a>
-
-			<?php endif; ?>
+					<?php endif; ?>
 
 
-		</div>
-	</div>
 
-	<div class="grid4">
-		<div class="featured-unit">
-			<!-- tried to separate the unit and tool, but didn't work.  and not as easy as selecting from either because Units use post thumbnails and tools use ACF images -->
-			<?php
-			// vars
-			$vacancy = get_field('featured_unit', false, false);
+			</div> <!-- end of 'featured'-->
+		</div> <!-- end of 'grid4'-->
 
-			// check
-			if( $vacancy ): ?>
-				<h3>UNIT VACANCY</h3>
+		<div class="grid4">
+			<div class="featured-unit">
+				<h3>FEATURED THIS MONTH</h3>
+
+				<!-- tried to separate the unit and tool, but didn't work.  and not as easy as selecting from either because Units use post thumbnails and tools use ACF images -->
+
+
+				<?php
+				// vars
+				$tool = get_field('featured_tool', false, false);
+
+				// check
+				if( $tool ): ?>
 
 				<div class="thumbnail">
-					<a href="<?php echo get_the_permalink($vacancy); ?>"><?php echo get_the_post_thumbnail($vacancy); ?></a>
+					<a href="<?php echo get_the_permalink($tool); ?>"><?php echo get_the_post_thumbnail($tool); ?></a>
 				</div>
-				<p><?php echo get_the_excerpt($vacancy); ?></p>
-				<a href="<?php echo get_the_permalink($vacancy); ?>"><div class="style-button button-bottom">Own It</div></a>
+
+				<p>
+				<?php echo get_the_excerpt($tool); ?></p>
+
+				<a href="<?php echo get_the_permalink($tool); ?>"><div class="style-button button-bottom">Try It</div></a>
+				<?php endif; ?>
 
 
-			<?php else : // THIS ELSE STATEMENT ISN'T WORKING, SO JUST HARD-CODE IT WHEN NECESSARY? ?>
-				<h3>FEATURED TOOL:</h3>
+			<!-- almost had this, but the button is not showing any page link.  tried different conditional syntax.  so just hard coding this, and if a vacancy arises, i can change this out.  -->
+
+				<!-- <?php
+				// vars
+				$unit = get_field('featured_unit', false, false);
+
+				// check
+				if( $unit ): ?>
+
 				<div class="thumbnail">
-					<a href="#">
-							<img src="image.jpg" alt="housing match tool">
-					</a>
+					<a href="<?php echo get_the_permalink($unit); ?>"><?php echo get_the_post_thumbnail($unit); ?></a>
 				</div>
-				<p>Match tool for you .... </p>
-				<a href="#"><div class="style-button button-bottom">Learn More</div></a>
-			<?php endif; // PUTTING THIS AFTER THE MATCH TOOL MAKES IN INVISIBLE, SO JUST HARD CODE WHEN NECESSARY ?>
 
-		</div>
-	</div>
+				<p>
+				<?php echo get_the_excerpt($unit); ?></p>
 
-	<div class="grid4">
-		<div class="featured-coop">
-			<!-- Just ONE post labelled "sticky" breaks the other post queries with a sticky note.  But if NO posts are "sticky" then the latest one shows and all of the work. -->
-
-			<?php // THIS CAN STAY A STICKY POST AND DON'T NEED AN ACF
-			$args = array( 'tag' => 'startup-story', 'posts_per_page' => 1, 'post__in'  => get_option( 'sticky_posts' ), 'ignore_sticky_posts' => 1 ); //Which tag you want, how many posts to show, last two arguments are to show first sticky post, if none show last post published. https://codex.wordpress.org/Sticky_Posts
-			$loop = new WP_Query( $args ); //Define the loop based on those arguments
-			//Display the contents
-			while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
-			<h3>STARTUP STORIES</h3>
-			<div class="thumbnail">
-				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-			</div>
-			<p class="quote"><?php the_excerpt(); ?></p>
-			<a href="<?php the_permalink(); ?>"><div class="style-button button-bottom">Read More</div></a>
+				<a href="<?php echo get_the_permalink($unit); ?>"><div class="style-button button-bottom">Own It</div></a>
+				<?php endif; ?> -->
 
 
+			</div> <!-- end of 'featured'-->
+		</div>  <!-- end of 'grid4'-->
 
-		<?php endwhile; ?>
-		<?php // RESETTING TO ORIG LOOP
-		wp_reset_postdata(); ?>
+		<div class="grid4">
+			<div class="featured-coop">
 
 
-		</div>
-	</div>
+				<h3>STARTUP STORIES</h3>
 
-	<div class="row single-col">
-		<p>Like those stories?
-		</br><a href="<?php get_page_template(); ?>/chgocoopWP/archived-news/">See the archive</a> OR Get them regularly:</p>
+				<?php
+				// vars
+				$startup = get_field('featured_startup_story', false, false);
+
+				// check
+				if( $startup ): ?>
+
+				<div class="thumbnail">
+					<a href="<?php echo get_the_permalink($startup); ?>"><?php echo get_the_post_thumbnail($startup); ?></a>
+				</div>
+
+				<p>
+				<?php echo get_the_excerpt($startup); ?></p>
+				<a href="<?php echo get_the_permalink($startup); ?>"><div class="style-button button-bottom">Read More</div></a>
+
+				<?php endif; ?>
+
+
+
+			</div> <!-- end of 'featured'-->
+		</div> <!-- end of 'grid4'-->
+	</div> <!-- end of 'row latest'-->
+
+	<div class="row single-col newsletter">
+		<h4>Like those stories?
+		</br><a href="<?php get_page_template(); ?>/chgocoopWP/archived-news/">See the archive</a> OR Get them regularly:</h4>
 		<a href="http://eepurl.com/cmiuZv" target="_blank"><div class="style-button">Sign Up for Newsletter</div></a>
 	</div>
 

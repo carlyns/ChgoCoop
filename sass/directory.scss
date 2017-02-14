@@ -1,0 +1,46 @@
+@import "helpers/variables"; // could just be helpers/
+
+.directorytabs {
+  padding: 0;
+}
+.directorytabs li {
+  display: inline-block;
+}
+.cooplist-item {
+  clear: both;
+  // overflow: auto;
+  // display: flex;
+  // align-items: center;
+  margin: 20px 0;
+}
+.coopname {
+  display: inline-block;
+  margin: 0;
+  margin-right: 2%;
+}
+.coopname h3, .coopname p, .profiletag p {
+  margin: 0;
+}
+.subtlelink {
+  display: inline-block;
+  margin: 0;
+}
+.subtlelink a {
+  color: $brand-color-primary;
+}
+.profiletag {
+  border: 1px solid $brand-color-accent;
+  display: inline-block;
+  margin-right: 2%;
+  padding: 0 1%;
+}
+.vacancytag {
+  display: inline-block;
+  margin-right: 2%;
+}
+.vacancytag p {
+  margin: 0;
+}
+hr {
+  clear: both;
+}

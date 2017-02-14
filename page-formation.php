@@ -3,7 +3,7 @@
 <!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/curated.css">
 
-<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
+<title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
 </head>
 
@@ -13,15 +13,17 @@
 
 <?php include ('topsticky.php'); ?>
 
-<?php include ('menu.php'); ?>
 
-
-<div class="container">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<h1><?php the_title(); ?></h1>
-
+		<div class="topbanner">
+			<h1><?php the_title(); ?></h1>
+		</div>
+		<div class="topbanner showonscrolldown">
+			<h1><?php the_title(); ?></h1>
+		</div>
 	<?php endwhile; endif; ?>
 
+<div class="container">
 
 	<h2 class="funfact"><?php the_content(); ?></h2>
 
