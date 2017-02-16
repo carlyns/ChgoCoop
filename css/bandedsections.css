@@ -1,9 +1,9 @@
-/* beige */
-/* dark grey */
-/* dark teal */
-/* light blue */
-/* light grey */
-/* white */
+/* AntiFlash White */
+/* Jet */
+/* Wenge */
+/* Pale Robin Egg */
+/* 50% Green Sheen */
+/*  White */
 /*  for banded sections pages */
 header {
   background-image: url(../imgs/patterns/asanoha-400px.png);
@@ -26,12 +26,12 @@ section {
 .band-white {
   padding: 6%;
   overflow-x: auto;
-  border-bottom: 5px solid #299c90; }
+  border-bottom: 5px solid #705d56; }
 
 .band-green {
   padding: 6%;
   overflow-x: auto;
-  border-bottom: 5px solid #299c90; }
+  border-bottom: 5px solid #705d56; }
 
 .band-purple {
   padding: 6%; }
@@ -75,27 +75,27 @@ section {
   margin: 0 auto;
   text-transform: capitalize;
   clear: both;
-  background-color: #299c90; }
+  background-color: #705d56; }
 
 .button-section {
-  color: #faffe8; }
+  color: #f0f7f4; }
 
 /* UNIQUE EXPLORERS 3-BUTTON CALL TO ACTION */
 .explore-action {
-  border: 1px solid #5b5151;
+  border: 1px solid #32292f;
   padding: 2%;
   text-align: left;
   margin-bottom: 20px; }
 
 .explore-action .button-bottom {
-  background-color: #299c90;
+  background-color: #705d56;
   padding: 1%;
   margin: 0 auto;
   width: 90%;
   text-align: center; }
 
 a .button-bottom {
-  color: #faffe8; }
+  color: #f0f7f4; }
 
 @media screen and (min-width: 700px) {
   .button-section {
@@ -131,8 +131,7 @@ input[type=submit] {
   font-size: 1.3em;
   margin: 2% auto;
   width: 100%;
-  background-color: #eca400;
-  /* gold */
+  background-color: #705d56;
   border-radius: 5px;
   width: 300px;
   text-align: center; }

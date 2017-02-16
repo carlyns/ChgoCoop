@@ -1,14 +1,20 @@
 // if this is used, then no need to declare variables at top of scss page files
 
-// Color Variables
-$brand-background-color: rgba(250,255,232,1); /* beige */
-$brand-color-primary: rgba(91,81,81,1); /* dark grey */
-$brand-color-accent: rgba(41,156,144,1); /* dark teal */
-$brand-second-accent: rgba(114,219,209,1); /* light blue */
-$brand-second-bkgd: rgba(221,219,219,1); /* light grey */
+// Color Variables DEB'S PALETTE
+// $brand-background-color: rgba(250,255,232,1); /* beige */
+// $brand-color-primary: rgba(91,81,81,1); /* dark grey */
+// $brand-color-accent: rgba(41,156,144,1); /* dark teal */
+// $brand-second-accent: rgba(114,219,209,1); /* light blue */
+// $brand-second-bkgd: rgba(221,219,219,1); /* light grey */
+// $brand-third-bkgd: rgba(255,255,255,1); /* white */
 
-$brand-third-bkgd: rgba(255,255,255,1); /* white */
-
+// Color Variables ALTERNATE PALETTE
+$brand-background-color: rgba(240,247,244,1); /* AntiFlash White */
+$brand-color-primary: rgba(50,41,47,1); /* Jet */
+$brand-color-accent: rgba(112,93,86,1); /* Wenge */
+$brand-second-accent: rgba(153,225,217,1); /* Pale Robin Egg */
+$brand-second-bkgd: rgba(112,171,175,0.5); /* 50% Green Sheen */
+$brand-third-bkgd: rgba(255,255,255,1); /*  White */
 
 // Font Weights
 $weight-bold: 700;

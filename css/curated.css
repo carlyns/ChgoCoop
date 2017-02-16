@@ -1,13 +1,13 @@
-/* beige */
-/* dark grey */
-/* dark teal */
-/* light blue */
-/* light grey */
-/* white */
+/* AntiFlash White */
+/* Jet */
+/* Wenge */
+/* Pale Robin Egg */
+/* 50% Green Sheen */
+/*  White */
 .funfact {
   font-weight: 300;
   text-align: center;
-  color: #299c90; }
+  color: #705d56; }
 
 @media screen and (min-width: 700px) {
   .funfact {
@@ -19,7 +19,7 @@
   font-size: 0.8em; }
 
 .mobileicon {
-  background-color: #299c90;
+  background-color: #705d56;
   border: 3px solid black;
   border-radius: 50%;
   width: 50px;
@@ -40,7 +40,7 @@
 .stepcontent {
   clear: both;
   padding-left: 60px;
-  border-bottom: 1px solid #299c90;
+  border-bottom: 1px solid #705d56;
   margin-bottom: 30px;
   overflow: auto; }
 
@@ -57,7 +57,7 @@
 .groupdiagram img {
   width: 100%;
   max-width: 1000px;
-  border: 1px solid #dddbdb; }
+  border: 1px solid rgba(112, 171, 175, 0.5); }
 
 .allexploreposts {
   clear: both; }
@@ -66,12 +66,12 @@ h4 {
   text-transform: capitalize; }
 
 .formation-button {
-  background-color: #299c90;
+  background-color: #705d56;
   text-align: center;
   margin-bottom: 1%; }
 
 .formation-button a {
-  color: #faffe8; }
+  color: #f0f7f4; }
 
 .formation-button h4 {
   padding: 2%; }
@@ -94,7 +94,7 @@ h4 {
     margin: 0 auto; }
 
   .active-step {
-    background-color: #299c90; }
+    background-color: #705d56; }
 
   .stepicon img {
     width: 100%;
@@ -103,9 +103,9 @@ h4 {
   .desktop-stepframe {
     clear: both;
     overflow: auto;
-    border-bottom: 2px solid #dddbdb;
-    border-left: 2px solid #dddbdb;
-    border-right: 2px solid #dddbdb; }
+    border-bottom: 2px solid rgba(112, 171, 175, 0.5);
+    border-left: 2px solid rgba(112, 171, 175, 0.5);
+    border-right: 2px solid rgba(112, 171, 175, 0.5); }
 
   .mobileicon {
     display: none; }
@@ -113,19 +113,19 @@ h4 {
   .step1, .step2, .step3, .step4, .step5 {
     float: left;
     width: 20%;
-    border-top: 2px solid #dddbdb;
+    border-top: 2px solid rgba(112, 171, 175, 0.5);
     padding-top: 2%;
-    border-left: 2px solid #dddbdb;
-    border-bottom: 2px solid #dddbdb;
+    border-left: 2px solid rgba(112, 171, 175, 0.5);
+    border-bottom: 2px solid rgba(112, 171, 175, 0.5);
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
     transition: background-color 0.25s ease-in; }
 
   .step5 {
-    border-right: 2px solid #dddbdb; }
+    border-right: 2px solid rgba(112, 171, 175, 0.5); }
 
   .step1:hover, .step2:hover, .step3:hover, .step4:hover, .step5:hover {
-    background-color: #299c90;
+    background-color: #705d56;
     position: relative;
     top: 2px;
     left: 2px; }

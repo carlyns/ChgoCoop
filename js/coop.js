@@ -1,4 +1,4 @@
-// TOGGLING THE MENU ICON -- off for now
+// invert menu icon colors on click
 /*
 $(".icon-menu").click(function() {
     $(".menu").toggle();
@@ -7,24 +7,14 @@ $(".icon-menu").click(function() {
 */
 
 
-// TRYING TO SLIDE THE MENU IN FROM THE RIGHT on click
+// toggle mobile menu on click
 $(".icon-menu").click(function() {
   $(".menu-mobile").toggle({duration: 500});
+  $(".icon-menu").toggleClass( "invertcolors" );
 });
 
-// FIXED BAR ON SCROLL, works but not smooth
-// var headerTopOffset = $(".topexplore").offset().top;
-// $(window).scroll(function () {
-//
-//   if ($(window).scrollTop() > headerTopOffset) {
-//     $(".topexplore").addClass("fixedbar");
-//   }
-//   else {
-//     $(".topexplore").removeClass("fixedbar");
-//   }
-// });
 
-//FIXED BAR FADE IN ON SCROLL
+//FIXED BANNER FADE IN ON SCROLL
 // from this thread: https://jsfiddle.net/tcloninger/e5qaD/  and  http://www.ordinarycoder.com/jquery-fade-content-scroll/
 
 
@@ -134,12 +124,6 @@ $(function() {
     }
   });
 });
-
-
-// HIDE TOPBAR (INLUDING NAV) AFTER TWO SECONDS, ONLY ON MOBILE???
-
-// ALSO HIDE IT (INLUDING NAV) ON CLICK OF NAV.
-
 
 
 $(document).ready(main);

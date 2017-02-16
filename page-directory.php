@@ -69,9 +69,7 @@
 	</div>
 	<?php endwhile; ?>
 	<?php wp_reset_postdata(); ?>
-		<p>
-			Add a <a href="#top">Back to Top</a> icon on all pages
-		</p>
+
 
 <hr id="orglist">
 	<h2>Regional Housing Cooperative-Related Organizations</h2>
@@ -93,9 +91,7 @@
 		<?php wp_reset_postdata(); ?>
 
 		</ul>
-		<p>
-			Add a <a href="#top">Back to Top</a> icon on all pages
-		</p>
+
 
 
 	<!-- HOPING TO ADD THIS SECTION SOON ----
@@ -111,9 +107,7 @@
 			<li>Stone Soup - Hoyne House</li>
 			<li>Stone Soup - ICA</li>
 		</ul>
-		<p>
-			Add a <a href="#top">Back to Top</a> icon on all pages
-		</p>
+
 		---------------------------->
 
 <!-- DON'T SHOW THE MAP HERE BECAUSE IT'S ALWAYS IN THE FOOTER

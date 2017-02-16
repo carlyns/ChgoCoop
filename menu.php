@@ -17,3 +17,6 @@ that way i don't have to touch the menu snippet.    -->
 <nav class="menu-mobile">
   <?php     wp_nav_menu(array('theme_location'=>'mobile')); ?>
 </nav>
+
+<a href="#top"><div class="backtotop icon-circle-up">
+  </div></a>

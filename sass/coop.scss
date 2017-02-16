@@ -1,12 +1,6 @@
 //////// STYLE ////////
 @import "helpers/variables"; // could just be helpers/
 
-  /* rgba(250,255,232,1); beige */
-  /* rgba(114,219,209,1); light teal */
-  /* rgba(41,156,144,1); dark teal */
-  /* rgba(221,219,219,1); grey */
-  /* rgba(91,81,81,1); dark grey */
-
   * {
     box-sizing: border-box;
     	-moz-box-sizing: border-box;
@@ -50,7 +44,7 @@
     }
 
   a {
-    color: rgba(41,156,144,1); /* dark teal */
+    color: $brand-color-accent;
     text-decoration: none;
   }
   a:hover {
@@ -60,8 +54,8 @@
     font-size: 1.5em;
     padding: 1%;
     text-align: center;
-    background-color: rgba(41,156,144,1); /* dark teal */
-    color: rgba(250,255,232,1); /* beige */
+    background-color: $brand-color-accent;
+    color: $brand-background-color;
   }
   .latest .style-button {
     font-size: 1em;
@@ -110,12 +104,15 @@
     clear: both;
   }
   .home header {
-    background-image: url("../imgs/unsplash apt-sm.jpg");
+    background-image: url("../imgs/unsplash facade-med.jpg");
     background-size: cover;
     background-position: bottom;
     overflow: auto; // without this, image cuts off at top without a clear or a border!
   }
-
+  .home h1, .home p {
+    background-color: $brand-background-color;
+    width: auto;
+  }
   .overview {
     font-size: 1.2em;
     clear: both;
@@ -123,6 +120,14 @@
   }
   .overview h2 {
     font-weight: $weight-bold;
+    background-color: $brand-background-color;
+    display: inline-block;
+    padding-left: 10px;
+  }
+  .overview h3 {
+    background-color: $brand-background-color;
+    display: inline-block;
+    padding-left: 10px;
   }
 
   // center align the text
@@ -149,21 +154,23 @@
   .heading {
     width: 150px; // on mobile, 'center' or replace w/ logo
     margin: 0 auto;
-    padding-left: 10px;
   }
-    @media screen and (min-width: $breakpoint-med-big ) {
-      .heading {
-        width: 100%;
-        padding-left: 20px;
-      }
-    }
   .heading h1 {
     margin-bottom: 0;
+    padding-left: 10px;
   }
   .heading p {
     margin-top: 0;
-    padding-left: 3px;
+    padding-left: 13px;
   }
+    @media screen and (min-width: $breakpoint-med-big ) {
+      .heading {
+        float: left;
+        width: 520px;
+        padding-left: 10px;
+      }
+    }
+
 
   .icon-menu {
     position: fixed;
@@ -177,13 +184,35 @@
     border: 2px solid $brand-color-accent;
     z-index: 9;
   }
+  .invertcolors {
+    color: $brand-background-color;
+    background-color: $brand-color-accent;
+    transition-duration: 1s;
+  }
     @media screen and (min-width: $breakpoint-med-big ) {
       .icon-menu {
         display: none;
       }
     }
-  nav {
+  .backtotop {
+    font-size: 1.5em;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9;
+    background-color: $brand-background-color;
+    border-radius: 50%;
+  }
 
+  @media screen and (min-width: $breakpoint-med-big ) {
+    nav {
+      clear: both;
+    }
+  }
+  @media screen and (min-width: $breakpoint-biggest ) {
+    nav {
+      clear: none;
+    }
   }
   nav ul {
     padding-left: 0;
@@ -191,12 +220,16 @@
     text-transform: uppercase;
     font-weight: $weight-bold;
   }
-  nav li {
+  .menu-big li {
+    background-color: $brand-background-color;
   }
+
+
   .menu-mobile {
     display: none;
     position: fixed;
     top: 0;
+    right: 0;
     background-image: url(../imgs/patterns/asanoha-400px.png);
     /* Background pattern from Subtle Patterns */
     background-attachment: fixed;
@@ -230,12 +263,6 @@
       .menu-big {
         float: right;
       }
-      .heading {
-        padding-left: 3%;
-        float: left;
-        width: 520px;
-      }
-
     }
 
   .button {
@@ -247,7 +274,6 @@
     width: 50%;
     margin: 4% auto 0 auto;
   }
-
 
   // for front page
   .row {
@@ -288,8 +314,7 @@
         border: 1px solid $brand-color-primary;
       }
       .twousers .grid6:hover {
-        border: 2px solid $brand-color-accent;
-        color: $brand-color-accent;
+        border: 2px solid $brand-second-accent;
       }
       .existing, .explorers {
         border-top: none;
@@ -433,7 +458,7 @@ footer p {
   }
 
 .datebox {
-  border: 2px solid rgba(41,156,144,1); /* dark teal */
+  border: 2px solid $brand-color-accent;
   border-radius: 10px;
   height: 45px;
   width: 45px;
