@@ -39,6 +39,9 @@ ul.availunits { /* NEED THIS SYNTAX ESP IF NO PARENT-CHILD RELATIONSHIP AND IS T
   list-style: none;
 }
 
+.potentialtips a {
+  color: $brand-color-accent;
+}
 
 /* ------ MEDIA QUERIES START HERE -----*/
 @media screen and (min-width: $breakpoint-med-big) {

@@ -2,7 +2,7 @@
 
 	<div class="grid6right">
 		<div class="map">
-			<iframe src="https://www.google.com/maps/d/u/4/embed?mid=1XihqVgdsrpQRCvE-2q5KsEsj0iY" width="100%"></iframe>
+			<iframe src="https://www.google.com/maps/d/u/5/embed?mid=1XihqVgdsrpQRCvE-2q5KsEsj0iY" width="100%"></iframe>
 		</div>
 
 

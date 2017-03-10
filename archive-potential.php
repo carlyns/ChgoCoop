@@ -52,7 +52,8 @@
 	<?php // RESETTING TO ORIG LOOP
 	wp_reset_postdata(); ?>
 
-	<!-- ADD PAGINATION JUST IN CASE??  HOW MANY RESULTS DOES IT DISPLAY? -->
+	<p>(If you see any properties with potential, you can suggest we list it here by <a href="mailto:cso@resusstudio.com">emailing us</a>)</p>
+
 
 	<div class="search">
 		<p>Or try searching for something else.  </p>
