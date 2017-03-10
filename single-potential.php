@@ -1,28 +1,33 @@
 <?php get_header(); ?>
 
-<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.
-  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/profiles.css">-->
+<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/profiles.css">
 
-
-
-<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
+	<title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
 </head>
-
-
 
 <body>
 
 <?php include ('topsticky.php'); ?>
-
-<?php include ('menu.php'); ?>
-
 
 <div class="container">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<h1><?php the_title(); ?></h1>
 	  <?php the_content(); ?>
 	<?php endwhile; endif; ?>
+
+
+	<hr>
+  <div class="tags">
+		<h5 class="potentialtips">
+			If you can imagine this property as a great housing co-op for your group, here are <a href="<?php get_page_template(); ?>/chgocoopWP/formation-abridged">some tips</a>.
+		</h5>
+		<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
+      You can check out all Potential Properties by visiting the<span class="category"><a href="<?php get_page_template(); ?>/chgocoopWP/potential">potential</a>
+      </span>archive page.
+		</h5>
+	</div>
 
 </div>
 

@@ -11,7 +11,7 @@ GOOGLE ANALYTICS TRACKING: PHP ALTERNATIVE!  via https://analytics.google.com/an
 HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS GOOD AS GOOGLE ANALYTICS?  SEE WHAT HAPPENS IF I INCLUDE THIS SCRIPT ON INDEX AT LEAST?  WP BUSINESS PLAN CAN ADD MORE GOOGLE ANALYTICS FEATURES.
 -->
 
-<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
+<title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
 </head>
 
@@ -20,8 +20,6 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 <body>
 
 <?php include ('topsticky.php'); ?>
-
-<?php include ('menu.php'); ?>
 
 
 <div class="container">

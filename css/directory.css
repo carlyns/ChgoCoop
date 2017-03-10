@@ -1,52 +1,49 @@
-a {
-  color: grey;
-  font-weight: 700;
-}
-a:hover {
-  background-color: rgba(236,164,0, 1); /* gold */
-}
+/*  White */
+/* 80% AntiFlash White */
+/* Jet */
+/* Wenge */
+/* Pale Robin Egg */
+/* 50% Green Sheen */
+/*  White */
 .directorytabs {
-  padding: 0;
-}
+  padding: 0; }
+
 .directorytabs li {
-  display: inline-block;
-}
+  display: inline-block; }
+
 .cooplist-item {
   clear: both;
-  overflow: auto;
-  display: flex;
-  align-items: center;
-  margin: 1% 0;
-}
-.black-link-font {
-  color: black;
-  font-weight: normal;
-}
-.coopname {
-  float: left;
-  margin-right: 2%;
-}
-.coopname h3, .coopname p, .profiletag p {
-  margin: 0;
-}
-.profiletag {
-  border: 1px solid black;
-  float: left;
-  margin-right: 2%;
-  padding: 1%;
-}
-.profiletag p {
+  margin: 20px 0; }
 
-}
-.vacancytag {
-  background-color: rgba(236,164,0, 1);
-  padding: 1%;
-  margin-right: 2%;
-  float: left;
-}
-.vacancytag p {
+.coopname {
+  display: inline-block;
   margin: 0;
-}
+  margin-right: 2%; }
+
+.coopname h3, .coopname p, .profiletag p {
+  margin: 0; }
+
+.subtlelink {
+  display: inline-block;
+  margin: 0; }
+
+.subtlelink a {
+  color: #32292f; }
+
+.profiletag {
+  border: 1px solid #705d56;
+  display: inline-block;
+  margin-right: 2%;
+  padding: 0 1%; }
+
+.vacancytag {
+  display: inline-block;
+  margin-right: 2%; }
+
+.vacancytag p {
+  margin: 0; }
+
 hr {
-  clear: both;
-}
+  clear: both; }
+
+/*# sourceMappingURL=directory.css.map */

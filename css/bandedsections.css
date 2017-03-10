@@ -1,93 +1,73 @@
+/*  White */
+/* 80% AntiFlash White */
+/* Jet */
+/* Wenge */
+/* Pale Robin Egg */
+/* 50% Green Sheen */
+/*  White */
+/*  for banded sections pages */
 header {
-  }
-header a {
-  color: white;
-}
+  background-image: url(../imgs/patterns/asanoha-400px.png);
+  /* Background pattern from Subtle Patterns */
+  background-attachment: fixed;
+  background-size: 40%; }
 
-.topexplore {
-  background-color: rgba(33,48,0, 1);
-  color: white;
-}
-.topenhance {
-  background-color: rgba(66,17,60, 1);
-  color: white;
-}
+.allsections {
+  clear: both;
+  margin-top: 0; }
 
-.topexplore h1 {
-  text-transform: uppercase;
-  padding-left: 3%;
-  width: 80%;
-}
-.topenhance h1 {
-  text-transform: uppercase;
-  padding-left: 3%;
-  width: 80%;
-}
 section {
   overflow: auto;
   clear: both;
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  justify-content: center;
-}
+  justify-content: center; }
+
 .band-white {
   padding: 6%;
   overflow-x: auto;
+  border-bottom: 5px solid #705d56; }
 
-}
-.band-white a {
-  color: black;
-}
 .band-green {
   padding: 6%;
-  background-color: rgba(33,48,0, 1);
-  color: white;
   overflow-x: auto;
+  border-bottom: 5px solid #705d56; }
 
-}
-.band-green a {
-  color: white;
-}
 .band-purple {
-  padding: 6%;
-  background-color: rgba(66,17,60, 1);
-  color: white;
-}
-.band-purple a {
-  color: white;
-}
-.tools a:hover { /* maybe because the h3 text is wrapped in a div the link properties don't come through (underline on hover), but highlighting the whole div is better anyway*/
-  background-color: rgba(150,150,150, 0.4);
-}
+  padding: 6%; }
+
+.tools a:hover {
+  /* maybe because the h3 text is wrapped in a div the link properties don't come through (underline on hover), but highlighting the whole div is better anyway*/
+  background-color: rgba(150, 150, 150, 0.4); }
+
 .infotool {
   width: 175px;
   float: left;
-  flex:none;
+  flex: none;
   margin: 3% 0;
-  margin-left: 5%;
-}
+  margin-left: 5%; }
+
 .infotool h3 {
   clear: both;
   text-align: center;
   text-transform: capitalize;
-  padding: 0 2.5%;
+  padding: 0 2.5%; }
 
-}
 .icon {
   border: 3px solid black;
   width: 75px;
-  height: 75px;/* if this does not match default thumbnail size in functions.php, it will be cut off*/
+  height: 75px;
+  /* if this does not match default thumbnail size in functions.php, it will be cut off*/
   margin: 0 auto;
   border-radius: 50%;
-  overflow: hidden;
-  background-color: white;
-}
+  overflow: hidden; }
+
 .icon img {
   min-height: 100%;
   max-width: 100%;
-  object-fit: cover;
-}
+  object-fit: cover; }
+
 .button-section {
   font-size: 1.5em;
   padding: 1%;
@@ -96,102 +76,65 @@ section {
   margin: 0 auto;
   text-transform: capitalize;
   clear: both;
-}
-.band-green .button-section {
-  border: 1px solid white;
-}
-.band-purple .button-section {
-  border: 1px solid white;
-}
-.band-white .button-section {
-  border: 1px solid black;
-}
-.allsections { /* SIMILAR RULES AS .container on typical pages to allow for topsticky space */
-  padding-top: 50px;
-  clear: both;
-}
+  background-color: #705d56; }
+
+.button-section {
+  color: white; }
+
 /* UNIQUE EXPLORERS 3-BUTTON CALL TO ACTION */
 .explore-action {
-  border: 1px solid black;
-  padding: 1%;
+  border: 1px solid #32292f;
+  padding: 2%;
   text-align: left;
-  position: relative; /* 1/3 needed this here for button-bottom, diff from main css */
-}
+  margin-bottom: 20px; }
+
 .explore-action .button-bottom {
-  border: 1px solid white;
-  background-color: black;
+  background-color: #705d56;
+  padding: 1%;
   margin: 0 auto;
   width: 90%;
-  position: absolute; /* 1/3 needed this here for button-bottom, diff from main css */
-  bottom: 4%; /* 1/3 needed this here for button-bottom, diff from main css */
-}
+  text-align: center; }
 
-.button-bottom {
-}
- a .button-bottom {
-  color: white;
-}
-.explore-action a {
-  background-color: rgba(236,164,0, 1); /* gold */
-}
-.sectionlisting{
-  text-align: center;
-}
+a .button-bottom {
+  color: white; }
+
+@media screen and (min-width: 700px) {
+  .button-section {
+    width: 30%; }
+
+  .explore-action {
+    width: 29%;
+    margin-right: 2%;
+    float: left;
+    height: 240px;
+    position: relative;
+    /* 1/3 needed this here for button-bottom, diff from main css */ }
+
+  .explore-action:last-of-type {
+    margin-right: 0; }
+
+  .explore-action .button-bottom {
+    position: absolute;
+    /* 1/3 needed this here for button-bottom, diff from main css */
+    bottom: 4%;
+    /* 1/3 needed this here for button-bottom, diff from main css */ } }
+.sectionlisting {
+  text-align: center; }
+
 .taller-field {
   font-size: 1.3em;
   margin: 1% 0;
   padding: 1%;
   border-radius: 5px;
-  width: 285px;
-}
+  width: 285px; }
+
 input[type=submit] {
   font-size: 1.3em;
   margin: 2% auto;
   width: 100%;
-  background-color: rgba(236,164,0, 1); /* gold */
+  background-color: #705d56;
   border-radius: 5px;
   width: 300px;
-  text-align: center;
-}
+  text-align: center; }
 
-/* ------ MEDIA QUERIES START HERE -----*/
-@media screen and (min-width: 700px) {
-  /* -- anchoring the button at the bottom might not be needed.  just use the clear:both.
-  .band-color, .band-white {
-    position: relative;
-  }
-  .button-section {
-    position: absolute;
-    bottom: 5%;
-    left: 40%;
-  } ---*/
-
-  .allsections { /* SIMILAR RULES AS .container on typical pages to allow for topsticky space */
-    padding-top: 100px;
-  }
-  .topexplore h1 {
-    width: 40%;
-    text-align: center;
-    float: left;
-    padding: 0;
-  }
-  .topenhance h1 {
-    width: 40%;
-    text-align: center;
-    float: left;
-    padding: 0;
-  }
-  .button-section {
-    width: 30%;
-  }
-  .explore-action {
-    width: 29%;
-    margin-right: 2%;
-    float: left;
-    height: 180px;
-  }
-  .explore-action:last-of-type {
-    margin-right: 0;
-  }
-
-}
+/*# sourceMappingURL=bandedsections.css.map */

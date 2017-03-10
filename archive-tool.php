@@ -1,13 +1,11 @@
 <?php get_header(); ?>
 
 
-<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
+<title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 </head>
 
 <body>
 	<?php include ('topsticky.php'); ?>
-
-	<?php include ('menu.php'); ?>
 
 <div class="container archive">
 	<!-- if trying to display posts that are CPT, the ARCHIVE PAGE  NEEDS TO BE TOGGLED EITHER MANUALLY (if custom post types were manually created) OR VIA THE CPT UI SETTINGS: "HAS ARCHIVE".-->
@@ -15,7 +13,7 @@
 
 	<?php // DISPLAY CUSTOM POST TYPE
 	// be aware tag & cat intersection has unique arguments: http://wordpress.stackexchange.com/questions/4201/how-to-query-posts-by-category-and-tag-
-	$args = array( 'post_type' => 'tool', 'posts_per_page' => 6, 'cat' => 15 ); //Define your custom post type name in the arguments
+	$args = array( 'post_type' => 'tool', 'posts_per_page' => -1, 'cat' => 15, 'order'=> 'ASC', 'orderby' => 'title' ); //Define your custom post type name in the arguments
 	$loop = new WP_Query( $args ); //Define the loop based on those arguments
 	//Display the contents
 	?>
@@ -24,7 +22,7 @@
 	<?php if ( have_posts() ) : ?>
 		<p>
 			You were looking for Tools for Existing Co-ops:
-				<!-- add the Tag Description? -->
+				<!-- this archive page only exists to link from the Enhance page, not for any other archive purposes.  as such, there is no archive page that lists Tools for Explorers bc it's not called for on the Explore page. -->
 		</p>
 
 		<?php while ( $loop->have_posts() ) : $loop->the_post();  ?>
@@ -33,11 +31,6 @@
 			<ul>
 				<li>
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-
-				<!-- IF I WANT TO SHOW THE PUBLISHED DATE (but the CPT don't have any!)
-				<span class="date">
-					(Published: <?php the_date(); ?>)
-				</span>----------->
 				</li>
 			</ul>
 		</h3>
