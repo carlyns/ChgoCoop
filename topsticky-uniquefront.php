@@ -11,9 +11,9 @@
 
 		<?php include ('menu.php'); ?>
 
-
-		<div class="icon-menu">		</div>
 	</div>
+
+<div class="icon-menu">		</div>
 
 
 <!-- header element ends in different place on front page-->

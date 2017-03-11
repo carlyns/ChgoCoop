@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+
 <title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
 </head>

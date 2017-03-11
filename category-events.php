@@ -27,8 +27,8 @@
 	$args = array (
 		'cat' => 18, // oddly, a startup story was getting queried so i added this filter
 		'posts_per_page' => -1,
-		'orderby' => 'meta_value_num', // order soonest first, seems to be working even though acf is different from publish date 
-		'order' => 'ASC',
+		'orderby'       => 'meta_value_num', // order soonest first
+		'order'          => 'ASC',
 	 	'meta_query' => array(
 		 array(
 				'key'       => 'event_start_date', // needed to change this to my ACF name
@@ -56,6 +56,8 @@
 
 		<h3><span class="eventdate"><?php echo $day->format('l'); ?>, <?php echo $date->format('F'); ?> <?php echo $date->format('d'); ?>, <?php echo $date->format('Y'); ?>. </span><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
+
+
 	<?php endwhile; else : ?>
 
 		<p><?php _e( "Unfortunately, there are no upcoming events.  But check back here soon!  Or subscribe to our RSS feed to be notified. " ); //_e aka echo
@@ -74,7 +76,7 @@
 		'cat' => 18, // oddly, a startup story was getting queried so i added this filter
     'posts_per_page' => -1,
     /* --- 'meta_key'       => 'date_debut', --NEEDED TO DELETE THIS --*/
-    'orderby' => 'event_start_date', /* --- need to use this (not meta_value_num) because Published Date of Post is different from the ACF date --*/
+    /* --- 'orderby'       => 'meta_value_num', --- REVERSE DATE ORDER --*/
     'order'          => 'ASC',
    	'meta_query' => array(
 	     array(

@@ -18,9 +18,8 @@
 	<h1>Directory</h1>
 	<ul class="directorytabs">
 		<li><a href="#cooplist">Cooperatives</a></li> |
-		<li><a href="#orglist">Organizations</a></li> |
-		<li><a href="<?php get_page_template(); ?>/chgocoopWP/potential/">Potential Properties</a></li> |
-		<li><a href="<?php get_page_template(); ?>/chgocoopWP/professionals/">Professional Services</a></li>
+		<li><a href="#orglist">Organizations</a></li><!--  |
+		COMING SOON: <li><a href="#potentiallist">Potential Properties</a></li> -->
 	</ul>
 
 <hr id="cooplist">
@@ -93,6 +92,26 @@
 
 		</ul>
 
+
+
+	<!-- HOPING TO ADD THIS SECTION SOON ----
+	<hr id="potentiallist">
+
+	<h2>Potential Properties for Formation Groups??</h2>
+		<ul>
+			<li>Genesys Cooperative</li>
+			<li>HUB Cooperative</li>
+			<li>Logan Square Co-op</li>
+			<li>Noble Square Co-op</li>
+			<li>Sol House</li>
+			<li>Stone Soup - Hoyne House</li>
+			<li>Stone Soup - ICA</li>
+		</ul>
+
+		---------------------------->
+
+<!-- DON'T SHOW THE MAP HERE BECAUSE IT'S ALWAYS IN THE FOOTER
+ <iframe src="https://www.google.com/maps/d/embed?mid=1XihqVgdsrpQRCvE-2q5KsEsj0iY" width="800" height="1000"></iframe> -->
 
 </div>
 

@@ -1,5 +1,4 @@
-/*  White */
-/* 80% AntiFlash White */
+/* AntiFlash White */
 /* Jet */
 /* Wenge */
 /* Pale Robin Egg */
@@ -41,9 +40,6 @@ ul.availunits {
 
 .availunits li {
   list-style: none; }
-
-.potentialtips a {
-  color: #705d56; }
 
 /* ------ MEDIA QUERIES START HERE -----*/
 @media screen and (min-width: 700px) {

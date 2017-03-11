@@ -1,5 +1,9 @@
 <?php get_header(); ?>
 
+<!-- PUT THIS BEFORE PATH FOR RELATIVE FOLDER PATHS!
+<?php bloginfo('template_directory'); ?>
+-->
+
 <!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/profiles.css">
 

@@ -71,11 +71,11 @@
 				<?php // need to get the all the Post Date from the selected Page Link ACF!! ?>
 
 
-				<h3>PROPERTY PROFILE</h3>
+				<h3>ORGANIZATION PROFILE</h3>
 					<?php // grabbing data about the post with Page Link ACF from https://www.advancedcustomfields.com/resources/page-link/
 
 					// vars
-					$org = get_field('featured_org_prop', false, false);
+					$org = get_field('featured_org', false, false);
 
 					// check
 					if( $org ): ?>
@@ -173,7 +173,8 @@
 	</div> <!-- end of 'row latest'-->
 
 	<div class="row single-col newsletter">
-		<h4>Sign up for e-news</br>to get these types of stories</br>and hear about the latest vacancies:</h4>
+		<h4>Like those stories?
+		</br><a href="<?php get_page_template(); ?>/chgocoopWP/archived-news/">See the archive</a> OR Get them regularly:</h4>
 		<a href="http://eepurl.com/cmiuZv" target="_blank"><div class="style-button">Sign Up for Newsletter</div></a>
 	</div>
 

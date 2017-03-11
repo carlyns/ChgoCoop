@@ -1,9 +1,9 @@
 /*
-Theme Name: ChgoCoop Twenty Seventeen
+Theme Name: ChgoCoop Twenty Fifteen
 Theme URI: http://www.resusstudio.com/
 Author: Carlyn So
 Author URI: http://www.resusstudio.com/
-Description: New theme for potential chicagocoop.net site.
+Description: A test theme for potential chicagocoop.net site.
 Version: 1.0
 Tags: cooperatives
 */
@@ -15,3 +15,10 @@ Tags: cooperatives
  * 1.0 -
 
 */
+
+
+
+body {
+	background-color: black;
+	color: pink;
+}

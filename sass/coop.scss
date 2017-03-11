@@ -110,15 +110,9 @@
     overflow: auto; // without this, image cuts off at top without a clear or a border!
   }
   .home h1, .home p {
-    // background-color: $brand-background-color; // text highlight
+    background-color: $brand-background-color;
     width: auto;
   }
-  .home .topsticky {
-    background-color: $brand-background-trslct; //topsticky highlight
-    overflow: auto;
-
-  }
-
   .overview {
     font-size: 1.2em;
     clear: both;
@@ -126,12 +120,12 @@
   }
   .overview h2 {
     font-weight: $weight-bold;
-    background-color: $brand-background-trslct; // text highlight
+    background-color: $brand-background-color;
     display: inline-block;
     padding-left: 10px;
   }
   .overview h3 {
-    background-color: $brand-background-trslct; // text highlight
+    background-color: $brand-background-color;
     display: inline-block;
     padding-left: 10px;
   }
@@ -227,7 +221,7 @@
     font-weight: $weight-bold;
   }
   .menu-big li {
-    // background-color: $brand-background-color; // text highlight
+    background-color: $brand-background-color;
   }
 
 

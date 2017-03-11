@@ -1,5 +1,4 @@
-/*  White */
-/* 80% AntiFlash White */
+/* AntiFlash White */
 /* Jet */
 /* Wenge */
 /* Pale Robin Egg */
@@ -79,7 +78,7 @@ section {
   background-color: #705d56; }
 
 .button-section {
-  color: white; }
+  color: #f0f7f4; }
 
 /* UNIQUE EXPLORERS 3-BUTTON CALL TO ACTION */
 .explore-action {
@@ -96,7 +95,7 @@ section {
   text-align: center; }
 
 a .button-bottom {
-  color: white; }
+  color: #f0f7f4; }
 
 @media screen and (min-width: 700px) {
   .button-section {

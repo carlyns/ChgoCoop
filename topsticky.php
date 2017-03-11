@@ -9,9 +9,9 @@
 
 		<?php include ('menu.php'); ?>
 
-
-		<div class="icon-menu">		</div>
 	</div>
+
+<div class="icon-menu">		</div>
 
 </header>
 <!-- header tag closes here for every page except front page-->

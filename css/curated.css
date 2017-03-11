@@ -1,5 +1,4 @@
-/*  White */
-/* 80% AntiFlash White */
+/* AntiFlash White */
 /* Jet */
 /* Wenge */
 /* Pale Robin Egg */
@@ -18,9 +17,6 @@
 
 .row-stepicons h2, .steptitle {
   font-size: 0.8em; }
-
-.stepcontent h3 {
-  font-weight: 700; }
 
 .mobileicon {
   background-color: #705d56;
@@ -75,7 +71,7 @@ h4 {
   margin-bottom: 1%; }
 
 .formation-button a {
-  color: white; }
+  color: #f0f7f4; }
 
 .formation-button h4 {
   padding: 2%; }
