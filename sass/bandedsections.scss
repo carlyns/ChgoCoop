@@ -20,18 +20,10 @@ section {
   flex-wrap: wrap;
   justify-content: center;
 }
-.band-white {
+.band {
   padding: 6%;
   overflow-x: auto;
   border-bottom: 5px solid $brand-color-accent;
-}
-.band-green {
-  padding: 6%;
-  overflow-x: auto;
-  border-bottom: 5px solid $brand-color-accent;
-}
-.band-purple {
-  padding: 6%;
 }
 .tools a:hover { /* maybe because the h3 text is wrapped in a div the link properties don't come through (underline on hover), but highlighting the whole div is better anyway*/
   background-color: rgba(150,150,150, 0.4);
@@ -75,12 +67,6 @@ section {
 }
 .button-section {
   color: $brand-background-color;
-}
-.band-green .button-section {
-}
-.band-purple .button-section {
-}
-.band-white .button-section {
 }
 /* UNIQUE EXPLORERS 3-BUTTON CALL TO ACTION */
 .explore-action {

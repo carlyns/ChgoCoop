@@ -24,18 +24,10 @@ section {
   flex-wrap: wrap;
   justify-content: center; }
 
-.band-white {
+.band {
   padding: 6%;
   overflow-x: auto;
   border-bottom: 5px solid #705d56; }
-
-.band-green {
-  padding: 6%;
-  overflow-x: auto;
-  border-bottom: 5px solid #705d56; }
-
-.band-purple {
-  padding: 6%; }
 
 .tools a:hover {
   /* maybe because the h3 text is wrapped in a div the link properties don't come through (underline on hover), but highlighting the whole div is better anyway*/

@@ -22,7 +22,7 @@
 		<h1><?php the_field('explore_banner'); ?></h1>
 	</div>
 
-	<div class="band-white">
+	<div class="band">
 		<h2>The Very Beginning</h2>
 			<!-- Show all posts (CPT only) of "tools" (not tagged with "formation") + Explore Category -->
 
@@ -76,7 +76,7 @@
 
 	</div>
 
-	<div class="band-green">
+	<div class="band">
 		<h2>Anecdotes & Advice for Beginners</h2>
 		<!--
 			Show all posts (blog only) of "advice"  + Explore Category
@@ -109,7 +109,7 @@
 		<a href="<?php get_page_template(); ?>/chgocoopWP/tag/advice"><div class="button-section">See All Inspiring Stories</div></a>
 	</div>
 
-	<div class="band-white" class="threeactions">
+	<div class="band" class="threeactions">
 		<h2>Find an Existing Co-op Vacancy</h2>
 		<p>If you prefer to drop into an already existing cooperative in/near Chicago, there are a few options:</p>
 		<div class="explore-action">
@@ -132,7 +132,7 @@
 
 	</div>
 
-	<div class="band-green">
+	<div class="band">
 		<h2>DIY: Form Your Own Co-op!</h2>
 		<!--
 			Show all posts (CPT only) of "tools" (tagged with "formation") + Explore Category

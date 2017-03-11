@@ -22,7 +22,7 @@
 		<h1><?php the_field('enhance_banner'); ?></h1>
 	</div>
 
-	<div class="band-white">
+	<div class="band">
 		<h2>Fundamentals & Collaboration</h2>
 			<!-- Show all posts (CPT or blog) + Enhance Category -->
 		<section>
@@ -56,7 +56,7 @@
 	</div>
 
 
-	<div class="band-purple">
+	<div class="band">
 		<h2>Tool & Templates</h2>
 		 <!-- (hard skills) -->
 			<!-- Show all posts (CPT only) of "tools" + Enhance Category -->
@@ -99,7 +99,7 @@
 		<a href="<?php get_page_template(); ?>/chgocoopWP/tool"><div class="button-section">See All Tools</div></a>
 	</div>
 
-	<div class="band-white" id="cooplisting">
+	<div class="band" id="cooplisting">
 		<h2>Put Your Co-op On The Map</h2>
 		<p>We list basic information like name, approximate location and size on our map for free.</p>
 		<p>If you see a mistake, please <a href="mailto: cso@RESUSstudio.com">email us</a> so we can revise it.</p>
@@ -127,7 +127,7 @@
 		<a href="https://resus.typeform.com/to/emYHV9" target="_blank"><div class="button-section">Create Co-op Profile</div></a>
 	</div>
 
-	<div class="band-purple">
+	<div class="band">
 
 		<h2>Have a Vacancy at your Co-op? Get Listed!</h2>
 		<p>Unit Listing: $20/unit</p>

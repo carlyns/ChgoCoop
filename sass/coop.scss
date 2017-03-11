@@ -244,6 +244,7 @@
     width: 100%;
     margin: 0 auto;
     font-size: 1.2em;
+    z-index: 7;
   }
   .menu-big {
     display: none;
@@ -417,7 +418,7 @@
   display: none;
   position: fixed;
   top: 0;
-  z-index: 7;
+  z-index: 5;
 }
   @media screen and (min-width: $breakpoint-small-med) {
     .topbanner {
