@@ -1,13 +1,19 @@
 <?php get_header(); ?>
 
 
-<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
+<title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 </head>
 
 <body>
-	<?php include ('topsticky.php'); ?>
+	<!-- menu not appearing on it's own, so adding this snippet -->
+		<?php
 
-	<?php include ('menu.php'); ?>
+		global $query_string;
+		parse_str($query_string, $args);
+		$args['post_type'] = array('nav_menu_item','post'); // can delete articles from the array and it'll still work.  this is leftover from the copied code cuz somone had a CPT of 'articles'
+		query_posts( $args );
+		?>
+		<?php include ('topsticky.php'); ?>
 
 <div class="container archive">
 
@@ -21,8 +27,8 @@
 	$args = array (
 		'cat' => 18, // oddly, a startup story was getting queried so i added this filter
 		'posts_per_page' => -1,
-		'orderby'       => 'meta_value_num', // order soonest first
-		'order'          => 'ASC',
+		'orderby' => 'meta_value_num', // order soonest first, seems to be working even though acf is different from publish date 
+		'order' => 'ASC',
 	 	'meta_query' => array(
 		 array(
 				'key'       => 'event_start_date', // needed to change this to my ACF name
@@ -50,8 +56,6 @@
 
 		<h3><span class="eventdate"><?php echo $day->format('l'); ?>, <?php echo $date->format('F'); ?> <?php echo $date->format('d'); ?>, <?php echo $date->format('Y'); ?>. </span><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-
-
 	<?php endwhile; else : ?>
 
 		<p><?php _e( "Unfortunately, there are no upcoming events.  But check back here soon!  Or subscribe to our RSS feed to be notified. " ); //_e aka echo
@@ -70,7 +74,7 @@
 		'cat' => 18, // oddly, a startup story was getting queried so i added this filter
     'posts_per_page' => -1,
     /* --- 'meta_key'       => 'date_debut', --NEEDED TO DELETE THIS --*/
-    /* --- 'orderby'       => 'meta_value_num', --- REVERSE DATE ORDER --*/
+    'orderby' => 'event_start_date', /* --- need to use this (not meta_value_num) because Published Date of Post is different from the ACF date --*/
     'order'          => 'ASC',
    	'meta_query' => array(
 	     array(

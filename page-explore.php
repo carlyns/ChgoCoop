@@ -3,7 +3,7 @@
 <!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bandedsections.css">
 
-<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
+<title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
 </head>
 
@@ -13,9 +13,14 @@
 
 <?php include ('topsticky.php'); ?>
 
-<?php include ('menu.php'); ?>
-
 <div class="allsections">
+	<div class="topbanner">
+		<h1><?php the_field('explore_banner'); ?></h1>
+	</div>
+	<!-- repeated div that unique to scrolldown -->
+	<div class="topbanner showonscrolldown">
+		<h1><?php the_field('explore_banner'); ?></h1>
+	</div>
 
 	<div class="band-white">
 		<h2>The Very Beginning</h2>
@@ -67,7 +72,7 @@
 
 
 		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE JUST FOR BEGINNING EXPLORERS -->
-		<a href="<?php get_page_template(); ?>/chgocoopWP/explore/beginners"><div class="button-section">Get Started</div></a>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/explore/beginners"><div class="button-section">Beginner's Guide</div></a>
 
 	</div>
 
@@ -119,9 +124,9 @@
 		</div>
 		<div class="explore-action">
 			<p>
-				Get notified when Fireplace - a new match tool - is launched.  It will help you discover your closest co-op match for a co-op or a group.
+				Get notified when Fireplace - a new compatibility tool - is launched.  It will help you discover your closest co-op match for a co-op or a group.
 			</p>
-			<a href="http://eepurl.com/_-yvz"><div class="button-bottom">Get updates</div></a>
+			<a href="http://fireplace.resusstudio.com" target="_blank"><div class="button-bottom">Visit page</div></a>
 		</div>
 
 
@@ -171,7 +176,7 @@
 
 		</section>
 		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE DETAILING THE PROCESS OF FORMING COOPS -->
-		<a href="<?php get_page_template(); ?>/chgocoopWP/explore/formation"><div class="button-section">Read More</div></a>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/explore/formation"><div class="button-section">Formation Guide</div></a>
 	</div>
 
 </div> <!-- //end of "allsections"-->

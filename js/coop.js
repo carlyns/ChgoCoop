@@ -1,4 +1,4 @@
-// TOGGLING THE MENU ICON -- off for now
+// invert menu icon colors on click
 /*
 $(".icon-menu").click(function() {
     $(".menu").toggle();
@@ -7,17 +7,33 @@ $(".icon-menu").click(function() {
 */
 
 
-// TRYING TO SLIDE THE MENU IN FROM THE RIGHT on click
+// toggle mobile menu on click
 $(".icon-menu").click(function() {
-  $(".menu").animate({right: "-30px"});
-  $(".icon-rocket").toggle({duration: 500});
+  $(".menu-mobile").toggle({duration: 500});
+  $(".icon-menu").toggleClass( "invertcolors" );
 });
 
-// TRYING TO SLIDE THE MENU IN FROM THE RIGHT on click
-$(".icon-rocket").click(function() {
-  $(".menu").animate({right: "-350px"});
-  $(".icon-rocket").toggle({duration: 500});
-});
+
+//FIXED BANNER FADE IN ON SCROLL
+// from this thread: https://jsfiddle.net/tcloninger/e5qaD/  and  http://www.ordinarycoder.com/jquery-fade-content-scroll/
+
+
+$(window).scroll( function (){
+
+  if ( $(window).scrollTop() > 200 ) {
+    $(".showonscrolldown").fadeIn(500)
+    // don't even need this: !!  .css("display","block");
+    // bc fadeIn takes care of it!
+  }
+  else
+  {
+    $(".showonscrolldown").fadeOut(500);
+  }
+
+} );
+
+
+
 
 // CURATED PAGES: TOGGLE BETWEEN STEPS ON DESKTOP
 
@@ -108,12 +124,6 @@ $(function() {
     }
   });
 });
-
-
-// HIDE TOPBAR (INLUDING NAV) AFTER TWO SECONDS, ONLY ON MOBILE???
-
-// ALSO HIDE IT (INLUDING NAV) ON CLICK OF NAV.
-
 
 
 $(document).ready(main);

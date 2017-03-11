@@ -2,11 +2,11 @@
 
 	<div class="grid6right">
 		<div class="map">
-			<iframe src="https://www.google.com/maps/d/u/4/embed?mid=1XihqVgdsrpQRCvE-2q5KsEsj0iY" width="100%"></iframe>
+			<iframe src="https://www.google.com/maps/d/u/5/embed?mid=1XihqVgdsrpQRCvE-2q5KsEsj0iY" width="100%"></iframe>
 		</div>
 
 
-		<div class="button"><a href="<?php get_page_template(); ?>/chgocoopWP/directory" target="_blank">See Directory</a></div>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/directory"><div class="style-button">See Directory</div></a>
 	</div>
 
 
@@ -16,33 +16,31 @@
 		<div class="eventlist">
 
 			<h3>Upcoming Events</h3>
-			<?php // DEFINE THE QUERY ARGUMENTS FOR EVENTS TODAY OR IN THE FUTURE ?>
-			<?php
-			$today = date("Ymd");
-			// WOW for some reason, making a post "sticky" placed it in the events list and broke the query. So must include ignore_sticky_posts in the array
+				<?php // DEFINE THE QUERY ARGUMENTS FOR EVENTS TODAY OR IN THE FUTURE ?>
+				<?php
+				$today = date("Ymd");
+				// WOW for some reason, making a post "sticky" placed it in the events list and broke the query. So must include ignore_sticky_posts in the array
 
-			$args = array (
-				 	'category' => 18,
-					'ignore_sticky_posts' => 1,
-					'posts_per_page' => 4,
-					'orderby'       => 'meta_value_num',
-					'order'          => 'ASC',
-			 'meta_query' => array(
-						 array(
-								'key'       => 'event_start_date',
-								'compare'   => '>=',
-								'value'     => $today,
-						)
-				),
-			);
-		 ?>
-
+				$args = array (
+					 	'category' => 18,
+						'ignore_sticky_posts' => 1,
+						'posts_per_page' => 4,
+						'orderby'       => 'meta_value_num',
+						'order'          => 'ASC',
+				 'meta_query' => array(
+							 array(
+									'key'       => 'event_start_date',
+									'compare'   => '>=',
+									'value'     => $today,
+							)
+					),
+				);
+			 ?>
 
 			<?php
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 		 //Display the contents
 		 while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
 
 			<!-- Then, need to pull the ACF data. -->
 			<?php  // edited code from: http://www.advancedcustomfields.com/resources/date-picker/
@@ -54,7 +52,10 @@
 			Date and time formats: https://codex.wordpress.org/Formatting_Date_and_Time -->
 			<div class="eventinfo">
 				<a href="<?php the_permalink(); ?>">
-					<div class="datebox"><?php echo $date->format('d'); ?></br><?php	echo $month->format('M'); ?></div>
+					<div class="datebox">
+						<p><?php echo $date->format('d'); ?></p>
+						<p><?php echo $month->format('M'); ?></p>
+					</div>
 				</a>
 				<a href="<?php the_permalink(); ?>">
 					<div class="eventtitle"><?php the_title(); ?></div>
@@ -65,25 +66,18 @@
 		<?php // RESETTING TO ORIG LOOP
 		wp_reset_postdata(); ?>
 
-		</div>
-
-
+	</div>
 
 		<div class="contactinfo">
 			<h3>Stay in Touch</h3>
+			<?php the_field( 'contact_info', 2 ); ?>
 
-			<p><a href="mailto:cso@RESUSstudio.com">Email us</a></p>
-			<p><a href="https://www.facebook.com/Exploring-Housing-Cooperatives-420807511344699/">Find us on Facebook</a></p>
 		</div>
 
 		<div class="loves">
 			<h3>We also love: </h3>
-			<p>
-				<a href="http://workerdemocracy.org/Directory.aspx">Chicagoland worker co-ops</a>.  <span class="cooploves">Check out Spudnik, Reliance, CoLab, Stocksy. </span>
-			</p>
-			<p>
-				<a href="http://www.chifoodcoops.org">Chicagoland food co-ops</a>.  <span class="cooploves">Check out Dill Pickle, Chicago Food Co-op, Sugar Beet & Chicago Market.</span>
-			</p>
+			<?php the_field( 'worker_coop_links', 2 ); ?>
+			<?php the_field( 'food_coop_links', 2 ); ?>
 		</div>
 
 

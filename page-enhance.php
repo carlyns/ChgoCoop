@@ -3,7 +3,7 @@
 <!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bandedsections.css">
 
-<title><?php wp_title(); ?> | Cooperative Homes & Communities of Chicago</title>
+<title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
 </head>
 
@@ -13,9 +13,14 @@
 
 <?php include ('topsticky.php'); ?>
 
-<?php include ('menu.php'); ?>
-
 <div class="allsections">
+	<div class="topbanner">
+		<h1><?php the_field('enhance_banner'); ?></h1>
+	</div>
+	<!-- repeated div that unique to scrolldown -->
+	<div class="topbanner showonscrolldown">
+		<h1><?php the_field('enhance_banner'); ?></h1>
+	</div>
 
 	<div class="band-white">
 		<h2>Fundamentals & Collaboration</h2>
@@ -112,9 +117,14 @@
 		<hr>
 
 		<h3>Want a more comprehensive listing?</h3>
-		<p>This includes contact, website, and photos.  Please complete <a href="https://resus.typeform.com/to/emYHV9" target="_blank">this form</a>.  It's $5/year to help maintain this website.</p>
+		<p>This includes contact, website, and photos.  Please complete <a href="https://resus.typeform.com/to/emYHV9" target="_blank">this form</a>.  The following fees help maintain this website:</p>
+		<ul>
+			<li>1-10 members: $5/year</li>
+			<li>11-50 members: $10/year</li>
+			<li>51+ members: $50/year</li>
+		</ul>
 
-		<a href="https://resus.typeform.com/to/emYHV9" target="_blank"><div class="button-section">Create Co-op Profile: $5/year</div></a>
+		<a href="https://resus.typeform.com/to/emYHV9" target="_blank"><div class="button-section">Create Co-op Profile</div></a>
 	</div>
 
 	<div class="band-purple">
@@ -123,7 +133,7 @@
 		<p>Unit Listing: $20/unit</p>
 		<ol>
 			<li>Fill out our simple form. The fee goes towards maintaining this site.</li>
-			<li>We feature your co-op and/or unit on this site, blog posts, and our <a href="http://eepurl.com/cmiuZv" target="_blank">"Good Housing" newsletter</a>.  (See a sample <a href="<?php get_page_template(); ?>/chgocoopWP/profile/vacant-unit-800-logan-square-co-op/">Co-op Profile</a> or a sample <a href="<?php get_page_template(); ?>/chgocoopWP/profile/logan-square-cooperative/">Unit Listing</a>)</li>
+			<li>We feature your co-op and/or unit on this site, blog posts, and our <a href="http://eepurl.com/cmiuZv" target="_blank">"Good Housing" newsletter</a>.
 			<li>Watch the requests roll in!</li>
 
 		</ol>

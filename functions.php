@@ -28,9 +28,14 @@ add_action( 'init', 'register_theme_menu' );
 */
 
 function coop_theme_setup() {
-  add_theme_support('menus');// This is the built in WP hook; but it's put in a function
+  add_theme_support('menus');// This is the built in WP hook; but it's put in a function.  Allows Menus to show up in WP dashboard.
 
-  register_nav_menu('pullout', 'Main Coop Pullout Nav'); // first is made-up name in slug for, second is description
+  register_nav_menu('primary', 'Main Coop Nav'); // first is made-up name in slug for, second is description
+
+  register_nav_menu('mobile', 'Mobile Coop Nav'); // first is made-up name in slug for, second is description
+
+  register_nav_menu('secondary', 'Footer Coop Nav'); // first is made-up name in slug for, second is description
+
 }
 add_action('init', 'coop_theme_setup');
 
