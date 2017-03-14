@@ -2,15 +2,6 @@
 
 <!-- ADD THE STYLESHEET THAT MIGHT CHANGE BETWEEN PAGES HERE.-->
 
-
-<!-- GOOGLE ANALYTICS TRACKING.  TRACKING NUMBER STARTS WITH UA.
-
-GOOGLE ANALYTICS TRACKING: PHP ALTERNATIVE!  via https://analytics.google.com/analytics/web/?authuser=1#management/Settings/a72902531w110694745p115471852/%3Fm.page%3DTrackingCode%26_r.ghFlowId%3D6324039/
-
-
-HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS GOOD AS GOOGLE ANALYTICS?  SEE WHAT HAPPENS IF I INCLUDE THIS SCRIPT ON INDEX AT LEAST?  WP BUSINESS PLAN CAN ADD MORE GOOGLE ANALYTICS FEATURES.
--->
-
 <title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
 </head>
@@ -18,7 +9,7 @@ HOWEVER, WORDPRESS HAS ITS OWN ANALYTICS FOR TRACKING POSTS.  SHOULD BE JUST AS 
 
 
 <body>
-
+<?php include_once("analyticstracking.php") ?>
 <?php include ('topsticky.php'); ?>
 
 

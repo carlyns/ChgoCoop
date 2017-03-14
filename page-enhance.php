@@ -10,8 +10,8 @@
 
 
 <body>
-
-<?php include ('topsticky.php'); ?>
+	<?php include_once("analyticstracking.php") ?>
+	<?php include ('topsticky.php'); ?>
 
 <div class="allsections">
 	<div class="topbanner">
@@ -137,8 +137,6 @@
 			<li>Watch the requests roll in!</li>
 
 		</ol>
-		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE JUST FOR MEMBERSHIP
-		<a href="<?php get_page_template(); ?>/chgocoopWP/membership"><div class="button-section">Become a Member</div></a>-->
 		<a href="https://resus.typeform.com/to/LWTR4c"><div class="button-section">List a Unit</div></a>
 	</div>
 

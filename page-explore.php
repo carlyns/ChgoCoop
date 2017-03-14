@@ -10,8 +10,8 @@
 
 
 <body>
-
-<?php include ('topsticky.php'); ?>
+	<?php include_once("analyticstracking.php") ?>
+	<?php include ('topsticky.php'); ?>
 
 <div class="allsections">
 	<div class="topbanner">

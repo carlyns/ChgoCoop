@@ -10,8 +10,8 @@
 
 
 <body>
-
-<?php include ('topsticky.php'); ?>
+	<?php include_once("analyticstracking.php") ?><!-- not sure how adding tracking to every single post will result  -->
+	<?php include ('topsticky.php'); ?>
 
 <div class="container">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
