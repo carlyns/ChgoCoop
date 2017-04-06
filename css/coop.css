@@ -89,16 +89,14 @@ a:hover {
 header {
   background-image: url(../imgs/patterns/asanoha-400px.png);
   /* Background pattern from Subtle Patterns */
-  background-attachment: fixed;
   background-size: 40%;
   overflow: auto;
   clear: both; }
 
 .home header {
-  background-image: url("../imgs/unsplash facade-med.jpg");
-  background-size: cover;
-  background-position: bottom;
-  overflow: auto; }
+  background-image: url(https://images.unsplash.com/photo-1422479278902-8cef24992df0?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=b3792fa660f10a17b1abfe7109b68a49);
+  width: 100%;
+  background-size: cover; }
 
 .home h1, .home p {
   width: auto; }
@@ -121,10 +119,30 @@ header {
 .overview h3 {
   background-color: rgba(240, 247, 244, 0.7);
   display: inline-block;
-  padding-left: 10px; }
+  padding-left: 10px;
+  margin-bottom: 50px; }
 
 .datebox, .style-hero, .single-col {
   text-align: center; }
+
+.taller-field {
+  font-size: 1.3em;
+  margin: 1% 0;
+  padding: 1%;
+  border-radius: 5px;
+  width: 285px;
+  font-family: 'Prompt', sans-serif; }
+
+input[type=submit] {
+  font-size: 1.3em;
+  margin: 2% auto;
+  width: 100%;
+  background-color: #705d56;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  color: white;
+  font-family: 'Prompt', sans-serif; }
 
 body {
   margin: 0; }
