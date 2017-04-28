@@ -24,12 +24,7 @@
 	</ul>
 
 <hr id="cooplist">
-	<h2 class="subtlelink">Chicagoland Housing Co-ops (<a href="https://www.google.com/maps/d/u/0/viewer?mid=1XihqVgdsrpQRCvE-2q5KsEsj0iY&ll=41.86774747699223%2C-87.69356691594237&z=12" target="_blank">See Our Map</a>)</h2>
-	<p>
-		(Last updated manually updated by volunteers Jan 2017)
-	</p>
-	<p>Don't see your co-op? Have a vacancy? <a href="<?php get_page_template(); ?>/chgocoopWP/enhance#cooplisting">Get Listed!</a></p>
-
+	<?php the_field('coop_list_preface'); ?>
 
 
 	<?php // query all coop profiles available (cpt)

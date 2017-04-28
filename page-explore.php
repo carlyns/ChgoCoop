@@ -70,9 +70,7 @@
 			wp_reset_postdata(); ?>
 		</section>
 
-
-		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE JUST FOR BEGINNING EXPLORERS -->
-		<a href="<?php get_page_template(); ?>/chgocoopWP/explore/beginners"><div class="button-section">Beginner's Guide</div></a>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/explore/beginners"><div class="button-section">See All</div></a>
 
 	</div>
 
@@ -176,7 +174,7 @@
 
 		</section>
 		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE DETAILING THE PROCESS OF FORMING COOPS -->
-		<a href="<?php get_page_template(); ?>/chgocoopWP/explore/formation"><div class="button-section">Formation Guide</div></a>
+		<a href="<?php get_page_template(); ?>/chgocoopWP/explore/formation"><div class="button-section">See All</div></a>
 	</div>
 
 </div> <!-- //end of "allsections"-->

@@ -2,7 +2,7 @@
 
 	<div class="grid6right">
 		<div class="map">
-			<iframe src="https://www.google.com/maps/d/u/5/embed?mid=1XihqVgdsrpQRCvE-2q5KsEsj0iY" width="100%"></iframe>
+			<?php the_field( 'map', 2 ); ?>
 		</div>
 
 
@@ -78,6 +78,10 @@
 			<h3>We also love: </h3>
 			<?php the_field( 'worker_coop_links', 2 ); ?>
 			<?php the_field( 'food_coop_links', 2 ); ?>
+		</div>
+
+		<div class="loves">
+			<?php the_field( 'platinum_sponsor', 2 ); ?>
 		</div>
 
 

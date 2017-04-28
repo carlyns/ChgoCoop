@@ -41,8 +41,35 @@
 		<hr>
 		<div class="tags">
 			<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
-				This post was tagged with:
-				<span><?php echo the_tags( '<li>', '</li><li>', '</li>' );				?></span>
+				<?php
+					$beginnertag = has_tag('beginners');
+					$formationtag = has_tag('formation');
+					$bothtags = has_tag('beginners') && has_tag('formation');
+				 ?>
+
+ 				<!-- WP Conditionals page is always helpful.  it's in_category not is_category! (which only works on archive pages prob)
+ 				https://codex.wordpress.org/Conditional_Tags
+ 				-->
+				<?php
+				if ( $bothtags ) { ?>
+					This tool is tagged with<a href="<?php get_page_template(); ?>/chgocoopWP/explore/beginners"><li>beginners</li></a>&<a href="<?php get_page_template(); ?>/chgocoopWP/explore/formation"><li>formation</li></a>
+ 				<?php }
+				elseif ( $beginnertag	) { ?>
+						This tool is tagged with<a href="<?php get_page_template(); ?>/chgocoopWP/explore/beginners"><li>beginners</li></a>
+				<?php }
+				elseif ( $formationtag ) { ?>
+					This tool is tagged with<a href="<?php get_page_template(); ?>/chgocoopWP/explore/formation"><li>formation</li></a>
+				<?php }
+			else { ?>
+				This tool has no tags.
+			<?php } ?>
+
+
+
+
+
+
+
 			</h5>
 		</div>
 

@@ -12,11 +12,10 @@
 
 
 <div class="container">
-	<h2>Sorry!  Looks like you've reached a page that doesn't exist.</h2>
 
 	<div class="search">
-		<h2>Don't worry.  Try searching.</h2>
-		<?php get_search_form(); ?>
+		<h2></h2>
+		<h1><?php get_search_form(); ?></h1>
 	</div>
 
 
