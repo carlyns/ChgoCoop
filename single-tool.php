@@ -52,13 +52,13 @@
  				-->
 				<?php
 				if ( $bothtags ) { ?>
-					This tool is tagged with<a href="<?php get_page_template(); ?>/chgocoopWP/explore/beginners"><li>beginners</li></a>&<a href="<?php get_page_template(); ?>/chgocoopWP/explore/formation"><li>formation</li></a>
+					This tool is tagged with<a href="<?php echo get_permalink(41); ?>"><li>beginners</li></a>&<a href="<?php echo get_permalink(43); ?>"><li>formation</li></a>
  				<?php }
 				elseif ( $beginnertag	) { ?>
-						This tool is tagged with<a href="<?php get_page_template(); ?>/chgocoopWP/explore/beginners"><li>beginners</li></a>
+						This tool is tagged with<a href="<?php echo get_permalink(41); ?>"><li>beginners</li></a>
 				<?php }
 				elseif ( $formationtag ) { ?>
-					This tool is tagged with<a href="<?php get_page_template(); ?>/chgocoopWP/explore/formation"><li>formation</li></a>
+					This tool is tagged with<a href="<?php echo get_permalink(43); ?>"><li>formation</li></a>
 				<?php }
 			else { ?>
 				This tool has no tags.

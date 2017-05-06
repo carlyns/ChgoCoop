@@ -31,9 +31,10 @@
 			<h2>EXPLORE</h2>
 			<div class="block">
 				<p><?php the_field( 'explore_message' ); ?></p>
-
 			</div>
-			<a href="<?php get_page_template(); ?>/chgocoopWP/explore"><div class="style-button button-bottom">GO</div></a>
+
+			<!-- permalink for Explore page -->
+			<a href="<?php echo get_permalink(7); ?>"><div class="style-button button-bottom">GO</div></a>
 		</div>
 	</div>
 
@@ -43,9 +44,10 @@
 
 			<div class="block">
 				<p><?php the_field( 'enhance_message' ); ?></p>
-
 			</div>
-			<a href="<?php get_page_template(); ?>/chgocoopWP/enhance"><div class="style-button button-bottom">GO</div></a>
+			
+			<!-- permalink for Enhance page -->
+			<a href="<?php echo get_permalink(5); ?>"><div class="style-button button-bottom">GO</div></a>
 		</div>
 	</div>
 </div>

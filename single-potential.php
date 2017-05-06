@@ -21,11 +21,12 @@
 	<hr>
   <div class="tags">
 		<h5 class="potentialtips">
-			If you can imagine this property as a great housing co-op for your group, here are <a href="<?php get_page_template(); ?>/chgocoopWP/formation-abridged">some tips</a>.
+			If you can imagine this property as a great housing co-op for your group, here are <a href="<?php echo get_permalink(496); ?>">some tips</a>.
 		</h5>
 		<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
-      You can check out all Potential Properties by visiting the<span class="category"><a href="<?php get_page_template(); ?>/chgocoopWP/potential">potential</a>
+      You can check out all Potential Properties by visiting the<span class="category"><a href="<?php echo get_post_type_archive_link( 'potential' ); ?>">potential</a>
       </span>archive page.
+      <!-- permalink for CPT archive page 'potential'-->
 		</h5>
 	</div>
 

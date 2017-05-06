@@ -18,7 +18,7 @@
 	<div class="tags">
 		<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
 
-			You can check out all organizations by visiting the<span class="category"><a href="<?php get_page_template(); ?>/chgocoopWP/directory#orglist">Directory</a>
+			You can check out all organizations by visiting the<span class="category"><a href="<?php echo get_permalink(11); ?>#orglist">Directory</a>
 			</span>
 
 		</h5>

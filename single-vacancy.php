@@ -80,8 +80,8 @@
   <hr>
   <div class="tags">
 		<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
-      You can find more Profiles and Vacancies in the<span class="category"><a href="<?php get_page_template(); ?>/chgocoopWP/directory">Directory</a></span>
-
+      You can find more Profiles and Vacancies in the<span class="category"><a href="<?php echo get_permalink(11); ?>">Directory</a></span>
+      <!-- permalink for Directory -->
 		</h5>
 	</div>
 

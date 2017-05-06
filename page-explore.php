@@ -70,7 +70,8 @@
 			wp_reset_postdata(); ?>
 		</section>
 
-		<a href="<?php get_page_template(); ?>/chgocoopWP/explore/beginners"><div class="button-section">See All</div></a>
+		<!-- permalink to Beginners Page -->
+		<a href="<?php echo get_permalink(41); ?>"><div class="button-section">See All</div></a>
 
 	</div>
 
@@ -104,27 +105,25 @@
 
 		</section>
 		<!-- THE FOLLOWING LINK SHOULD BE AN ARCHIVE PAGE for tag "advice" -->
-		<a href="<?php get_page_template(); ?>/chgocoopWP/tag/advice"><div class="button-section">See All Inspiring Stories</div></a>
+		<a href="<?php echo get_tag_link( 11 ); ?>"><div class="button-section">See All Inspiring Stories</div></a>
 	</div>
 
 	<div class="band" class="threeactions">
-		<h2>Find an Existing Co-op Vacancy</h2>
-		<p>If you prefer to drop into an already existing cooperative in/near Chicago, there are a few options:</p>
+		<?php the_field('vacancy_section'); ?>
+
 		<div class="explore-action">
-			<p>Check out the directory for vacancies. We also profile vacancies in the <a href="http://eepurl.com/cmiuZv" target="_blank">"Good Housing" newsletter</a>, managed by RESUS.</p>
-			<a href="<?php get_page_template(); ?>/chgocoopWP/directory"><div class="button-bottom">View directory</div></a>
+			<?php the_field('first_explore_action'); ?>
+			<a href="<?php the_field('first_explore_action_link'); ?>"><div class="button-bottom"><?php the_field('first_explore_action_button'); ?></div></a>
 		</div>
+
 		<div class="explore-action">
-			<p>
-				Visit Craigslist and use the search term “co-op” or “cooperative.” You may also want to try online real-estate listings.
-			</p>
-			<a href="http://chicago.craigslist.org/search/hhh?query=%22cooperative%22&availabilityMode=0" target="_blank"><div class="button-bottom">Visit Craigslist</div></a>
+			<?php the_field('second_explore_action'); ?>
+			<a href="<?php the_field('second_explore_action_link'); ?>"><div class="button-bottom"><?php the_field('second_explore_action_button'); ?></div></a>
 		</div>
+
 		<div class="explore-action">
-			<p>
-				Get notified when Fireplace - a new compatibility tool - is launched.  It will help you discover your closest co-op match for a co-op or a group.
-			</p>
-			<a href="http://fireplace.resusstudio.com" target="_blank"><div class="button-bottom">Visit page</div></a>
+			<?php the_field('third_explore_action'); ?>
+			<a href="<?php the_field('third_explore_action_link'); ?>"><div class="button-bottom"><?php the_field('third_explore_action_button'); ?></div></a>
 		</div>
 
 
@@ -173,8 +172,8 @@
 
 
 		</section>
-		<!-- THE FOLLOWING LINK SHOULD BE A CRAFTED PAGE DETAILING THE PROCESS OF FORMING COOPS -->
-		<a href="<?php get_page_template(); ?>/chgocoopWP/explore/formation"><div class="button-section">See All</div></a>
+		<!-- permalink to Formation Page -->
+		<a href="<?php echo get_permalink(43); ?>"><div class="button-section">See All</div></a>
 	</div>
 
 </div> <!-- //end of "allsections"-->

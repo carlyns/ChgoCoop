@@ -5,13 +5,14 @@
 			<?php the_field( 'map', 2 ); ?>
 		</div>
 
-
-		<a href="<?php get_page_template(); ?>/chgocoopWP/directory"><div class="style-button">See Directory</div></a>
+		<!-- permalink for Directory -->
+		<a href="<?php echo get_permalink(11); ?>"><div class="style-button">See Directory</div></a>
 	</div>
 
 
 	<div class="grid6right">
-		<h3><a href="<?php get_page_template(); ?>/chgocoopWP/our-team">Our Team</a></h3>
+		<!-- permalink for Team -->
+		<h3><a href="<?php echo get_permalink(15); ?>">Our Team</a></h3>
 
 		<div class="eventlist">
 

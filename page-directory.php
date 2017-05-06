@@ -19,8 +19,10 @@
 	<ul class="directorytabs">
 		<li><a href="#cooplist">Cooperatives</a></li> |
 		<li><a href="#orglist">Organizations</a></li> |
-		<li><a href="<?php get_page_template(); ?>/chgocoopWP/potential/">Potential Properties</a></li> |
-		<li><a href="<?php get_page_template(); ?>/chgocoopWP/professionals/">Professional Services</a></li>
+		<li><a href="<?php echo get_post_type_archive_link( 'potential' ); ?>">Potential Properties</a></li> |<!-- this is the permalink for the Archive Page for Post Type "Potential" so you don't have to perform a find/replace to delete the "/chgocoopWP" prefix that breaks on the live site. -->
+		<li><a href="<?php echo get_permalink(522); ?>">Professional Services</a></li>  <!-- this is the permalink for the Page "Professional Services" so you don't have to perform a find/replace to delete the "/chgocoopWP" prefix that breaks on the live site. -->
+		<?php get_post_type_archive_link( $post_type ); ?>
+
 	</ul>
 
 <hr id="cooplist">

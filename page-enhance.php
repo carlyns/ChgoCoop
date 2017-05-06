@@ -52,7 +52,7 @@
 
 		</section>
 
-		<a href="<?php get_page_template(); ?>/chgocoopWP/tag/collaboration"><div class="button-section">See All articles</div></a>
+		<a href="<?php echo get_tag_link( 15 ); ?>"><div class="button-section">See All articles</div></a>
 	</div>
 
 
@@ -96,13 +96,11 @@
 
 		</section>
 		<!-- THE FOLLOWING LINK SHOULD BE AN ARCHIVE PAGE FOR ALL TOOLS, A TAG? -->
-		<a href="<?php get_page_template(); ?>/chgocoopWP/tool"><div class="button-section">See All Tools</div></a>
+		<a href="<?php echo get_post_type_archive_link( 'tool' ); ?>"><div class="button-section">See All Tools</div></a>
 	</div>
 
 	<div class="band" id="cooplisting">
-		<h2>Put Your Co-op On The Map</h2>
-		<p>We list basic information like name, approximate location and size on our map for free.</p>
-		<p>If you see a mistake, please <a href="mailto: cso@RESUSstudio.com">email us</a> so we can revise it.</p>
+		<?php the_field('map_listing'); ?>
 
 		<div>
 			<form action="https://formspree.io/cso@RESUSstudio.com" method="POST">
@@ -115,29 +113,15 @@
 		</div>
 
 		<hr>
+		<?php the_field('coop_listing'); ?>
 
-		<h3>Want a more comprehensive listing?</h3>
-		<p>This includes contact, website, and photos.  Please complete <a href="https://resus.typeform.com/to/emYHV9" target="_blank">this form</a>.  The following fees help maintain this website:</p>
-		<ul>
-			<li>1-10 members: $5/year</li>
-			<li>11-50 members: $10/year</li>
-			<li>51+ members: $50/year</li>
-		</ul>
-
-		<a href="https://resus.typeform.com/to/emYHV9" target="_blank"><div class="button-section">Create Co-op Profile</div></a>
+		<a href="<?php the_field('coop_listing_link'); ?>"><div class="button-section"><?php the_field('coop_listing_button'); ?></div></a>
 	</div>
 
 	<div class="band">
+		<?php the_field('vacancy_listing'); ?>
 
-		<h2>Have a Vacancy at your Co-op? Get Listed!</h2>
-		<p>Unit Listing: $20/unit</p>
-		<ol>
-			<li>Fill out our simple form. The fee goes towards maintaining this site.</li>
-			<li>We feature your co-op and/or unit on this site, blog posts, and our <a href="http://eepurl.com/cmiuZv" target="_blank">"Good Housing" newsletter</a>.
-			<li>Watch the requests roll in!</li>
-
-		</ol>
-		<a href="https://resus.typeform.com/to/LWTR4c"><div class="button-section">List a Unit</div></a>
+		<a href="<?php the_field('vacancy_listing_link'); ?>"><div class="button-section"><?php the_field('vacancy_listing_button'); ?></div></a>
 	</div>
 
 
