@@ -103,7 +103,7 @@
 		<?php the_field('map_listing'); ?>
 
 		<div>
-			<form action="https://formspree.io/cso@RESUSstudio.com" method="POST">
+			<form action="https://formspree.io/cooperativechicago@gmail.com" method="POST">
 				<input class="taller-field" type="text" name="coopname" id="coopname" placeholder="Co-op Name">
 				<input class="taller-field" type="text" name="intersection" id="intersection" placeholder="Major Intersection, City">
 				<input class="taller-field" type="text" name="coopsize" id="coopsize" placeholder="Number of Units/Apts">

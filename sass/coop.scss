@@ -103,14 +103,14 @@
     clear: both;
   }
   .home header {
-    background-image: url(https://images.unsplash.com/photo-1422479278902-8cef24992df0?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=b3792fa660f10a17b1abfe7109b68a49);
     width: 100%; // this fixed the scaling issue
-    // background-image: url("../imgs/unsplash_room-sm.jpg");
+    background-image: url("../imgs/unsplash_vista-sm.jpg");
     background-size: cover;
   }
   @media screen and (min-width: $breakpoint-med-big) {
     .home header {
-      // background-image: url("../imgs/unsplash_room.jpg");
+      background-image: url("../imgs/unsplash_cozytable.jpg");
+      background-position: center;
     }
   }
   .home h1, .home p {
