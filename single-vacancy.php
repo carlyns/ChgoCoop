@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
+<!-- a unique stylesheet for certain pages.-->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/profiles.css">
 
   <title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
@@ -52,13 +52,7 @@
 
       We prefer <?php the_field('apply_option'); ?>
       <a href="mailto:<?php the_field('email_unit'); ?>"><?php the_field('email_unit'); ?></a>
-      <!-- make sure Fireplace is ready to generate profiles -->
 
-
-
-      <!-- this didn't work - didn't generate url link
-      <?php if( get_field('application_form')): // if there's an app form ?>
-          Application Form: </p>
       <?php endif; ?> -->
 
     </div>
@@ -73,15 +67,12 @@
 
     </div>
 
-
-
-	<?php endwhile; endif; // THIS PLACEMENT MATTERS: in between the ul tag! ?>
+	<?php endwhile; endif;  ?>
 
   <hr>
   <div class="tags">
-		<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
+		<h5>
       You can find more Profiles and Vacancies in the<span class="category"><a href="<?php echo get_permalink(11); ?>">Directory</a></span>
-      <!-- permalink for Directory -->
 		</h5>
 	</div>
 

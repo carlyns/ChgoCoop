@@ -20,7 +20,6 @@
 				<?php // DEFINE THE QUERY ARGUMENTS FOR EVENTS TODAY OR IN THE FUTURE ?>
 				<?php
 				$today = date("Ymd");
-				// WOW for some reason, making a post "sticky" placed it in the events list and broke the query. So must include ignore_sticky_posts in the array
 
 				$args = array (
 					 	'category' => 18,
@@ -43,14 +42,11 @@
 		 //Display the contents
 		 while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-			<!-- Then, need to pull the ACF data. -->
 			<?php  // edited code from: http://www.advancedcustomfields.com/resources/date-picker/
 				$date = DateTime::createFromFormat('Ymd', get_field('event_start_date'));
 				$month = DateTime::createFromFormat('Ymd', get_field('event_start_date'));
 			?>
 
-			<!-- And display in the desired format.
-			Date and time formats: https://codex.wordpress.org/Formatting_Date_and_Time -->
 			<div class="eventinfo">
 				<a href="<?php the_permalink(); ?>">
 					<div class="datebox">
@@ -97,12 +93,10 @@
 <!-- FOOTER AREA to add widgets -->
 			<?php if ( is_active_sidebar( 'main_footer' ) ) : ?>
 			<?php dynamic_sidebar( 'main_footer' ); ?>
-			<!-- ADD CLASSES TO REGISTER_SIDEBAR FUNCTION IN FUNCTIONS.PHP TO WRAP DIVS UNIQUELY.  Didn't really try to do this.  Instead of having two different sizes for the icons, I made them a universal 40px wide and fudged the centering on larger screens. -->
 			<?php endif; ?>
 
 <?php wp_footer(); ?>
 
-<!-- FOR SCRIPTS, PATH NEEDS TO USE PHP template_url, NOT JUST RELATIVE URL -->
 <script src="<?php bloginfo( 'template_url' ); ?>/js/jquery.min.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/coop.js"></script>
 

@@ -1,8 +1,5 @@
 <?php get_header(); ?>
 
-<!-- ADD THE STYLESHEET THAT MIGHT CHANGE BETWEEN PAGES HERE.-->
-
-
 <title><?php bloginfo( 'name' ); ?></title>
 
 </head>
@@ -45,7 +42,7 @@
 			<div class="block">
 				<p><?php the_field( 'enhance_message' ); ?></p>
 			</div>
-			
+
 			<!-- permalink for Enhance page -->
 			<a href="<?php echo get_permalink(5); ?>"><div class="style-button button-bottom">GO</div></a>
 		</div>
@@ -57,13 +54,10 @@
 
 		<div class="grid4">
 			<div class="featured-org">
-				<?php // need to get the all the Post Date from the selected Page Link ACF!! ?>
-
 
 				<h3>PROPERTY SPOTLIGHT</h3>
-				<!-- switch this card out with co-op profile or vacancy -->
-					<?php // grabbing data about the post with Page Link ACF from https://www.advancedcustomfields.com/resources/page-link/
 
+					<?php
 					// vars
 					$org = get_field('featured_prop', false, false);
 
@@ -79,7 +73,6 @@
 					<a href="<?php echo get_the_permalink($org); ?>"><div class="style-button button-bottom">Read More</div></a>
 
 					<?php endif; ?>
-
 
 
 			</div> <!-- end of 'featured'-->
