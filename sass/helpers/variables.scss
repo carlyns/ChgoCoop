@@ -1,33 +1,26 @@
-// if this is used, then no need to declare variables at top of scss page files
-
-// Color Variables DEB'S PALETTE
-// $brand-background-color: rgba(250,255,232,1); /* beige */
-// $brand-color-primary: rgba(91,81,81,1); /* dark grey */
-// $brand-color-accent: rgba(41,156,144,1); /* dark teal */
-// $brand-second-accent: rgba(114,219,209,1); /* light blue */
-// $brand-second-bkgd: rgba(221,219,219,1); /* light grey */
-// $brand-third-bkgd: rgba(255,255,255,1); /* white */
 
 // Color Variables ALTERNATE PALETTE
-$brand-background-color: rgba(255,255,255,1); /*  White */
-$brand-background-trslct: rgba(240,247,244,0.7); /* 80% AntiFlash White */
-$brand-color-primary: rgba(50,41,47,1); /* Jet */
-$brand-color-accent: rgba(112,93,86,1); /* Wenge */
-$brand-second-accent: rgba(153,225,217,1); /* Pale Robin Egg */
-$brand-second-bkgd: rgba(112,171,175,0.5); /* 50% Green Sheen */
-$brand-third-bkgd: rgba(255,255,255,1); /*  White */
+$brand-background-color: rgba(255,255,255,1); //  White
+$brand-background-trslct: rgba(240,247,244,0.7); // 80% AntiFlash White
+$brand-color-primary: rgba(50,41,47,1); // Jet
+$brand-color-accent: rgba(112,93,86,1); // Wenge
+$brand-second-accent: rgba(153,225,217,1); // Pale Robin Egg
+$brand-second-bkgd: rgba(112,171,175,0.5); // 50% Green Sheen
+$brand-third-bkgd: rgba(255,255,255,1); //White
+/*  Variables for Color Palette were used and compiled */
+
+
 
 // Font Weights
 $weight-bold: 700;
 $weight-medium: 500;
 $weight-light: 300;
+/*  Variables for Font Weights were used and compiled */
+
 
 
 // Breakpoints, still need to specify min or max
 $breakpoint-small-med: 500px;
 $breakpoint-med-big: 700px;
 $breakpoint-biggest: 1200px;
-
-
-// Basic Page Margins:
-$margin-typ: 0 3%;
+/*  Variables for Breakpoints were used and compiled */

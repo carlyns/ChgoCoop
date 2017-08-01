@@ -1,5 +1,7 @@
-@import "helpers/variables"; // could just be helpers/
-
+@import "coop";
+/*
+CSS FOR DIRECTORY
+*/
 .directorytabs {
   padding: 0;
 }
@@ -8,9 +10,6 @@
 }
 .cooplist-item {
   clear: both;
-  // overflow: auto;
-  // display: flex;
-  // align-items: center;
   margin: 20px 0;
 }
 .coopname {
@@ -44,3 +43,6 @@
 hr {
   clear: both;
 }
+/*
+end of CSS FOR DIRECTORY
+*/

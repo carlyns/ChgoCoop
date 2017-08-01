@@ -1,0 +1,81 @@
+/*
+CSS FOR FOOTER
+*/
+
+footer {
+  clear: both;
+  padding: 3% 3% 0 3%;
+  overflow: auto;
+  background-color: $brand-second-bkgd;
+}
+footer h3 {
+  width: 80%;
+  margin-top: 15px;
+  margin-bottom: 3px;
+}
+footer p {
+  margin: 0;
+}
+
+.map {
+  width: 90%;
+  padding-bottom: 5%;
+}
+  @media screen and (min-width: $breakpoint-med-big ) {
+
+    .grid6right {
+      width: 50%;
+      float: right; /* this allows information to display after map on mobile */
+    }
+    .map iframe {
+      height: 500px;
+    }
+  }
+
+.datebox {
+  border: 2px solid $brand-color-accent;
+  border-radius: 10px;
+  height: 45px;
+  width: 45px;
+  margin-bottom: 3%;
+  float: left;
+  text-align: center;
+}
+.datebox p {
+  padding-top: 3px;
+  margin: -5px;
+}
+.eventtitle {
+  float: left;
+  width: 60%;
+  padding-left: 3%;
+}
+.eventinfo {
+  clear: both;
+  margin-bottom: 0;
+
+}
+.eventinfo a:hover {
+  text-decoration: underline;
+}
+.eventlist {
+  overflow: auto;
+}
+.contactinfo {
+  clear: both;
+}
+.cooploves {
+  font-size: 0.7em;
+}
+.cooploves a {
+  color: $brand-color-primary;
+}
+
+.credits {
+  clear: both;
+  text-align: center;
+  padding: 2%;
+}
+/*
+end of CSS FOR FOOTER
+*/

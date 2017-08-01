@@ -1,6 +1,10 @@
-@import "helpers/variables"; // could just be helpers/
+@import "coop";
+@import "_stickybanner";
+@import "_forms";
 
-/*  for banded sections pages */
+/*
+CSS FOR BANDED SECTIONS
+*/
 header {
   background-image: url(../imgs/patterns/asanoha-400px.png);
   /* Background pattern from Subtle Patterns */
@@ -25,7 +29,7 @@ section {
   overflow-x: auto;
   border-bottom: 5px solid $brand-color-accent;
 }
-.tools a:hover { /* maybe because the h3 text is wrapped in a div the link properties don't come through (underline on hover), but highlighting the whole div is better anyway*/
+.tools a:hover {
   background-color: rgba(150,150,150, 0.4);
 }
 .infotool {
@@ -45,7 +49,7 @@ section {
 .icon {
   border: 3px solid black;
   width: 75px;
-  height: 75px;/* if this does not match default thumbnail size in functions.php, it will be cut off*/
+  height: 75px; /* if this does not match default thumbnail size in functions.php, it will be cut off */
   margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
@@ -68,7 +72,9 @@ section {
 .button-section {
   color: $brand-background-color;
 }
-/* UNIQUE EXPLORERS 3-BUTTON CALL TO ACTION */
+
+
+/* 3-BUTTON CALL TO ACTION on Explorers Page */
 .explore-action {
   border: 1px solid $brand-color-primary;
   padding: 2%;
@@ -94,37 +100,36 @@ a .button-bottom {
     margin-right: 2%;
     float: left;
     height: 240px;
-    position: relative; /* 1/3 needed this here for button-bottom, diff from main css */
+    position: relative;
   }
   .explore-action:last-of-type {
     margin-right: 0;
   }
   .explore-action .button-bottom {
-    position: absolute; /* 1/3 needed this here for button-bottom, diff from main css */
-    bottom: 4%; /* 1/3 needed this here for button-bottom, diff from main css */
-
+    position: absolute;
+    bottom: 4%;
   }
-
-
 }
 
 
-.sectionlisting{
+/* ------ LIST OF POSTS ON BEGINNER/FORMATION PAGES -----*/
+.funfact {
+  font-weight: $weight-light;
   text-align: center;
+  color: $brand-color-accent;
 }
-.taller-field {
-  font-size: 1.3em;
-  margin: 1% 0;
-  padding: 1%;
-  border-radius: 5px;
-  width: 285px;
+@media screen and (min-width: $breakpoint-med-big) {
+  .funfact {
+    font-size: 2em;
+  }
 }
-input[type=submit] {
-  font-size: 1.3em;
-  margin: 2% auto;
-  width: 100%;
-  background-color: $brand-color-accent;
-  border-radius: 5px;
-  width: 300px;
-  text-align: center;
+.allposts {
+  clear: both;
 }
+h4 {
+  text-transform: capitalize;
+}
+
+/*
+end of CSS FOR BANDED SECTIONS
+*/
