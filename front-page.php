@@ -1,5 +1,8 @@
 <?php get_header(); ?>
 
+<!-- a unique stylesheet for certain pages.-->
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/frontpage.css">
+
 <title><?php bloginfo( 'name' ); ?></title>
 
 </head>
@@ -132,7 +135,7 @@
 		</div> <!-- end of 'grid4'-->
 	</div> <!-- end of 'row latest'-->
 
-	<div class="row single-col randomaction">
+	<div class="row randomaction">
 		<h4><?php the_field( 'random_action' ); ?></h4>
 
 		<a href="<?php the_field( 'random_action_link' ); ?>" target="_blank"><div class="style-button"><?php the_field( 'random_action_button' ); ?></div></a>

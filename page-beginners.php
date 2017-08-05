@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- a unique stylesheet for certain pages.-->
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/curated.css">
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bandedsections.css">
 
 <title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
@@ -26,7 +26,7 @@
 
 	<h2 class="funfact"><?php the_content(); ?></h2>
 
-	<div class="allexploreposts">
+	<div class="allposts">
 		<h2>Tools & Posts relevant to beginners</h2>
 
 			<?php // ALL 'BEGINNERS' TOOLS

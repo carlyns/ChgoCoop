@@ -98,7 +98,7 @@
 	</div>
 
 	<div class="band" class="threeactions">
-		<?php the_field('vacancy_section'); ?>
+		<h2><?php the_field('vacancy_section'); ?></h2>
 
 		<div class="explore-action">
 			<?php the_field('first_explore_action'); ?>

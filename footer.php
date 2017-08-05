@@ -77,11 +77,6 @@
 			<?php the_field( 'food_coop_links', 2 ); ?>
 		</div>
 
-		<div class="loves">
-			<?php the_field( 'platinum_sponsor', 2 ); ?>
-		</div>
-
-
 	</div> <!-- // end of "grid6right"-->
 
 
