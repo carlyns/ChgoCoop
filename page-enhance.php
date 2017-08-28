@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
+<!-- a unique stylesheet for certain pages.-->
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bandedsections.css">
 
 <title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
@@ -17,24 +17,19 @@
 	<div class="topbanner">
 		<h1><?php the_field('enhance_banner'); ?></h1>
 	</div>
-	<!-- repeated div that unique to scrolldown -->
+	<!-- repeated div that's unique to scrolldown -->
 	<div class="topbanner showonscrolldown">
 		<h1><?php the_field('enhance_banner'); ?></h1>
 	</div>
 
 	<div class="band">
 		<h2>Fundamentals & Collaboration</h2>
-			<!-- Show all posts (CPT or blog) + Enhance Category -->
 		<section>
 			<?php
-			$args = array( 'cat' => 15, 'posts_per_page' => 6, 'orderby' => 'rand' ); //Which tag you want, how many posts to show
+			$args = array( 'cat' => 15, 'posts_per_page' => 6, 'orderby' => 'rand' );
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
-			<!-- STILL DOESN'T SHOW BOTH REG BLOG POSTS AND CPT POSTS, EVEN THOUGH ARCHIVE PAGE DOES!! -->
-
-			<!-- THIS LOOP IS NOT SHOWING THE CPT ... HOW TO INCLUDE THE CPT THAT ARE TAGGED WITH 'PRINCIPLES'?? -->
 
 			<a href="<?php the_permalink(); ?>">
 			<div class="infotool">
@@ -58,12 +53,9 @@
 
 	<div class="band">
 		<h2>Tool & Templates</h2>
-		 <!-- (hard skills) -->
-			<!-- Show all posts (CPT only) of "tools" + Enhance Category -->
 		<section>
 
-			<?php // DISPLAY CUSTOM POST TYPE
-			// be aware tag & cat intersection has unique arguments: http://wordpress.stackexchange.com/questions/4201/how-to-query-posts-by-category-and-tag-
+			<?php
 			$args = array( 'post_type' => 'tool', 'posts_per_page' => 6, 'cat' => 15, 'orderby' => 'date'  ); //Define your custom post type name in the arguments
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents
@@ -73,7 +65,7 @@
 				<div class="infotool">
 					<div class="icon">
 
-						<?php // IF you uploaded a standard tool icon under ACF 'icon_thumb', it means you want this to display as the landingpage icon. this captures ugly pdf documents.  ?>
+						<?php // IF you uploaded a standard tool icon under ACF 'icon_thumb', it means you want this to display as the landingpage icon. This captures pdf documents.  ?>
 						<?php
 						$icon_thumb = get_field('icon_thumb');
 						$image = get_field('tool_img');
@@ -95,7 +87,7 @@
 			wp_reset_postdata(); ?>
 
 		</section>
-		<!-- THE FOLLOWING LINK SHOULD BE AN ARCHIVE PAGE FOR ALL TOOLS, A TAG? -->
+
 		<a href="<?php echo get_post_type_archive_link( 'tool' ); ?>"><div class="button-section">See All Tools</div></a>
 	</div>
 
@@ -108,7 +100,7 @@
 				<input class="taller-field" type="text" name="intersection" id="intersection" placeholder="Major Intersection, City">
 				<input class="taller-field" type="text" name="coopsize" id="coopsize" placeholder="Number of Units/Apts">
 				<br>
-				<input class="form-submit-style" type="submit" name="submit" value="Get on the Map (free)"> <!-- target="_blank" doens't work on the submit button -->
+				<input class="form-submit-style" type="submit" name="submit" value="Get on the Map (free)">
 			</form>
 		</div>
 

@@ -1,0 +1,38 @@
+/*
+CSS FOR STICKY BANNER
+*/
+
+.topbanner {
+  background-color: $brand-second-accent;
+  text-align: left;
+  width: 100%;
+  clear: both;
+  font-size: 0.8em;
+  padding-right: 65px;
+  padding-left: 3%;
+  height: 60px;
+  border-bottom: 3px solid white;
+  border-top: 1px solid rgba(255,255,255,0.1); 
+}
+.showonscrolldown {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+  @media screen and (min-width: $breakpoint-small-med) {
+    .topbanner {
+      font-size: 1.2em;
+      height: auto;
+    }
+  }
+  @media screen and (min-width: $breakpoint-med-big) {
+    .topbanner {
+      height: 80px;
+      text-align: center;
+      padding-right: 0;
+    }
+  }
+/*
+end of CSS FOR STICKY BANNER
+*/

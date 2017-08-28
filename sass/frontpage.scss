@@ -1,0 +1,187 @@
+@import "coop";
+
+/*
+CSS FOR FRONT PAGE ONLY
+*/
+// home page unique hero image
+.home header {
+  width: 100%;
+  background-image: url("../imgs/unsplash_vista-sm.jpg");
+  background-size: cover;
+}
+@media screen and (min-width: $breakpoint-med-big) {
+  .home header {
+    background-image: url("../imgs/unsplash_cozytable.jpg");
+    background-position: center;
+    height: 500px;
+  }
+}
+.home h1, .home p {
+  width: auto;
+}
+.home .topsticky {
+  background-color: $brand-background-trslct;
+  overflow: auto;
+}
+
+
+.overview {
+  font-size: 1.2em;
+  clear: both;
+  padding: 5% 10% 0 10%;
+}
+.overview h2 {
+  font-weight: $weight-bold;
+  background-color: $brand-background-trslct;
+  display: inline-block;
+  padding-left: 10px;
+}
+.overview h3 {
+  background-color: $brand-background-trslct;
+  display: inline-block;
+  padding-left: 10px;
+  margin-bottom: 50px;
+}
+
+
+
+
+
+.twousers .grid6 {
+  margin: 3% 1%;
+  padding: 2%;
+}
+.explorers .button-bottom {
+  width: 100px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.existing {
+  text-align: right;
+  overflow: auto;
+  border-top: 2px solid $brand-second-bkgd;
+}
+.existing .button-bottom {
+  width: 100px;
+  margin-left: 0;
+  margin-right: 0;
+  float: right;
+}
+  @media screen and (min-width: $breakpoint-med-big) {
+    .block {
+      height: 100px;
+    }
+    .twousers .grid6 {
+      transition: background-color 0.25s ease-in;
+      border: 1px solid $brand-color-primary;
+    }
+    .twousers .grid6:hover {
+      border: 2px solid $brand-second-accent;
+    }
+    .existing, .explorers {
+      border-top: none;
+      text-align: left;
+      position: relative;
+      padding-bottom: 50px;
+
+    }
+    .twousers {
+      .button-bottom {
+          width: 50%;
+          position: absolute;
+          bottom: 0;
+          margin-left: 25%;
+          float: none;
+      }
+    }
+  }
+
+
+
+.thumbnail {
+  overflow: hidden;
+}
+.thumbnail img {
+  display: block;
+  margin: 0 auto;
+  height: 100px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+  .latest {
+    border-top: 1px solid $brand-color-primary;
+    border-bottom: 1px solid $brand-color-primary;
+    padding-bottom: 15px;
+  }
+  .latest h2 {
+    margin-bottom: 0;
+  }
+  .latest h3 {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .latest p {
+    margin: 1% 0;
+  }
+  .latest .style-button {
+    font-size: 1em;
+    margin-top: 0;
+  }
+    @media screen and (min-width: $breakpoint-med-big ) {
+      .latest {
+        border-top: none;
+      }
+
+      .latest .style-button {
+        font-size: 1.5em;
+      }
+    }
+
+
+.featured-org, .featured-unit, .featured-coop {
+  .button-bottom {
+      width: 70%;
+      margin: 0 auto;
+  }
+}
+
+    @media screen and (min-width: $breakpoint-med-big ) {
+      .featured-org, .featured-unit, .featured-coop {
+        height: 300px;
+        position: relative;
+        .button-bottom {
+            width: 70%;
+            position: absolute;
+            bottom: 5px;
+            margin-left: 15%;
+          }
+      }
+    }
+
+
+
+
+
+.randomaction {
+  padding-bottom: 5%;
+  font-size: 0.8em;
+  text-align: center;
+
+}
+.randomaction h4 {
+  font-size: 1.1em;
+}
+  @media screen and (min-width: $breakpoint-med-big ) {
+    .randomaction .style-button {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .randomaction {
+      font-size: 1em;
+    }
+  }
+/*
+end of CSS FOR FRONT PAGE ONLY
+*/

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
+<!-- a unique stylesheet for certain pages.-->
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/directory.css">
 
 <title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
@@ -19,8 +19,8 @@
 	<ul class="directorytabs">
 		<li><a href="#cooplist">Cooperatives</a></li> |
 		<li><a href="#orglist">Organizations</a></li> |
-		<li><a href="<?php echo get_post_type_archive_link( 'potential' ); ?>">Potential Properties</a></li> |<!-- this is the permalink for the Archive Page for Post Type "Potential" so you don't have to perform a find/replace to delete the "/chgocoopWP" prefix that breaks on the live site. -->
-		<li><a href="<?php echo get_permalink(522); ?>">Professional Services</a></li>  <!-- this is the permalink for the Page "Professional Services" so you don't have to perform a find/replace to delete the "/chgocoopWP" prefix that breaks on the live site. -->
+		<li><a href="<?php echo get_post_type_archive_link( 'potential' ); ?>">Potential Properties</a></li> |
+		<li><a href="<?php echo get_permalink(522); ?>">Professional Services</a></li>
 		<?php get_post_type_archive_link( $post_type ); ?>
 
 	</ul>
@@ -58,7 +58,7 @@
 					<div class="vacancytag">
 							<a href="<?php echo get_permalink($vacancy->ID); ?>"><p>unit vacancy: (<?php the_field('bedrooms', $vacancy->ID); ?>)</p></a>
 					</div>
-        <?php endforeach; // no else, do nothing ?>
+        <?php endforeach; ?>
       <?php endif;      ?>
 
 
@@ -84,12 +84,10 @@
 
 			</li>
 
-
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?>
 
 		</ul>
-
 
 </div>
 

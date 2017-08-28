@@ -1,10 +1,9 @@
-/*  White */
-/* 80% AntiFlash White */
-/* Jet */
-/* Wenge */
-/* Pale Robin Egg */
-/* 50% Green Sheen */
-/*  White */
+/*  Variables for Color Palette were used and compiled */
+/*  Variables for Font Weights were used and compiled */
+/*  Variables for Breakpoints were used and compiled */
+/* --------
+BASE CSS FOR ALL PAGES
+------ */
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -13,7 +12,12 @@
 body {
   font-family: 'Prompt', sans-serif;
   background-color: white;
-  color: #32292f; }
+  color: #32292f;
+  margin: 0; }
+
+.container {
+  clear: both;
+  margin: 0 3%; }
 
 h1, h2, h3, h4 {
   font-weight: 500; }
@@ -46,34 +50,13 @@ a {
 a:hover {
   text-decoration: underline; }
 
-.style-button {
-  font-size: 1.5em;
-  padding: 1%;
-  text-align: center;
-  background-color: #705d56;
-  color: white; }
+header {
+  background-image: url(../imgs/patterns/asanoha-400px.png);
+  background-size: 40%;
+  overflow: auto;
+  clear: both; }
 
-.latest .style-button {
-  font-size: 1em;
-  margin-top: 0; }
-
-.randomaction {
-  padding-bottom: 5%;
-  font-size: 0.8em; }
-
-.randomaction h4 {
-  font-size: 1.1em; }
-
-@media screen and (min-width: 700px) {
-  .latest .style-button {
-    font-size: 1.5em; }
-
-  .randomaction .style-button {
-    width: 50%;
-    margin: 0 auto; }
-
-  .randomaction {
-    font-size: 1em; } }
+/* -------- TOP BAR ON EVERY PAGE ------- */
 .beta {
   font-size: 0.5em;
   font-weight: 300; }
@@ -86,76 +69,7 @@ a:hover {
   .style-tagline {
     display: block;
     font-size: 1em; } }
-header {
-  background-image: url(../imgs/patterns/asanoha-400px.png);
-  /* Background pattern from Subtle Patterns */
-  background-size: 40%;
-  overflow: auto;
-  clear: both; }
-
-.home header {
-  width: 100%;
-  background-image: url("../imgs/unsplash_vista-sm.jpg");
-  background-size: cover; }
-
-@media screen and (min-width: 700px) {
-  .home header {
-    background-image: url("../imgs/unsplash_cozytable.jpg");
-    background-position: center; } }
-.home h1, .home p {
-  width: auto; }
-
-.home .topsticky {
-  background-color: rgba(240, 247, 244, 0.7);
-  overflow: auto; }
-
-.overview {
-  font-size: 1.2em;
-  clear: both;
-  padding: 5% 10% 0 10%; }
-
-.overview h2 {
-  font-weight: 700;
-  background-color: rgba(240, 247, 244, 0.7);
-  display: inline-block;
-  padding-left: 10px; }
-
-.overview h3 {
-  background-color: rgba(240, 247, 244, 0.7);
-  display: inline-block;
-  padding-left: 10px;
-  margin-bottom: 50px; }
-
-.datebox, .style-hero, .single-col {
-  text-align: center; }
-
-.taller-field {
-  font-size: 1.3em;
-  margin: 1% 0;
-  padding: 1%;
-  border-radius: 5px;
-  width: 285px;
-  font-family: 'Prompt', sans-serif; }
-
-input[type=submit] {
-  font-size: 1.3em;
-  margin: 2% auto;
-  width: 100%;
-  background-color: #705d56;
-  border-radius: 5px;
-  width: 300px;
-  text-align: center;
-  color: white;
-  font-family: 'Prompt', sans-serif; }
-
-body {
-  margin: 0; }
-
-.container {
-  /* SIMILAR RULES AS .allsections on banded pages to allow for topsticky space */
-  clear: both;
-  margin: 0 3%; }
-
+/* -------- HEADING AREA  ------- */
 .heading {
   width: 150px;
   margin: 0 auto; }
@@ -173,6 +87,39 @@ body {
     float: left;
     width: 520px;
     padding-left: 10px; } }
+/* -------- BUTTONS  ------- */
+.button {
+  width: 50%;
+  margin: 0 auto;
+  margin: 4% auto 0 auto; }
+
+.style-button {
+  font-size: 1.5em;
+  padding: 1%;
+  text-align: center;
+  background-color: #705d56;
+  color: white; }
+
+/* -------- BASE GRID  ------- */
+.row {
+  clear: both;
+  overflow: auto; }
+
+@media screen and (min-width: 700px) {
+  .grid6 {
+    width: 48%;
+    float: left; }
+
+  .grid4 {
+    width: 33%;
+    float: left;
+    padding-right: 3%; }
+
+  .grid4:last-child {
+    padding-right: 0; } }
+/*
+CSS FOR MENUS
+*/
 .icon-menu {
   position: fixed;
   top: 15px;
@@ -207,13 +154,12 @@ body {
     clear: both; } }
 @media screen and (min-width: 1200px) {
   nav {
-    clear: none; } }
-nav ul {
-  padding-left: 0;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 700; }
-
+    clear: none; }
+    nav ul {
+      padding-left: 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 700; } }
 .menu-mobile {
   display: none;
   position: fixed;
@@ -226,8 +172,12 @@ nav ul {
   border-bottom: 2px solid #705d56;
   width: 100%;
   margin: 0 auto;
-  font-size: 1.2em;
   z-index: 7; }
+
+li {
+  list-style: none;
+  font-weight: 700;
+  text-transform: uppercase; }
 
 .menu-big {
   display: none; }
@@ -238,152 +188,20 @@ nav ul {
 
   .menu-big li {
     display: inline-block;
-    font-size: 0.8em;
     padding: 0 15px;
     margin-top: 15px; }
 
   .menu-mobile {
-    display: none; }
-
-  .home header {
-    height: 500px; } }
+    display: none; } }
 @media screen and (min-width: 1200px) {
   .menu-big {
     float: right; } }
-.button {
-  width: 50%;
-  margin: 0 auto;
-  margin: 4% auto 0 auto; }
-
-.button-bottom {
-  width: 50%;
-  margin: 4% auto 0 auto; }
-
-.row {
-  clear: both;
-  overflow: auto; }
-
-.twousers .grid6 {
-  margin: 3% 1%;
-  padding: 2%; }
-
-.explorers .button-bottom {
-  width: 100px;
-  margin-left: 0;
-  margin-right: 0; }
-
-.existing {
-  text-align: right;
-  overflow: auto;
-  border-top: 2px solid rgba(112, 171, 175, 0.5); }
-
-.existing .button-bottom {
-  width: 100px;
-  margin-left: 0;
-  margin-right: 0;
-  float: right; }
-
-@media screen and (min-width: 700px) {
-  .block {
-    height: 100px; }
-
-  .grid6 {
-    width: 48%;
-    float: left; }
-
-  .twousers .grid6 {
-    transition: background-color 0.25s ease-in;
-    border: 1px solid #32292f; }
-
-  .twousers .grid6:hover {
-    border: 2px solid #99e1d9; }
-
-  .existing, .explorers {
-    border-top: none;
-    text-align: left; }
-
-  .existing .button-bottom, .explorers .button-bottom {
-    margin: 0 auto;
-    float: none; } }
-.latest {
-  border-top: 1px solid #32292f;
-  border-bottom: 1px solid #32292f;
-  padding-bottom: 15px; }
-
-.latest h2 {
-  margin-bottom: 0; }
-
-.latest h3 {
-  margin-top: 20px;
-  margin-bottom: 0; }
-
-.latest p {
-  margin: 1% 0; }
-
-@media screen and (min-width: 700px) {
-  .latest {
-    border-top: none; }
-
-  .featured-org, .featured-unit, .featured-coop {
-    height: 350px;
-    position: relative;
-    /* need this here for button-bottom */ }
-
-  .latest .button-bottom {
-    position: absolute;
-    /* need this here for button-bottom */
-    bottom: 4%;
-    width: 70%;
-    left: 15%; } }
-@media screen and (min-width: 700px) {
-  .featured-org, .featured-unit, .featured-coop {
-    height: 300px; }
-
-  .grid4 {
-    width: 33%;
-    float: left;
-    padding-right: 3%;
-    /*figure out last child for padding*/ }
-
-  .grid4:last-child {
-    padding-right: 0; } }
-.thumbnail {
-  overflow: hidden; }
-
-.thumbnail img {
-  display: block;
-  margin: 0 auto;
-  height: 100px;
-  width: 100%;
-  object-fit: cover; }
-
-.topbanner {
-  background-color: #99e1d9;
-  text-align: left;
-  width: 100%;
-  clear: both;
-  font-size: 0.8em;
-  padding-right: 65px;
-  padding-left: 3%;
-  height: 60px;
-  border-bottom: 3px solid white;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); }
-
-.showonscrolldown {
-  display: none;
-  position: fixed;
-  top: 0;
-  z-index: 5; }
-
-@media screen and (min-width: 500px) {
-  .topbanner {
-    font-size: 1.2em;
-    height: auto; } }
-@media screen and (min-width: 700px) {
-  .topbanner {
-    height: 80px;
-    text-align: center;
-    padding-right: 0; } }
+/*
+end of CSS FOR MENUS
+*/
+/*
+CSS FOR FOOTER
+*/
 footer {
   clear: both;
   padding: 3% 3% 0 3%;
@@ -406,7 +224,7 @@ footer p {
   .grid6right {
     width: 50%;
     float: right;
-    /* so info comes after map on mobile!*/ }
+    /* this allows information to display after map on mobile */ }
 
   .map iframe {
     height: 500px; } }
@@ -416,7 +234,8 @@ footer p {
   height: 45px;
   width: 45px;
   margin-bottom: 3%;
-  float: left; }
+  float: left;
+  text-align: center; }
 
 .datebox p {
   padding-top: 3px;
@@ -432,15 +251,13 @@ footer p {
   margin-bottom: 0; }
 
 .eventinfo a:hover {
-  /* not sure why this hover is not working*/
   text-decoration: underline; }
 
 .eventlist {
   overflow: auto; }
 
 .contactinfo {
-  clear: both;
-  /*  border-top: 1px solid white;  */ }
+  clear: both; }
 
 .cooploves {
   font-size: 0.7em; }
@@ -453,6 +270,12 @@ footer p {
   text-align: center;
   padding: 2%; }
 
+/*
+end of CSS FOR FOOTER
+*/
+/*
+CSS FOR PAGES AND POSTS
+*/
 /* ------ EVENT ARCHIVE PAGE -----*/
 .eventdate {
   font-weight: 200; }
@@ -508,7 +331,7 @@ hr {
   font-size: 2em;
   width: 100%; }
 
-/* ------ STANDARD TOOL ICONS  -----*/
+/* ------  TOOL ICONS FOR CPT SINGLE POSTS -----*/
 .tool-img {
   width: 100%;
   max-width: 800px;
@@ -516,5 +339,12 @@ hr {
 
 .tool-img img {
   width: 100%; }
+
+/*
+end of CSS FOR PAGES AND POSTS
+*/
+/* --------
+end of BASE CSS FOR ALL PAGES
+------ */
 
 /*# sourceMappingURL=coop.css.map */

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/curated.css">
+<!-- a unique stylesheet for certain pages.-->
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bandedsections.css">
 
 <title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
@@ -26,13 +26,12 @@
 
 	<h2 class="funfact"><?php the_content(); ?></h2>
 
-	
-
-	<div class="allexploreposts">
+	<div class="allposts">
 		<h2>Tools & Posts relevant to beginners</h2>
 
 			<?php // ALL 'BEGINNERS' TOOLS
-			$args = array( 'post_type' => 'tool', 'tag' => 'beginners', 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
+			$args = array( 'post_type' => 'tool', 'tag' => 'beginners', 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'title' );
+
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -44,8 +43,9 @@
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 
+
 			<?php // ALL FROM EXPLORE CATEGORY
-			$args = array( 'cat' => 10, 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
+			$args = array( 'cat' => 10, 'posts_per_page' => -1, 'order'=> 'ASC', 'orderby' => 'title' );
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>

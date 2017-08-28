@@ -1,12 +1,11 @@
 <?php get_header(); ?>
 
-<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
+<!-- a unique stylesheet for certain pages.-->
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bandedsections.css">
 
 <title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
 
 </head>
-
 
 
 <body>
@@ -17,23 +16,19 @@
 	<div class="topbanner">
 		<h1><?php the_field('explore_banner'); ?></h1>
 	</div>
-	<!-- repeated div that unique to scrolldown -->
+	<!-- repeated div that's unique to scrolldown -->
 	<div class="topbanner showonscrolldown">
 		<h1><?php the_field('explore_banner'); ?></h1>
 	</div>
 
 	<div class="band">
 		<h2>The Very Beginning</h2>
-			<!-- Show all posts (CPT only) of "tools" (not tagged with "formation") + Explore Category -->
-
 
 		<section>
 
-			<?php //HOW TO DISPLAY CUSTOM POSTS from https://wp-types.com/documentation/user-guides/displaying-wordpress-custom-content/
+			<?php
 
-			// how to exclude a tag: http://wordpress.stackexchange.com/questions/180052/exclude-tags-by-array  but in the end it made more sense to just create another tag
-
-			$args = array( 'post_type' => 'tool', 'tag' => 'beginners', 'posts_per_page' => 6, 'order'=> 'DESC', 'orderby' => 'date' ); //Which tag you want, how many posts to show
+			$args = array( 'post_type' => 'tool', 'tag' => 'beginners', 'posts_per_page' => 6, 'order'=> 'DESC', 'orderby' => 'date' );
 
  			//Define your custom post type name in the arguments
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
@@ -44,13 +39,12 @@
 				<div class="infotool">
 					<div class="icon">
 
-					<?php // IF you uploaded a standard tool icon under ACF 'icon_thumb', it means you want this to display as the landingpage icon. this captures ugly pdf documents.  ?>
+					<?php // IF you uploaded a standard tool icon under ACF 'icon_thumb', it means you want this to display as the landingpage icon. This captures pdf documents.  ?>
 					<?php
 					$icon_thumb = get_field('icon_thumb');
 					$image = get_field('tool_img');
 			      if( !empty($icon_thumb) ): ?>
 						<img src="<?php echo $icon_thumb['url']; ?>" alt="<?php echo $icon_thumb['alt']; ?>" />
-
 
 					<?php // ELSE you want the uploaded post image to display as the landingpage icon
 					$image = get_field('tool_img');
@@ -70,22 +64,17 @@
 			wp_reset_postdata(); ?>
 		</section>
 
-		<!-- permalink to Beginners Page -->
 		<a href="<?php echo get_permalink(41); ?>"><div class="button-section">See All</div></a>
 
 	</div>
 
 	<div class="band">
 		<h2>Anecdotes & Advice for Beginners</h2>
-		<!--
-			Show all posts (blog only) of "advice"  + Explore Category
-			(advice tag could be for Explore & Enhance, eg for the co-op principles)
-		-->
+
 		<section>
 
-
 			<?php
-			$args = array( 'tag' => 'advice', 'cat' => 10, 'posts_per_page' => 6, 'order'=> 'ASC', 'orderby' => 'title' ); //Which tag you want, how many posts to show
+			$args = array( 'tag' => 'advice', 'cat' => 10, 'posts_per_page' => 6, 'order'=> 'ASC', 'orderby' => 'title' );
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -104,12 +93,12 @@
 		wp_reset_postdata(); ?>
 
 		</section>
-		<!-- THE FOLLOWING LINK SHOULD BE AN ARCHIVE PAGE for tag "advice" -->
+
 		<a href="<?php echo get_tag_link( 11 ); ?>"><div class="button-section">See All Inspiring Stories</div></a>
 	</div>
 
 	<div class="band" class="threeactions">
-		<?php the_field('vacancy_section'); ?>
+		<h2><?php the_field('vacancy_section'); ?></h2>
 
 		<div class="explore-action">
 			<?php the_field('first_explore_action'); ?>
@@ -131,14 +120,12 @@
 
 	<div class="band">
 		<h2>DIY: Form Your Own Co-op!</h2>
-		<!--
-			Show all posts (CPT only) of "tools" (tagged with "formation") + Explore Category
-		-->
+
 		<section>
 
 			<?php
 
-			$args = array( 'post_type' => 'tool', 'tag' => 'formation', 'posts_per_page' => 6, 'orderby' => 'rand' ); //Which tag you want, how many posts to show
+			$args = array( 'post_type' => 'tool', 'tag' => 'formation', 'posts_per_page' => 6, 'orderby' => 'rand' );
 			$loop = new WP_Query( $args ); //Define the loop based on those arguments
 			//Display the contents
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -169,10 +156,7 @@
 		<?php // RESETTING TO ORIG LOOP
 		wp_reset_postdata(); ?>
 
-
-
 		</section>
-		<!-- permalink to Formation Page -->
 		<a href="<?php echo get_permalink(43); ?>"><div class="button-section">See All</div></a>
 	</div>
 

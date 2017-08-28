@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
+<!-- a unique stylesheet for certain pages.-->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/profiles.css">
 
 	<title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
@@ -23,10 +23,9 @@
 		<h5 class="potentialtips">
 			If you can imagine this property as a great housing co-op for your group, here are <a href="<?php echo get_permalink(496); ?>">some tips</a>.
 		</h5>
-		<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
+		<h5>
       You can check out all Potential Properties by visiting the<span class="category"><a href="<?php echo get_post_type_archive_link( 'potential' ); ?>">potential</a>
       </span>archive page.
-      <!-- permalink for CPT archive page 'potential'-->
 		</h5>
 	</div>
 

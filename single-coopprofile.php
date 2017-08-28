@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<!-- THIS STYLESHEET MIGHT CHANGE BETWEEN PAGES.-->
+<!-- a unique stylesheet for certain pages.-->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/profiles.css">
 
   <title><?php wp_title(); ?> | <?php bloginfo( 'name' ); ?></title>
@@ -29,7 +29,8 @@
         <div class="icon-location">	</div>
       </div>
         <div class="infoblock"><p>Main intersection: </span><a href="http://maps.google.com/?q=<?php the_field('intersection'); ?>" target="_blank"><span class="infofield"><?php the_field('intersection'); ?></a>
-        <!-- add if statement to display address or not -->
+
+        <!-- if statement to display address or not -->
         <?php
           $address = get_field('address');
 
@@ -154,10 +155,10 @@
         at <?php the_field('email'); // then print email ?></p>
 
       <?php elseif( get_field('contact_pref') == 'via phone' ):  ?>
-        at <?php the_field('phone'); // then print it ?></p>
+        at <?php the_field('phone'); // then print phone number ?></p>
 
       <?php elseif( get_field('contact_pref') == 'through ChicagoCoop.net' ):  ?>
-        <?php // do nothing -- could just delete this block ?>
+        <?php  ?>
 
         <?php endif; ?>
       </div>
@@ -170,17 +171,6 @@
     </div>
 
     <div class="infoblock">
-      <?php
-      /* -------- DIDN'T USE THIS OPTION 1
-      *  Loop through post objects (assuming this is a multi-select field) ( setup postdata )
-      *  Using this method, you can use all the normal WP functions as the $post object is temporarily initialized within the loop
-      *  Read more: http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset  --------------*/  ?>
-
-      <?php
-      /*  USED THIS OPTION
-      *  Loop through post objects (assuming this is a multi-select field) ( don't setup postdata )
-      *  Using this method, the $post object is never changed so all functions need a seccond parameter of the post ID in question.
-      */ ?>
 
       <?php
       $vacancy = get_field('vacancies');
@@ -190,15 +180,10 @@
         <?php foreach( $vacancy as $vacancy): ?>
             <li>
                 <a href="<?php echo get_permalink($vacancy->ID); ?>"><h3><?php echo get_the_title($vacancy->ID); ?> (<?php the_field('bedrooms', $vacancy->ID); ?>)</h3></a>
-
-                <!--  this is tricky because it's a ACF field that links to a post.  getting the ACF from that post is easy (above), but getting the regular featured image to appear is not working ...   <?php the_post_thumbnail(); ?> -->
-
             </li>
         <?php endforeach; ?>
         </ul>
 
-
-      <!-- BASIC ACF IF/ELSE STATMENTS https://support.advancedcustomfields.com/forums/topic/if-true-do-this-false-do-that/ -->
       <?php else: ?>
         <p>
           Sorry, there are no vacancies at this co-op.
@@ -209,10 +194,9 @@
 
 	<?php endwhile; endif; ?>
 
-
   <hr>
   <div class="tags">
-		<h5> <!-- wrapping with a <p> tag for some reason gave a line break-->
+		<h5> 
 			You can find more Profiles and Vacancies in the<span class="category"><a href="<?php echo get_permalink(11); ?>">Directory</a></span>
 		</h5>
 	</div>

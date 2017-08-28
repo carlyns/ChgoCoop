@@ -1,0 +1,81 @@
+/*
+CSS FOR PAGES AND POSTS
+*/
+/* ------ EVENT ARCHIVE PAGE -----*/
+
+.eventdate {
+  font-weight: 200;
+}
+
+
+/* ------ STANDARD ARCHIVE PAGE -----*/
+.archive li {
+  text-transform: capitalize;
+}
+.keyword {
+  font-weight: $weight-bold;
+}
+.date {
+  font-weight: $weight-light;
+  font-size: 0.8em;
+}
+
+
+
+
+
+
+/* ------ STANDARD POST -----*/
+.container {
+  min-height: 400px;
+}
+.container h1 {
+  text-transform: capitalize;
+}
+hr {
+  clear: both;
+}
+.tags {
+  font-size: 1.2em;
+  clear: both;
+}
+.tags h5 {
+  font-weight: $weight-medium;
+}
+.tags li {
+  display: inline-block;
+  background-color: $brand-color-accent;
+  padding: 0.5% 1%;
+  margin: 0 1%;
+}
+.tags a {
+  color: $brand-background-color;
+}
+.category {
+  background-color: $brand-color-accent;
+  padding: 0.5%;
+  margin: 0 0.5%;
+
+}
+.search {
+  border: 1px solid $brand-second-bkgd;
+  margin: 3% 0;
+  padding: 2%;
+}
+.search input[type="text"] {
+  font-size: 2em;
+  width: 100%;
+}
+
+/* ------  TOOL ICONS FOR CPT SINGLE POSTS -----*/
+.tool-img {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 3%;
+}
+.tool-img img {
+  width: 100%;
+}
+/*
+end of CSS FOR PAGES AND POSTS
+*/
